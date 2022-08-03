@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//layouting
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.layout.master_main');
 });
+
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
