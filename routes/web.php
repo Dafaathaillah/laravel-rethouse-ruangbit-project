@@ -15,14 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 //layouting
-Route::get('/', function () {
-    return view('layouts.layout.master_main');
+// Route::get('/', function () {
+//     return view('layouts.layout.master_main');
+// });
+
+Route::get('/property-list', function () {
+    return view('user.property.property_list');
 });
 
+Route::get('/dashboard', function () {
+    return view('user.dashboard.dashboard');
+});
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Auth::routes();
 

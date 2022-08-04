@@ -1,6 +1,6 @@
-@section('footer')
-    <!-- HEADER -->
-    <header class="jumbotron bg-theme-v5">
+@section('navbar_dashboard')
+      <!-- HEADER -->
+      <header class="jumbotron bg-theme-v5">
         <div class="bg-overlay"></div>
         <!-- NAVBAR -->
         <nav class="navbar navbar-hover navbar-expand-lg navbar-soft navbar-transparent">
@@ -28,7 +28,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Pages </a>
                             <ul class="dropdown-menu animate fade-up">
-    
+
                                 <li><a class="dropdown-item icon-arrow" href="#"> Property Listing </a>
                                     <ul class="submenu dropdown-menu  animate fade-up">
                                         <li><a class="dropdown-item" href="/listing-style-v1.html"> Style 1</a></li>
@@ -36,7 +36,7 @@
                                         <li><a class="dropdown-item" href="/listing-style-v3.html"> Style 3</a></li>
                                         <li><a class="dropdown-item" href="/listing-style-v4.html"> Style 4</a></li>
                                         <li><a class="dropdown-item" href="/listing-style-v5.html"> Style 5</a></li>
-    
+
                                         <li><a class="dropdown-item icon-arrow" href="">Submenu item 3 </a>
                                             <ul class="submenu dropdown-menu  animate fade-up">
                                                 <li><a class="dropdown-item" href="">Multi level 1</a></li>
@@ -56,7 +56,7 @@
                                         <li><a class="dropdown-item" href="/single-detail-v5.html">Style 5</a></li>
                                     </ul>
                                 </li>
-    
+
                                 <li><a class="dropdown-item icon-arrow" href="#"> Agent </a>
                                     <ul class="submenu dropdown-menu  animate fade-up">
                                         <li><a class="dropdown-item" href="/agents-v1.html">Style 1</a></li>
@@ -78,24 +78,24 @@
                                 <li><a class="dropdown-item" href="/404.html"> 404 Error </a>
                             </ul>
                         </li>
-    
-    
-    
+
+
+
                         <li class="nav-item dropdown">
                             <a class="nav-link active dropdown-toggle" href="#" data-toggle="dropdown"> Blog </a>
                             <ul class="dropdown-menu dropdown-menu-left animate fade-up">
                                 <li><a class="dropdown-item" href="/blog.html"> Blog </a>
                                 </li>
                                 <li><a class="dropdown-item" href="/blog-single.html"> Blog Single </a></li>
-    
-    
+
+
                             </ul>
                         </li>
-    
+
                         <li class="nav-item"><a class="nav-link" href="/contact.html"> contact </a></li>
                     </ul>
-    
-    
+
+
                     <!-- Search bar.// -->
                     <ul class="navbar-nav ">
                         <li>
@@ -108,7 +108,7 @@
                         <div class="container">
                             <div class="input-group ">
                                 <form action="#">
-    
+
                                     <div class="row no-gutters mt-3">
                                         <div class="col">
                                             <input class="form-control border-secondary border-right-0 rounded-0"
@@ -121,7 +121,7 @@
                                             </a>
                                         </div>
                                     </div>
-    
+
                                 </form>
                             </div>
                         </div>
@@ -137,12 +137,12 @@
                 <div class="row align-items-center justify-content-start flex-wrap">
                     <div class="col-lg-12 mx-auto">
                         <div class="wrap__intro-heading" data-aos="fade-up">
-    
+
                             <h1 class="text-capitalize">
                                 Find your dream house </h1>
                             <p>Your Property, Our Priority and From as low as $10 per day with limited time offer
                                 discounts</p>
-    
+
                             <div class="bg__overlay-black p-4">
                                 <div class="search__property">
                                     <div class="position-relative">
@@ -156,7 +156,7 @@
                                                 <a class="nav-link" id="rent-tab" data-toggle="pill" href="#rent"
                                                     role="tab" aria-controls="rent" aria-selected="false">Rent</a>
                                             </li>
-    
+
                                         </ul>
                                         <div class="tab-content" id="pills-tabContent">
                                             <div class="tab-pane fade active show" id="buy" role="tabpanel"
@@ -172,7 +172,7 @@
                                                                 <option>Residential</option>
                                                                 <option>Land</option>
                                                                 <option>Luxury</option>
-    
+
                                                             </select>
                                                         </div>
                                                         <div class="col-lg-2">
@@ -184,7 +184,7 @@
                                                                 <option>600</option>
                                                                 <option>300</option>
                                                                 <option>100</option>
-    
+
                                                             </select>
                                                         </div>
                                                         <div class="col-lg-2">
@@ -199,7 +199,7 @@
                                                                 <option>7</option>
                                                                 <option>8</option>
                                                                 <option>9</option>
-    
+
                                                             </select>
                                                         </div>
                                                         <div class="col-lg-2">
@@ -210,7 +210,7 @@
                                                                 <option>3</option>
                                                                 <option>4</option>
                                                                 <option>5</option>
-    
+
                                                             </select>
                                                         </div>
                                                         <div class="col-lg-2">
@@ -221,7 +221,7 @@
                                                                 <option>Belgium</option>
                                                                 <option>Canada</option>
                                                                 <option>Delaware</option>
-    
+
                                                             </select>
                                                         </div>
                                                         <div class="col-lg-2 input-group-append">
@@ -246,7 +246,7 @@
                                                                 <option>Residential</option>
                                                                 <option>Land</option>
                                                                 <option>Luxury</option>
-    
+
                                                             </select>
                                                         </div>
                                                         <div class="col-lg-2">
@@ -258,7 +258,7 @@
                                                                 <option>600</option>
                                                                 <option>300</option>
                                                                 <option>100</option>
-    
+
                                                             </select>
                                                         </div>
                                                         <div class="col-lg-2">
@@ -273,7 +273,7 @@
                                                                 <option>7</option>
                                                                 <option>8</option>
                                                                 <option>9</option>
-    
+
                                                             </select>
                                                         </div>
                                                         <div class="col-lg-2">
@@ -284,7 +284,7 @@
                                                                 <option>3</option>
                                                                 <option>4</option>
                                                                 <option>5</option>
-    
+
                                                             </select>
                                                         </div>
                                                         <div class="col-lg-2">
@@ -295,7 +295,7 @@
                                                                 <option>Belgium</option>
                                                                 <option>Canada</option>
                                                                 <option>Delaware</option>
-    
+
                                                             </select>
                                                         </div>
                                                         <div class="col-lg-2 input-group-append">
@@ -307,7 +307,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-    
+
                                         </div>
                                     </div>
                                 </div>
