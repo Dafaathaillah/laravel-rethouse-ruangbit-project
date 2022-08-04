@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -37,24 +38,23 @@ class HomeController extends Controller
     }
 
     public function save(Request $request){
-        // $request->validate([
-        //     'name'=>'required',
-        //     'email'=>'required|email',
-        //     'password'=>'required|min:5|'
-        // ]);
-        return $request->input();
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'password'=>'required|min:5|'
+        ]);
 
-        // $admin = new Admin;
-        // $admin->name = $request->name;
-        // $admin->email = $request->email;
-        // $admin->password = $request->password;
-        // $save = $admin->save();
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $save = $user->save();
 
-        // if ($save) {
-        //     return back()->with('success', 'New User has been succesfuly');
-        // } else {
-        //     return back()->with('fail', 'Something wrong, try again later');
-        // }
+        if ($save) {
+            return back()->with('success', 'New User has been succesfuly');
+        } else {
+            return back()->with('fail', 'Something wrong, try again later');
+        }
         
     }
 }

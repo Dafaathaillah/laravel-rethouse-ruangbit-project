@@ -38,6 +38,18 @@
     <div class="card-body">
         <h4 class="card-title mb-4">Sign in</h4>
         <form action="{{ route('auth.save') }}" method="post">
+        @if(Session::get('success'))
+            <div class="alert alert-success">
+                {{ Session::get('success' )}}
+            </div>
+        @endif
+
+        @if(Session::get('fail'))
+            <div class="alert alert-danger">
+                {{ Session::get('fail' )}}
+            </div>
+        @endif
+
         @csrf
             <div class="form-row">
                 <div class="col form-group">
