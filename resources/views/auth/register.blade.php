@@ -1,77 +1,110 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<head>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Rethouse - Real Estate HTML Template">
+<meta name="keywords" content="Real Estate, Property, Directory Listing, Marketing, Agency" />
+<meta name="author" content="mardianto - retenvi.com">
+<title>Rethouse - Real Estate HTML Template</title>
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+<!-- Facebook and Twitter integration -->
+<meta property="og:title" content="" />
+<meta property="og:image" content="" />
+<meta property="og:url" content="" />
+<meta property="og:site_name" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:title" content="" />
+<meta name="twitter:image" content="" />
+<meta name="twitter:url" content="" />
+<meta name="twitter:card" content="" />
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+<link rel="manifest" href="site.webmanifest">
+<!-- favicon.ico in the root directory -->
+<link rel="apple-touch-icon" href="icon.png">
+<meta name="theme-color" content="#3454d1">
+<link href="{{ asset('./css/styles.css?fd365619e86ad9137a29')}}" rel="stylesheet"></head>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+<section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Form Register -->
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+<div class="card mx-auto" style="max-width:520px;">
+    <div class="card-body">
+        <h4 class="card-title mb-4">Sign in</h4>
+        <form action="{{ route('auth.save') }}" method="post">
+            <div class="form-row">
+                <div class="col form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your name" name="first_name">
+                    <span class="text-danger">@error('first_name'){{ $message }} @enderror</span>
+                </div> <!-- form-group end.// -->
+                <!-- <div class="col form-group">
+                    <label>Last name</label>
+                    <input type="text" class="form-control" placeholder="">
+                    <span class="text-danger">@error('last_name'){{ $message }} @enderror</span>
+                </div> -->
+                 <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="Enter your email" name="email">
+                <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <span class="text-danger">@error('email'){{ $message }} @enderror</span>
+            </div> <!-- form-group end.// -->
+            <div class="form-group">
+                <label class="custom-control custom-radio custom-control-inline">
+                    <input class="custom-control-input" checked="" type="radio" name="gender" value="option1">
+                    <span class="custom-control-label"> Male </span>
+                </label>
+                <label class="custom-control custom-radio custom-control-inline">
+                    <input class="custom-control-input" type="radio" name="gender" value="option2">
+                    <span class="custom-control-label"> Female </span>
+                </label>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" placeholder="Enter your password" name="password">                
+                <span class="text-danger">@error('password'){{ $message }} @enderror</span>
+            </div>
+             <!-- form-group end.// -->            
+            <!--<div class="form-row">
+                <div class="form-group col-lg-6">
+                    <label>City</label>
+                    <input type="text" class="form-control" name="city">
+                </div>--> <!-- form-group end.// -->
+                <!-- <div class="form-group col-lg-6">
+                    <label>Country</label>
+                    <select class=" form-control" name="country">
+                        <option> Choose...</option>
+                        <option>Uzbekistan</option>
+                        <option>Russia</option>
+                        <option selected="">United States</option>
+                        <option>India</option>
+                        <option>Afganistan</option>
+                    </select>
+                </div>  -->
+                <!-- form-group end.// -->
+            <!-- </div>  -->
+            <!-- form-row.// -->           
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block"> Register </button>
+            </div> <!-- form-group// -->
+            <div class="form-group">
+                <label class="custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input"
+                        checked="">
+                    <span class="custom-control-label"> I am agree with <a href="#">terms and contitions</a> </span>
+                </label>
+            </div> <!-- form-group end.// -->
+        </form>
+    </div><!-- card-body.// -->
+</div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-@endsection
+    </section>

@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +27,7 @@ Route::get('/dashboard', function () {
     return view('user.dashboard.dashboard');
 });
 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/auth/login', [HomeController::class,'login'])->name('auth.login');
+Route::get('/auth/register', [HomeController::class,'register'])->name('auth.register');
+Route::get('/auth/save', [HomeController::class,'save'])->name('auth.save');
