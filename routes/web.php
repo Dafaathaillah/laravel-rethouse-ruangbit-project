@@ -14,17 +14,45 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//layouting
-// Route::get('/', function () {
-//     return view('layouts.layout.master_main');
-// });
+//Admin
+
+
+
+//User
+Route::get('/dashboard', function () {
+    return view('user.dashboard.dashboard');
+});
 
 Route::get('/property-list', function () {
     return view('user.property.property_list');
 });
 
-Route::get('/dashboard', function () {
-    return view('user.dashboard.dashboard');
+Route::get('/property-detail', function () {
+    return view('user.property.property_detail');
+});
+
+Route::get('/agency', function () {
+    return view('user.agency.agency');
+});
+
+Route::get('/agency-detail', function () {
+    return view('user.agency.agency_detail');
+});
+
+Route::get('/about-us', function () {
+    return view('user.about_us.about-us');
+});
+
+Route::get('/blog-news', function () {
+    return view('user.blog_news.blog');
+});
+
+Route::get('/agents-list', function () {
+    return view('user.agents.agents');
+});
+
+Route::get('/agents-detail', function () {
+    return view('user.agents.agents_detail');
 });
 
 
