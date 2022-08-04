@@ -19,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 
 //User
+Route::get('/', function () {
+    return view('user.dashboard.dashboard');
+});
+
 Route::get('/dashboard', function () {
     return view('user.dashboard.dashboard');
 });
