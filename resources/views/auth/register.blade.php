@@ -38,16 +38,17 @@
     <div class="card-body">
         <h4 class="card-title mb-4">Sign in</h4>
         <form action="{{ route('auth.save') }}" method="post">
+        @csrf
             <div class="form-row">
                 <div class="col form-group">
                     <label>Name</label>
-                    <input type="text" class="form-control" placeholder="Enter your name" name="first_name">
-                    <span class="text-danger">@error('first_name'){{ $message }} @enderror</span>
+                    <input type="text" class="form-control" placeholder="Enter your name" name="name">
+                    <span class="text-danger">@error('name'){{ $message }} @enderror</span>
                 </div> <!-- form-group end.// -->
                 <!-- <div class="col form-group">
                     <label>Last name</label>
                     <input type="text" class="form-control" placeholder="">
-                    <span class="text-danger">@error('last_name'){{ $message }} @enderror</span>
+                    <span class="text-danger"></span>
                 </div> -->
                  <!-- form-group end.// -->
             </div> <!-- form-row end.// -->

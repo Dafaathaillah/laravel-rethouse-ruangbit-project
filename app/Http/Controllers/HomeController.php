@@ -37,23 +37,24 @@ class HomeController extends Controller
     }
 
     public function save(Request $request){
-        $request->validate([
-            'name'=>'required',
-            'email'=>'required|email',
-            'password'=>'required|min:5|'
-        ]);
+        // $request->validate([
+        //     'name'=>'required',
+        //     'email'=>'required|email',
+        //     'password'=>'required|min:5|'
+        // ]);
+        return $request->input();
 
-        $admin = new Admin;
-        $admin->name = $request->name;
-        $admin->email = $request->email;
-        $admin->password = $request->password;
-        $save = $admin->save();
+        // $admin = new Admin;
+        // $admin->name = $request->name;
+        // $admin->email = $request->email;
+        // $admin->password = $request->password;
+        // $save = $admin->save();
 
-        if ($save) {
-            return back()->with('success', 'New User has been succesfuly');
-        } else {
-            return back()->with('fail', 'Something wrong, try again later');
-        }
+        // if ($save) {
+        //     return back()->with('success', 'New User has been succesfuly');
+        // } else {
+        //     return back()->with('fail', 'Something wrong, try again later');
+        // }
         
     }
 }
