@@ -24,9 +24,9 @@
 
     <link rel="manifest" href="site.webmanifest">
     <!-- favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="apple-touch-icon" href="{{ asset('icon.png') }}">
     <meta name="theme-color" content="#3454d1">
-    <link href="./css/styles.css?fd365619e86ad9137a29" rel="stylesheet">
+    <link href="{{ asset('./css/styles.css?fd365619e86ad9137a29') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -41,9 +41,9 @@
     <!-- END FOOTER -->
 
     <!-- SCROLL TO TOP -->
-    <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+    <a href="{{ asset('javascript:') }}" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
     <!-- END SCROLL TO TOP -->
-    <script src="./js/index.bundle.js?fd365619e86ad9137a29"></script>
+    <script src="{{ asset('./js/index.bundle.js?fd365619e86ad9137a29') }}"></script>
 </body>
 
 </html>

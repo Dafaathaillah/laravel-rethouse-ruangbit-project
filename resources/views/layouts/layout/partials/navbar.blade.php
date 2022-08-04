@@ -1,40 +1,6 @@
-@section('navbar_listing_list')
+@section('navbar')
 <header>
-    <!-- NAVBAR TOP -->
-    <div class="topbar d-none d-sm-block">
-        <div class="container ">
-            <div class="row">
-                <div class="col-sm-12 col-md-5">
-                    <div class="topbar-left">
-                        <div class="topbar-text">
-                            Monday, March 22, 2020
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-7">
-                    <div class="list-unstyled topbar-right">
-                        <ul class="topbar-link">
-                            <li><a href="#" title="">Career</a></li>
-                            <li><a href="#" title="">Contact Us</a></li>
-                            <li><a href="#" title="">Login / Register</a></li>
-                        </ul>
-                        <ul class="topbar-sosmed">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END NAVBAR TOP -->
+    <!-- <div class="bg-overlay-one"></div> -->
     <!-- NAVBAR -->
     <nav class="navbar navbar-hover navbar-expand-lg navbar-soft">
         <div class="container">
@@ -160,5 +126,36 @@
         </div>
     </nav>
     <!-- END NAVBAR -->
+    <!-- BREADCRUMB -->
+    <div class="bg-theme-overlay">
+        <section class="section__breadcrumb ">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-8 text-center">
+                        <h2 class="text-capitalize text-white ">agency detail</h2>
+                        <ul class="list-inline ">
+                            <li class="list-inline-item">
+                                <a href="#" class="text-white">
+                                    home
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="text-white">
+                                    agency
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="text-white">
+                                    agency detail
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- END BREADCRUMB -->
 </header>
 @show

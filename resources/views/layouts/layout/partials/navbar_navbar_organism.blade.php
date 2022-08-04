@@ -163,33 +163,7 @@
     <!-- BREADCRUMB -->
     <div class="bg-theme-overlay">
  
-        <section class="section__breadcrumb ">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md-8 text-center">
-                        <h2 class="text-capitalize text-white ">property list</h2>
-                        <ul class="list-inline ">
-                            <li class="list-inline-item">
-                                <a href="#" class="text-white">
-                                    home
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" class="text-white">
-                                    property
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" class="text-white">
-                                    property list
-                                </a>
-                            </li>
- 
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+    @yield('title_image')
  
     </div>
     <!-- END BREADCRUMB -->
