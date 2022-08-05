@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User_testing;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -40,7 +41,8 @@ class HomeController extends Controller
     public function save(Request $request){
         $request->validate([
             'name'=>'required',
-            'email'=>'required|email',
+            'email'=>'required|email|unique:user_testing',
+            'contact'=>'required',
             'password'=>'required|min:5|'
         ]);
 
@@ -49,7 +51,7 @@ class HomeController extends Controller
         $user->email = $request->email;
         $user->contact = $request->contact;
         $user->gender = $request->gender;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);        
         $save = $user->save();
 
         if ($save) {
