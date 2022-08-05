@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PropertyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,14 +27,11 @@ Route::get('/dashboard', function () {
     return view('user.dashboard.dashboard');
 });
 
-Route::get('/property-list', function () {
-    return view('user.property.property_list');
-});
 
-Route::get('/property-detail', function () {
-    return view('user.property.property_detail');
-});
+//property
+Route::resource('property', PropertyController::class);
 
+//agency
 Route::get('/agency', function () {
     return view('user.agency.agency');
 });
@@ -43,14 +40,20 @@ Route::get('/agency-detail', function () {
     return view('user.agency.agency_detail');
 });
 
+
+//about  us
 Route::get('/about-us', function () {
     return view('user.about_us.about-us');
 });
 
+
+//blog news
 Route::get('/blog-news', function () {
     return view('user.blog_news.blog');
 });
 
+
+//agents
 Route::get('/agents-list', function () {
     return view('user.agents.agents');
 });
