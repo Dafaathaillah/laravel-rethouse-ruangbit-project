@@ -37,7 +37,13 @@
                 <div class="card mx-auto" style="max-width: 380px;">
                     <div class="card-body">
                         <h4 class="card-title mb-4">Sign in</h4>
-                        <form action="#">
+                        <form action="{{ route('auth.check') }}" method="post">
+                            @if(Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('fail' )}}
+                                </div>
+                            @endif
+                            @csrf
                             <a href="#" class="btn btn-facebook btn-block mb-2 text-white"> <i
                                     class="fa fa-facebook"></i> &nbsp; Sign
                                 in
@@ -47,10 +53,12 @@
                                 Sign in with
                                 Google</a>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Email" type="text" name="email">
+                                <input class="form-control" placeholder="Enter Email Adress" type="text" name="email">
+                                <span class="text-danger">@error('email'){{ $message }} @enderror</span>
                             </div> <!-- form-group// -->
                             <div class="form-group">
-                                <input class="form-control" placeholder="Password" type="password" name="password">
+                                <input class="form-control" placeholder="Enter Password" type="password" name="password">
+                                <span class="text-danger">@error('password'){{ $message }} @enderror</span>
                             </div> <!-- form-group// -->
 
                             <div class="form-group">

@@ -33,3 +33,4 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/auth/login', [HomeController::class,'login'])->name('auth.login');
 Route::get('/auth/register', [HomeController::class,'register'])->name('auth.register');
 Route::post('/auth/save', [HomeController::class,'save'])->name('auth.save');
+Route::post('/auth/check', [HomeController::class,'check'])->name('auth.check');

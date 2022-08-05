@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User_testing;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
@@ -43,7 +44,7 @@ class HomeController extends Controller
             'name'=>'required',
             'email'=>'required|email|unique:user_testing',
             'contact'=>'required',
-            'password'=>'required|min:5|'
+            'password'=>'required|min:5|max:12'
         ]);
 
         $user = new User_testing;
@@ -60,5 +61,33 @@ class HomeController extends Controller
             return back()->with('fail', 'Something wrong, try again later');
         }
         
+    }
+
+    public function check(Request $request){
+        $credentials = $request->validate([            
+            'email'=>'required|email',            
+            'password'=>'required|min:5|max:12'
+        ]);
+
+        // $userInfo = User_testing::where('email', '=', $request->email)->first();
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/dashboard');            
+        } else {
+            return back()->with('fail', 'Login Failed!');
+        }
+
+        
+        // if ($userInfo) {
+        //     return back()->with('fail', 'We do not recognize your email address');
+        // } else {
+        //     if (Hash::check($request->password, $userInfo->password)) {
+        //         $request->session()->put('loggedUser', $userInfo->id);
+        //         return redirect('user/dashboard');
+        //     } else {
+        //         return back()->with('fail', 'Incorrect password');
+        //     }            
+        // }        
     }
 }
