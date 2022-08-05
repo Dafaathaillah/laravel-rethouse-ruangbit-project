@@ -43,7 +43,6 @@
                 {{ Session::get('success' )}}
             </div>
         @endif
-
         @if(Session::get('fail'))
             <div class="alert alert-danger">
                 {{ Session::get('fail' )}}
@@ -53,15 +52,15 @@
         @csrf
             <div class="form-row">
                 <div class="col form-group">
-                    <label>Name</label>
+                    <label>Full Name</label>
                     <input type="text" class="form-control" placeholder="Enter your name" name="name">
                     <span class="text-danger">@error('name'){{ $message }} @enderror</span>
                 </div> <!-- form-group end.// -->
-                <!-- <div class="col form-group">
-                    <label>Last name</label>
-                    <input type="text" class="form-control" placeholder="">
-                    <span class="text-danger"></span>
-                </div> -->
+                <div class="col form-group">
+                    <label>Contact</label>
+                    <input type="text" class="form-control" placeholder="Enter your phone number" name="contact">
+                    <span class="text-danger">@error('contact'){{ $message }} @enderror</span>
+                </div> 
                  <!-- form-group end.// -->
             </div> <!-- form-row end.// -->
             <div class="form-group">
@@ -72,11 +71,11 @@
             </div> <!-- form-group end.// -->
             <div class="form-group">
                 <label class="custom-control custom-radio custom-control-inline">
-                    <input class="custom-control-input" checked="" type="radio" name="gender" value="option1">
+                    <input class="custom-control-input" checked="" type="radio" name="gender" value="Male">
                     <span class="custom-control-label"> Male </span>
                 </label>
                 <label class="custom-control custom-radio custom-control-inline">
-                    <input class="custom-control-input" type="radio" name="gender" value="option2">
+                    <input class="custom-control-input" type="radio" name="gender" value="Female">
                     <span class="custom-control-label"> Female </span>
                 </label>
             </div>

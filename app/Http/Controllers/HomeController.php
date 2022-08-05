@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\User_testing;
 
 class HomeController extends Controller
 {
@@ -44,9 +44,11 @@ class HomeController extends Controller
             'password'=>'required|min:5|'
         ]);
 
-        $user = new User;
+        $user = new User_testing;
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->contact = $request->contact;
+        $user->gender = $request->gender;
         $user->password = $request->password;
         $save = $user->save();
 

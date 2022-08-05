@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class User_testing extends Model
 {
-    protected $table = "user_testing";
+    protected $table = "users";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id', 'name', 'email', 'password',
+        'id', 'name', 'email', 'contact', 'gender', 'password',
     ];
 }

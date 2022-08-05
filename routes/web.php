@@ -26,7 +26,9 @@ Route::get('/property-list', function () {
 Route::get('/dashboard', function () {
     return view('user.dashboard.dashboard');
 });
-
+Route::get('/', function () {
+    return view('user.dashboard.dashboard');
+});
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/auth/login', [HomeController::class,'login'])->name('auth.login');
 Route::get('/auth/register', [HomeController::class,'register'])->name('auth.register');
