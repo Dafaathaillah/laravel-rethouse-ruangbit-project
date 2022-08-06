@@ -59,6 +59,10 @@ Route::get('/agents-detail', function () {
     return view('user.agents.agents_detail');
 });
 
+//admin
+Route::get('/admin-dashboard', function () {
+    return view('layouts\layout_admin\master_admin');
+});
 
 Auth::routes();
 
