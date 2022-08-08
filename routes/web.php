@@ -64,6 +64,10 @@ Route::get('/admin-dashboard', function () {
     return view('layouts\layout_admin\master_admin');
 });
 
+Route::get('/admin-dashboard', function () {
+    return view('admin\dashboard\dashboard');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
