@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\ManageUserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,8 +29,12 @@ Route::get('/dashboard', function () {
 Route::get('/', function () {
     return view('user.dashboard.dashboard');
 });
+// Route::get('/dashboardadmin', function () {
+//     return view('admin.dashboard.dashboard');
+// });
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/auth/login', [HomeController::class,'login'])->name('auth.login');
 Route::get('/auth/register', [HomeController::class,'register'])->name('auth.register');
+Route::get('/dashboardadmin', [ManageUserController::class,'index'])->name('admin.user.index');
 Route::post('/auth/save', [HomeController::class,'save'])->name('auth.save');
 Route::post('/auth/check', [HomeController::class,'check'])->name('auth.check');
