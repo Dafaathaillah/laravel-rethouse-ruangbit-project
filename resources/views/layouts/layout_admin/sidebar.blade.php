@@ -38,12 +38,6 @@ License: You must have a valid license purchased only from above link or https:/
 				</li>
 				<li class="nav-item">
 					<a href="#" class="nav-link">
-						<i class="link-icon" data-feather="book-open"></i>
-						<span class="link-title">Manage Agents</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="#" class="nav-link">
 						<i class="link-icon" data-feather="book"></i>
 						<span class="link-title">Manage Agency</span>
 					</a>
