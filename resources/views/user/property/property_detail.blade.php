@@ -193,7 +193,7 @@
                   <!-- END FEATURES -->
 
                   <!-- FLOR PLAN -->
-                  <div class="single__detail-features">
+                  {{-- <div class="single__detail-features">
                      <h5 class="text-capitalize detail-heading">floor plan</h5>
                      <!-- FLOR PLAN IMAGE -->
                      <div id="accordion" class="floorplan" role="tablist">
@@ -267,7 +267,7 @@
                         </div>
 
                      </div>
-                  </div>
+                  </div> --}}
                   <!-- END FLOR PLAN -->
                   <div class="single__detail-features">
                      <h5 class="text-capitalize detail-heading">property video</h5>
@@ -761,7 +761,7 @@
                </div>
                <!-- END FORM FILTER -->
                <!-- FORM FILTER -->
-               <div class="products__filter mb-30">
+               {{-- <div class="products__filter mb-30">
                   <div class="products__filter__group">
                      <div class="products__filter__header">
 
@@ -821,7 +821,7 @@
                         </div>
                      </div>
                   </div>
-               </div>
+               </div> --}}
 
                <!-- END FORM FILTER -->
 

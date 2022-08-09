@@ -115,7 +115,7 @@
                       <a style="margin-top: 20px" type="submit" class="btn btn-success btn-block">
                           Simpan
                       </a>
-                      <a style="margin-top: 20px" type="submit" class="btn btn-danger btn-block">
+                      <a href="{{route('property.index')}}" style="margin-top: 20px" type="submit" class="btn btn-danger btn-block">
                         Cancel
                     </a>
                   </form>
