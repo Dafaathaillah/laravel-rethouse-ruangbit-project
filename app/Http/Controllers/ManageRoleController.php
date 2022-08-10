@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 
-class ManageAdsController extends Controller
+class ManageRoleController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,7 +25,7 @@ class ManageAdsController extends Controller
     public function index()
     {
     //fungsi eloquent menampilkan data menggunakan pagination
-    $ads = $ads = DB::table('advertisements')->get(); // Mengambil semua isi tabel    
-    return view('admin.ads.index', compact('ads'));    
-    }   
+    $role = $role = DB::table('role')->get(); // Mengambil semua isi tabel    
+    return view('admin.role.index', compact('role'));    
+    }  
 }

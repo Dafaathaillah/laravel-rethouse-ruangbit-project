@@ -39,6 +39,23 @@ class ManageUserController extends Controller
     return view('admin.users.detail', compact('user'));
     }
     
+    public function store(Request $request)
+    {
+    //melakukan validasi data
+    $request->validate([
+        'name' => 'required',
+        'email' => 'required',
+        'contact' => 'required', 
+        'gender' => 'required',
+        'agent_status' => 'required',
+    ]);
+    //fungsi eloquent untuk menambah data
+    User::create($request->all());
+    //jika data berhasil ditambahkan, akan kembali ke halaman utama
+    return redirect()->route('admin.users.index')
+    ->with('success', 'Mahasiswa Berhasil Ditambahkan');
+    }
+
     public function edit($id)
     {
     //menampilkan detail data dengan menemukan berdasarkan id user untuk diedit
@@ -50,11 +67,11 @@ class ManageUserController extends Controller
     {
     //melakukan validasi data
     $request->validate([
-    'Name' => 'required',
-    'email' => 'required',
-    'contact' => 'required', 
-    'gender' => 'required',
-    'agent_status' => 'required',
+        'name' => 'required',
+        'email' => 'required',
+        'contact' => 'required', 
+        'gender' => 'required',
+        'agent_status' => 'required',
     ]);
     //fungsi eloquent untuk mengupdate data inputan kita
     Mahasiswa::find($id)->update($request->all());

@@ -7,6 +7,7 @@ use App\Http\Controllers\ManageAdsController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\ManageAgencyController;
 use App\Http\Controllers\ManageTermController;
+use App\Http\Controllers\ManageRoleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +23,6 @@ use App\Http\Controllers\ManageTermController;
 // Route::get('/', function () {
 //     return view('layouts.layout.master_main');
 // });
-
 Route::get('/property-list', function () {
     return view('user.property.property_list');
 });
@@ -41,9 +41,15 @@ Route::get('/auth/login', [HomeController::class,'login'])->name('auth.login');
 Route::get('/auth/register', [HomeController::class,'register'])->name('auth.register');
 Route::get('/admin', [DashboardAdminController::class,'index'])->name('admin.dashboard.index');
 Route::get('/admin/users', [ManageUserController::class,'index'])->name('admin.user.index');
-Route::get('/admin/Advertisements', [ManageAdsController::class,'index'])->name('admin.ads.index');
+Route::get('/admin/users/show/{id}', [ManageUserController::class,'show'])->name('admin.user.show');
+Route::get('/admin/users/edit{id}', [ManageUserController::class,'edit'])->name('admin.user.edit');
+// Route::get('/admin/users/delete/{id}', [ManageUserController::class,'destroy'])->name('admin.user.delete');
+Route::get('/admin/role', [ManageRoleController::class,'index'])->name('admin.role.index');
+Route::get('/admin/advertisements', [ManageAdsController::class,'index'])->name('admin.ads.index');
 Route::get('/admin/agencies', [ManageAgencyController::class,'index'])->name('admin.agency.index');
 Route::get('/admin/term&condition', [ManageTermController::class,'index'])->name('admin.term.index');
 Route::post('/auth/save', [HomeController::class,'save'])->name('auth.save');
 Route::post('/auth/check', [HomeController::class,'check'])->name('auth.check');
+
+
 

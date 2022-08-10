@@ -32,8 +32,14 @@ License: You must have a valid license purchased only from above link or https:/
 				</li>
 				<li class="nav-item">
 					<a href=" {{ route('admin.user.index')}} " class="nav-link">
-						<i class="link-icon" data-feather="code"></i>
+						<i class="link-icon" data-feather="users"></i>
 						<span class="link-title">Manage User</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href=" {{ route('admin.role.index')}} " class="nav-link">
+						<i class="link-icon" data-feather="user-check"></i>
+						<span class="link-title">Manage Role</span>
 					</a>
 				</li>
 				<li class="nav-item">
