@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManageUserController;
+use App\Http\Controllers\ManageAdsController;
+use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\ManageAgencyController;
+use App\Http\Controllers\ManageTermController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +39,11 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/auth/login', [HomeController::class,'login'])->name('auth.login');
 Route::get('/auth/register', [HomeController::class,'register'])->name('auth.register');
-Route::get('/dashboardadmin', [ManageUserController::class,'index'])->name('admin.user.index');
+Route::get('/admin', [DashboardAdminController::class,'index'])->name('admin.dashboard.index');
+Route::get('/admin/users', [ManageUserController::class,'index'])->name('admin.user.index');
+Route::get('/admin/Advertisements', [ManageAdsController::class,'index'])->name('admin.ads.index');
+Route::get('/admin/agencies', [ManageAgencyController::class,'index'])->name('admin.agency.index');
+Route::get('/admin/term&condition', [ManageTermController::class,'index'])->name('admin.term.index');
 Route::post('/auth/save', [HomeController::class,'save'])->name('auth.save');
 Route::post('/auth/check', [HomeController::class,'check'])->name('auth.check');
+

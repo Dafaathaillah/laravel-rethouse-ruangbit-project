@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use DB;
+use Illuminate\Http\Request;
 
-class ManageAdsController extends Controller
+class ManageAgencyController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,7 +24,7 @@ class ManageAdsController extends Controller
     public function index()
     {
     //fungsi eloquent menampilkan data menggunakan pagination
-    $ads = $ads = DB::table('advertisement')->get(); // Mengambil semua isi tabel    
-    return view('admin.ads.index', compact('ads'));    
+    $agency = $agency = DB::table('agency')->get(); // Mengambil semua isi tabel    
+    return view('admin.agency.index', compact('agency'));    
     }   
 }

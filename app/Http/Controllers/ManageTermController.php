@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 
-class ManageAdsController extends Controller
+class ManageTermController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,7 +25,7 @@ class ManageAdsController extends Controller
     public function index()
     {
     //fungsi eloquent menampilkan data menggunakan pagination
-    $ads = $ads = DB::table('advertisement')->get(); // Mengambil semua isi tabel    
-    return view('admin.ads.index', compact('ads'));    
+    $term = $term = DB::table('terms')->get(); // Mengambil semua isi tabel    
+    return view('admin.terms.index', compact('term'));    
     }   
 }

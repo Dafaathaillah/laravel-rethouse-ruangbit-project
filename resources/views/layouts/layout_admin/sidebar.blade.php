@@ -25,41 +25,35 @@ License: You must have a valid license purchased only from above link or https:/
 			<ul class="nav">
 				<li class="nav-item nav-category">SIDEBAR - MENU</li>
 				<li class="nav-item">
-					<a href=" {{ route('home')}} " class="nav-link">
+					<a href=" {{ route('admin.dashboard.index')}} " class="nav-link">
 						<i class="link-icon" data-feather="box"></i>
 						<span class="link-title">Dashboard</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="#" class="nav-link">
+					<a href=" {{ route('admin.user.index')}} " class="nav-link">
 						<i class="link-icon" data-feather="code"></i>
 						<span class="link-title">Manage User</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="#" class="nav-link">
+					<a href=" {{ route('admin.agency.index')}} " class="nav-link">
 						<i class="link-icon" data-feather="book"></i>
 						<span class="link-title">Manage Agency</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="#" class="nav-link">
+					<a href=" {{ route('admin.ads.index')}} " class="nav-link">
 						<i class="link-icon" data-feather="minus-square"></i>
 						<span class="link-title">Manage Ads</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="#" class="nav-link">
+					<a href=" {{ route('admin.term.index')}} " class="nav-link">
 						<i class="link-icon" data-feather="edit-3"></i>
 						<span class="link-title">Manage T&C</span>
 					</a>
-				</li>
-				<li class="nav-item">
-					<a href="#" class="nav-link">
-						<i class="link-icon" data-feather="pie-chart"></i>
-						<span class="link-title">Manage Logo</span>
-					</a>
-				</li>
+				</li>				
 			</ul>
 		</div>
 	</nav>
