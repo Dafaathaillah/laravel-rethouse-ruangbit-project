@@ -15,7 +15,7 @@ class PropertyController extends Controller
     public function index()
     {
         return view('user.property.property_list');
-        // return view('user.property.property_detail');
+
     }
 
 
@@ -38,6 +38,16 @@ class PropertyController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'status' => 'required',
+            'street' => 'required',
+            'city' => 'required',
+            'provience' => 'required',
+            'description' => 'required',
+
+        ]);
     }
 
     /**
@@ -46,9 +56,10 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function show(Property $property)
+    public function show($id)
     {
-        //
+        // $property = Property::find($id);
+        // return view('user.property.property_detail');
     }
 
     /**

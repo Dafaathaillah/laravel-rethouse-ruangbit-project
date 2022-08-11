@@ -10,6 +10,12 @@ class Property extends Model
     use HasFactory;
 
     protected $fillable=[
-        
+        'name',
+        'price',
+        'status',
+        'street',
+        'city',
+        'provience',
+        'description'
     ];
 }
