@@ -1,10 +1,11 @@
 @extends('layouts\layout_admin\master_admin')
-
 @section('title')
    | Dashboard-Admin
 @endsection
-
 @section('content')
+<?php
+  $no = 0;
+?>
 <div class="main-wrapper">
       <div class="page-content">
 
@@ -25,6 +26,7 @@
                <table id="dataTableExample" class="table">
                  <thead>
                    <tr>
+                     <th>No</th>
                      <th>Name</th>
                      <th>Email</th>
                      <th>Phone</th>
@@ -33,10 +35,10 @@
                      <th>Action</th>
                    </tr>
                  </thead>
-                 <tbody>
-                  @foreach ($user as $usr)
-                    
+                 <tbody>                  
+                  @foreach ($user as $usr)                    
                    <tr>
+                      <td>{{ ++$no; }}</td>
                       <td>{{ $usr->name }}</td>                                          
                       <td>{{ $usr->email }}</td>
                       <td>{{ $usr->contact }}</td>
@@ -46,15 +48,10 @@
                       @else
                         <td>Normal User</td>
                       @endif
-                      <td>
-                      <form action="{{ route('admin.user.index',['admin.user.index'=>$usr->id]) }}" method="POST">
- 
+                      <td>                      
                         <a class="btn btn-success" href="{{ route('admin.user.show',$usr->id) }}"><i class="link-icon" data-feather="eye"></i></a>
-                        <a class="btn btn-primary" href="{{ route('admin.user.edit',$usr->id) }}"><i class="link-icon" data-feather="edit"></i></a>
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger"><i class="link-icon" data-feather="trash-2"></i></button>
-                      </form>
+                        <a class="btn btn-primary" href="{{ route('admin.user.edit',$usr->id) }}"><i class="link-icon" data-feather="edit"></i></a>                             
+                        <a class="btn btn-primary" href="{{ route('admin.user.destroy',$usr->id) }}"><i class="link-icon" data-feather="trash-2"></i></a>                                
                       </td>
                       {{-- <td>
                         <a href="#" class="nav-link">

@@ -43,7 +43,8 @@ Route::get('/admin', [DashboardAdminController::class,'index'])->name('admin.das
 Route::get('/admin/users', [ManageUserController::class,'index'])->name('admin.user.index');
 Route::get('/admin/users/show/{id}', [ManageUserController::class,'show'])->name('admin.user.show');
 Route::get('/admin/users/edit{id}', [ManageUserController::class,'edit'])->name('admin.user.edit');
-// Route::get('/admin/users/delete/{id}', [ManageUserController::class,'destroy'])->name('admin.user.delete');
+Route::put('/admin/users/update{id}', [ManageUserController::class,'update'])->name('admin.user.update');
+Route::get('/admin/users/delete/{id}', [ManageUserController::class,'destroy'])->name('admin.user.destroy');
 Route::get('/admin/role', [ManageRoleController::class,'index'])->name('admin.role.index');
 Route::get('/admin/advertisements', [ManageAdsController::class,'index'])->name('admin.ads.index');
 Route::get('/admin/agencies', [ManageAgencyController::class,'index'])->name('admin.agency.index');

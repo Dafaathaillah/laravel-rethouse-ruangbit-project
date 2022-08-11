@@ -22,30 +22,34 @@
  </ul>
  </div>
  @endif
- <form method="post" action="{{ route('mahasiswa.update', $Mahasiswa->nim) }}" id="myForm">
+ <form method="post" action="{{ route('admin.user.update', $user->id) }}" id="myForm">
  @csrf
- @method('PUT')
+ @method('PUT') 
  <div class="form-group">
- <label for="Nim">Nim</label> 
- <input type="text" name="Nim" class="form-control" id="Nim" value="{{ $Mahasiswa-
->nim }}" aria-describedby="Nim" > 
+ <label for="name">Name</label> 
+ <input type="text" name="name" class="form-control" id="name" value="{{ $user->name }}" aria-describedby="name" > 
  </div>
  <div class="form-group">
- <label for="Nama">Nama</label> 
- <input type="text" name="Nama" class="form-control" id="Nama" value="{{ $Mahasiswa-
->nama }}" aria-describedby="Nama" > 
+ <label for="email">Email</label> 
+ <input type="email" name="email" class="form-control" id="email" value="{{ $user->email }}" aria-describedby="email" > 
  </div>
  <div class="form-group">
- <label for="Kelas">Kelas</label> 
- <input type="Kelas" name="Kelas" class="form-control" id="Kelas" value="{{ $Mahasiswa-
->kelas }}" aria-describedby="Kelas" > 
- </div>
+   <label class="custom-control custom-radio custom-control-inline">
+       <input class="custom-control-input" type="radio" name="gender" value="Male">
+       <span class="custom-control-label"> Male </span>
+   </label>
+   <label class="custom-control custom-radio custom-control-inline">
+       <input class="custom-control-input" type="radio" name="gender" value="Female">
+       <span class="custom-control-label"> Female </span>
+   </label>
+</div>
  <div class="form-group">
- <label for="Jurusan">Jurusan</label> 
- <input type="Jurusan" name="Jurusan" class="form-control" id="Jurusan" value="{{ $Mahasiswa-
->jurusan }}" aria-describedby="Jurusan" > 
- </div>
- <button type="submit" class="btn btn-primary">Submit</button>
+ <label for="contact">Contact</label> 
+ <input type="contact" name="contact" class="form-control" id="contact" value="{{ $user->contact }}" aria-describedby="contact" > 
+ </div> 
+ <a class="btn btn-primary" href="{{ route('admin.user.index') }}">Kembali</a>
+ {{-- <button class="btn btn-primary">Kembali</button> --}}
+ <button type="submit" class="btn btn-success">Submit</button>
  </form>
  </div>
  </div>

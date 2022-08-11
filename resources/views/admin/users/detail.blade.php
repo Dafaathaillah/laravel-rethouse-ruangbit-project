@@ -25,8 +25,8 @@
                 <li class="list-group-item"><b>Gender: </b>{{$user->gender}}</li>
                 </ul>
             </div>
-            <a class="btn btn-success mt-3" href="{{ route('admin.user.index') }}">Kembali</a>
-            </div>
+            <a class="btn btn-primary" href="{{ route('admin.user.index') }}">Kembali</a>
+        </div>
     </div>
 </div>
 @endsection

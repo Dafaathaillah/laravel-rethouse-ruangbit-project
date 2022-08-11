@@ -52,8 +52,8 @@ class ManageUserController extends Controller
     //fungsi eloquent untuk menambah data
     User::create($request->all());
     //jika data berhasil ditambahkan, akan kembali ke halaman utama
-    return redirect()->route('admin.users.index')
-    ->with('success', 'Mahasiswa Berhasil Ditambahkan');
+    return redirect()->route('admin.user.index')
+    ->with('success', 'User Berhasil Ditambahkan');
     }
 
     public function edit($id)
@@ -71,12 +71,12 @@ class ManageUserController extends Controller
         'email' => 'required',
         'contact' => 'required', 
         'gender' => 'required',
-        'agent_status' => 'required',
+        // 'agent_status' => 'required',
     ]);
     //fungsi eloquent untuk mengupdate data inputan kita
-    Mahasiswa::find($id)->update($request->all());
+    User::find($id)->update($request->all());
     //jika data berhasil diupdate, akan kembali ke halaman utama
-    return redirect()->route('admin.users.index')
+    return redirect()->route('admin.user.index')
     ->with('success', 'User Berhasil Diupdate');
     }
     
@@ -84,7 +84,7 @@ class ManageUserController extends Controller
     {
     //fungsi eloquent untuk menghapus data
     User::find($id)->delete();
-    return redirect()->route('admin.users.index')
+    return redirect()->route('admin.user.index')
     -> with('success', 'user Berhasil Dihapus');
     }
 
