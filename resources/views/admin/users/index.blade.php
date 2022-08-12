@@ -1,4 +1,5 @@
 @extends('layouts\layout_admin\master_admin')
+@include('sweetalert::alert')
 @section('title')
    | Dashboard-Admin
 @endsection
@@ -51,7 +52,7 @@
                       <td>                      
                         <a class="btn btn-success" href="{{ route('admin.user.show',$usr->id) }}"><i class="link-icon" data-feather="eye"></i></a>
                         <a class="btn btn-primary" href="{{ route('admin.user.edit',$usr->id) }}"><i class="link-icon" data-feather="edit"></i></a>                             
-                        <a class="btn btn-primary" href="{{ route('admin.user.destroy',$usr->id) }}"><i class="link-icon" data-feather="trash-2"></i></a>                                
+                        <a class="btn btn-primary delete" href="#" id="trash" data-id="{{ $usr->id }}" data-name="{{ $usr->name }}"><i class="link-icon" data-feather="trash-2"></i></a>                        
                       </td>
                       {{-- <td>
                         <a href="#" class="nav-link">
@@ -78,4 +79,30 @@
       </div>
    </div>
 </div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+<script>  
+ $('.delete').click( function(){  
+  var id = $(this).attr('data-id');
+  var name = $(this).attr('data-name');
+  swal({
+    title: "Are you sure?",
+    text: "You won't be able to revert user "+name+"!",
+    icon: 'warning',
+    buttons: {
+      cancel: true,
+      confirm: true,
+    }
+  }).then((result) => {
+    if (result) {
+      window.location = "{{ route('admin.user.destroy',$usr->id) }}"
+      Swal.fire(
+        'Deleted!',
+        'User'+name+'has been deleted.',
+        'success'
+      )
+    }
+  });
+ });
+</script>
 @endsection

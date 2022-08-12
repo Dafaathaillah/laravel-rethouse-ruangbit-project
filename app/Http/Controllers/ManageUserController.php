@@ -76,16 +76,14 @@ class ManageUserController extends Controller
     //fungsi eloquent untuk mengupdate data inputan kita
     User::find($id)->update($request->all());
     //jika data berhasil diupdate, akan kembali ke halaman utama
-    return redirect()->route('admin.user.index')
-    ->with('success', 'User Berhasil Diupdate');
+    return redirect()->route('admin.user.index')->with('success', 'User Update Successfully!');;
     }
     
     public function destroy( $id)
     {
     //fungsi eloquent untuk menghapus data
     User::find($id)->delete();
-    return redirect()->route('admin.user.index')
-    -> with('success', 'user Berhasil Dihapus');
+    return redirect()->route('admin.user.index')->with('success', 'User Destroy Successfully!');
     }
 
 }
