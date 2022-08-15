@@ -34,6 +34,14 @@
  <input type="email" name="email" class="form-control" id="email" value="{{ $user->email }}" aria-describedby="email" > 
  </div>
  <div class="form-group">
+    <label for="exampleFormControlSelect1">Role</label>
+    <select class="form-control" id="role_id" name="role_id">
+        <option value="#" selected="selected" disabled >Pilih Role</option>                
+        <option value="1">Admin</option>            
+        <option value="2">Normal User</option>
+    </select>
+</div>
+ <div class="form-group">
    <label class="custom-control custom-radio custom-control-inline">
        <input class="custom-control-input" type="radio" name="gender" value="Male">
        <span class="custom-control-label"> Male </span>
@@ -47,9 +55,9 @@
  <label for="contact">Contact</label> 
  <input type="contact" name="contact" class="form-control" id="contact" value="{{ $user->contact }}" aria-describedby="contact" > 
  </div> 
- <a class="btn btn-primary" href="{{ route('admin.user.index') }}">Kembali</a>
- {{-- <button class="btn btn-primary">Kembali</button> --}}
  <button type="submit" class="btn btn-success">Submit</button>
+ <a class="btn btn-primary" href="{{ route('admin.user.index') }}">Kembali</a>
+ {{-- <button class="btn btn-primary">Kembali</button> --}} 
  </form>
  </div>
  </div>
