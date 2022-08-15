@@ -27,7 +27,8 @@
                 <label for="name">Name</label> 
                 <input type="text" name="name" class="form-control" id="name" aria-describedby="name" > 
                 </div>                
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+                <a class="btn btn-primary" href="{{ route('admin.role.index') }}">Kembali</a>
                 </form>
             </div>
         </div>
