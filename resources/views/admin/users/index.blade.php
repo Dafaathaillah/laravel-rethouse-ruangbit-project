@@ -23,6 +23,8 @@
            <div class="card-body">
              <h6 class="card-title">User Managements</h6>
              {{-- <p class="card-description">Read the <a href="https://datatables.net/" target="_blank"> Official DataTables Documentation </a>for a full list of instructions and other options.</p> --}}
+             <br>
+             <a class="btn btn-primary" href="{{ route('admin.user.edit',$usr->id) }}"><i class="link-icon" data-feather="edit"></i></a>
              <div class="table-responsive">
                <table id="dataTableExample" class="table">
                  <thead>
@@ -90,8 +92,8 @@
     text: "You won't be able to revert user "+name+"!",
     icon: 'warning',
     buttons: {
-      cancel: true,
       confirm: true,
+      cancel: true,      
     }
   }).then((result) => {
     if (result) {
