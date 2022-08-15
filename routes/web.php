@@ -60,7 +60,7 @@ Route::get('/agents-detail', function () {
 });
 
 //admin
-Route::get('/admin-dashboard', function () {
+Route::get('/admin', function () {
     return view('layouts\layout_admin\master_admin');
 });
 
