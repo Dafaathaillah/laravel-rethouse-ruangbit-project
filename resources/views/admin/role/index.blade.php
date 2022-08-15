@@ -88,7 +88,7 @@
       window.location = "{{ route('admin.role.destroy',$rl->id) }}"
       Swal.fire(
         'Deleted!',
-        'User'+name+'has been deleted.',
+        'Role'+name+'has been deleted.',
         'success'
       )
     }

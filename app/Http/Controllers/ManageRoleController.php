@@ -52,7 +52,7 @@ class ManageRoleController extends Controller
         Role::create($request->all());
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect()->route('admin.role.index')
-        ->with('success', 'Role Berhasil Ditambahkan');
+        ->with('success', 'Role Create Successfully');
     }
 
     public function edit($id)
@@ -72,13 +72,13 @@ class ManageRoleController extends Controller
         //fungsi eloquent untuk mengupdate data inputan kita
         Role::find($id)->update($request->all());
         //jika data berhasil diupdate, akan kembali ke halaman utama
-        return redirect()->route('admin.role.index')->with('success', 'User Update Successfully!');;
+        return redirect()->route('admin.role.index')->with('success', 'Role Update Successfully!');;
         }
         
         public function destroy( $id)
         {
         //fungsi eloquent untuk menghapus data
         Role::find($id)->delete();
-        return redirect()->route('admin.role.index')->with('success', 'User Destroy Successfully!');
+        return redirect()->route('admin.role.index')->with('success', 'Role Destroy Successfully!');
     }
 }
