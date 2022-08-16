@@ -52,6 +52,13 @@ Route::get('/admin/roles/show/{id}', [ManageRoleController::class,'show'])->name
 Route::get('/admin/roles/edit{id}', [ManageRoleController::class,'edit'])->name('admin.role.edit');
 Route::put('/admin/roles/update{id}', [ManageRoleController::class,'update'])->name('admin.role.update');
 Route::get('/admin/roles/delete/{id}', [ManageRoleController::class,'destroy'])->name('admin.role.destroy');
+Route::get('/admin/agencies', [ManageAgencyController::class,'index'])->name('admin.agency.index');
+Route::get('/admin/agencies/create', [ManageAgencyController::class,'create'])->name('admin.agency.create');
+Route::post('/admin/agencies/store', [ManageAgencyController::class,'store'])->name('admin.agency.store');
+Route::get('/admin/agencies/show/{id}', [ManageAgencyController::class,'show'])->name('admin.agency.show');
+Route::get('/admin/agencies/edit{id}', [ManageAgencyController::class,'edit'])->name('admin.agency.edit');
+Route::put('/admin/agencies/update{id}', [ManageAgencyController::class,'update'])->name('admin.agency.update');
+Route::get('/admin/agencies/delete/{id}', [ManageAgencyController::class,'destroy'])->name('admin.agency.destroy');
 Route::get('/admin/advertisements', [ManageAdsController::class,'index'])->name('admin.ads.index');
 Route::get('/admin/agencies', [ManageAgencyController::class,'index'])->name('admin.agency.index');
 Route::get('/admin/term&condition', [ManageTermController::class,'index'])->name('admin.term.index');
