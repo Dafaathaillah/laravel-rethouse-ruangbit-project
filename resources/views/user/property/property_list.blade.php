@@ -82,19 +82,6 @@
                 <div class="col-6 col-lg-3 col-md-3">
                     <div class="form-group">
                         <select class="wide select_option">
-                            <option data-display="Area From">Area From </option>
-                            <option>1500</option>
-                            <option>1200</option>
-                            <option>900</option>
-                            <option>600</option>
-                            <option>300</option>
-                            <option>100</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3 col-md-3">
-                    <div class="form-group">
-                        <select class="wide select_option">
                             <option data-display="Locations">Locations</option>
                             <option>United Kingdom</option>
                             <option>American Samoa</option>
@@ -105,42 +92,6 @@
                             <option>Malaysia</option>
                             <option>Japan</option>
                         </select>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3 col-md-3">
-                    <div class="form-group">
-                        <select class="wide select_option">
-                            <option data-display="Bedrooms">Bedrooms</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3 col-md-3">
-                    <div class="form-group">
-                        <select class="wide select_option">
-                            <option data-display="Bathrooms">Bathrooms</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-
-
-                        </select>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-3 col-md-3">
-                    <div class="form-group">
-                        <div class="filter__price">
-                            <input class="price-range" type="text" name="my_range" value="" />
-                        </div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-3 col-md-3">
@@ -206,7 +157,7 @@
                                                 <div class="row no-gutters">
                                                     <div class="col-md-4 col-lg-3 col-xl-4">
                                                         <div class="card__image__header h-250">
-                                                            <a href="#">
+                                                            <a href="">
                                                                 <div class="ribbon text-capitalize">sold out</div>
                                                                 <img src="images/600x400.jpg" alt=""
                                                                     class="img-fluid w100 img-transition">
