@@ -9,7 +9,11 @@ License: You must have a valid license purchased only from above link or https:/
 -->
 <html lang="en">
 
+<<<<<<< HEAD
 <head>
+=======
+	<head>
+>>>>>>> main
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -29,9 +33,15 @@ License: You must have a valid license purchased only from above link or https:/
 	<link rel="stylesheet" href="{{ asset('assets/css/demo_1/style.css') }}">
 	<!-- End layout styles -->
 	<link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" />
+<<<<<<< HEAD
 </head>
 
 <body>
+=======
+	</head>
+
+	<body>
+>>>>>>> main
 	<div class="main-wrapper">
 
 		<!-- partial:partials/_sidebar.html -->
@@ -83,6 +93,7 @@ License: You must have a valid license purchased only from above link or https:/
 	<script src="{{ asset('assets/assets/core/core.js') }}"></script>
 	<!-- endinject -->
 	<!-- plugin js for this page -->
+<<<<<<< HEAD
 	<script src="{{ asset('assets/assets/chartjs/Chart.min.js') }}"></script>
 	<script src="{{ asset('assets/assets/jquery.flot/jquery.flot.js') }}"></script>
 	<script src="{{ asset('assets/assets/jquery.flot/jquery.flot.resize.js') }}"></script>
@@ -118,5 +129,29 @@ License: You must have a valid license purchased only from above link or https:/
         </script>
 	@endif
 </body>
+=======
+	<script src="{{ asset('assets/assets/chartjs/Chart.min.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('assets/assets/jquery.flot/jquery.flot.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('assets/assets/jquery.flot/jquery.flot.resize.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('assets/assets/bootstrap-datepicker/bootstrap-datepicker.min.js') }}" type="text/javascript">
+	</script>
+	<script src="{{ asset('assets/assets/apexcharts/apexcharts.min.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('assets/assets/progressbar.js/progressbar.min.js') }}" type="text/javascript"></script>
+	<!-- end plugin js for this page -->
+	<!-- inject:js -->
+	<script src="{{ asset('assets/assets/feather-icons/feather.min.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('assets/js/template.js') }}" type="text/javascript"></script>
+	<!-- endinject -->
+	<!-- custom js for this page -->
+	<script src="{{ asset('assets/js/dashboard.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('assets/js/datepicker.js') }}" type="text/javascript"></script>
+	<!-- end custom js for this page -->
+	<script src="{{ asset('assets/assets/datatables.net/jquery.dataTables.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('assets/assets/datatables.net-bs4/dataTables.bootstrap4.js') }}" type="text/javascript">
+		<script>
+	<script src="{{ asset('assets/js/data-table.js') }}" type="text/javascript">
+	</script>
+	</body>
+>>>>>>> main
 
 </html>

@@ -19,12 +19,22 @@ use App\Http\Controllers\ManageRoleController;
 |
 */
 
+<<<<<<< HEAD
 //layouting
 // Route::get('/', function () {
 //     return view('layouts.layout.master_main');
 // });
 Route::get('/property-list', function () {
     return view('user.property.property_list');
+=======
+//Admin
+
+
+
+//User
+Route::get('/', function () {
+    return view('user.dashboard.dashboard');
+>>>>>>> main
 });
 
 Route::get('/dashboard', function () {
@@ -65,5 +75,45 @@ Route::get('/admin/term&condition', [ManageTermController::class,'index'])->name
 Route::post('/auth/save', [HomeController::class,'save'])->name('auth.save');
 Route::post('/auth/check', [HomeController::class,'check'])->name('auth.check');
 
+Route::get('/property-list', function () {
+    return view('user.property.property_list');
+});
+
+Route::get('/property-detail', function () {
+    return view('user.property.property_detail');
+});
+
+Route::get('/agency', function () {
+    return view('user.agency.agency');
+});
+
+Route::get('/agency-detail', function () {
+    return view('user.agency.agency_detail');
+});
+
+Route::get('/about-us', function () {
+    return view('user.about_us.about-us');
+});
+
+Route::get('/blog-news', function () {
+    return view('user.blog_news.blog');
+});
+
+Route::get('/agents-list', function () {
+    return view('user.agents.agents');
+});
+
+Route::get('/agents-detail', function () {
+    return view('user.agents.agents_detail');
+});
+
+//admin
+Route::get('/admin', function () {
+    return view('layouts\layout_admin\master_admin');
+});
+
+Route::get('/admin-dashboard', function () {
+    return view('admin\dashboard\dashboard');
+});
 
 
