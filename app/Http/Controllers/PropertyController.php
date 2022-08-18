@@ -40,14 +40,18 @@ class PropertyController extends Controller
         //
         $request->validate([
             'name' => 'required',
+            'picture' => 'required',
             'price' => 'required',
             'status' => 'required',
             'street' => 'required',
             'city' => 'required',
             'provience' => 'required',
             'description' => 'required',
-
         ]);
+
+        Property::create($request->all());
+
+        return redirect()->route('user.property.property_list')->with('success', 'Property Added');
     }
 
     /**
@@ -68,9 +72,10 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function edit(Property $property)
+    public function edit($id)
     {
-        //
+        $property = DB::table('property')->where('id', $id)->first();;
+        return view('user.property.property_edit', compact('property'));
     }
 
     /**
@@ -91,8 +96,9 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Property $property)
+    public function destroy($id)
     {
-        //
+        Property::find($id)->delete();
+        return redirect()->route('user.property.property_list')->with('success', 'Property Deleted');
     }
 }

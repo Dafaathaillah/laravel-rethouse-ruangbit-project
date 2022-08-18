@@ -11,17 +11,6 @@
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Tambah Property</h1>
         </div>
-
-        <!-- Content Row -->
-        {{-- @if ($errors->any())
-              <div class="alert alert-danger">
-                  <ul>
-                      @foreach ($errors->all() as $error)
-                          <li>{{ $error }}</li>
-                      @endforeach
-                  </ul>
-              </div>
-          @endif --}}
         <div class="row">
             <div class="card shadow">
                 <div class="card-body pt-0">
@@ -38,7 +27,7 @@
                         <div style="margin-top: 20px" class="form-group col-12 col-sm-6">
                             <label for="harga">Harga</label>
                             <input type="price" class="form-control" name="harga" placeholder="Harga" value="">
-                        </div> 
+                        </div>
                         <div style="margin-top: 20px" class="form-group col-12 col-sm-6">
                             <label for="status" class="form-label">Status</label>
                             <input class="form-control" list="status-list" id="status" placeholder="Pilih Status">
