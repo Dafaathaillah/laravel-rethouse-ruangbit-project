@@ -7,8 +7,6 @@
 <?php
   $no = 0;
 ?>
-<div class="main-wrapper">
-  <div class="page-content">
 
     {{-- <nav class="page-breadcrumb">
       <ol class="breadcrumb">
@@ -52,14 +50,14 @@
                     <td>Normal User</td>
                     @endif
                     <td>
-                     
-                        <a class="nav-link" href="{{ route('admin.user.show',$usr->id) }}"><i class="link-icon"
-                            data-feather="eye"></i></a>
-                        <a class="nav-link" href="{{ route('admin.user.edit',$usr->id) }}"><i class="link-icon"
-                            data-feather="edit"></i></a>
-                        <a class="nav-link" href="#" id="trash" data-id="{{ $usr->id }}" data-name="{{ $usr->name }}"><i
-                            class="link-icon" data-feather="trash-2"></i></a>
-             
+
+                      <a class="nav-link" href="{{ route('admin.user.show',$usr->id) }}"><i class="link-icon"
+                          data-feather="eye"></i></a>
+                      <a class="nav-link" href="{{ route('admin.user.edit',$usr->id) }}"><i class="link-icon"
+                          data-feather="edit"></i></a>
+                      <a class="nav-link" href="#" id="trash" data-id="{{ $usr->id }}" data-name="{{ $usr->name }}"><i
+                          class="link-icon" data-feather="trash-2"></i></a>
+
                     </td>
                     {{-- <td>
                       <a href="#" class="nav-link">
@@ -82,10 +80,6 @@
         </div>
       </div>
     </div>
-
-  </div>
-</div>
-</div>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
   integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>

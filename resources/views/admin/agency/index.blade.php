@@ -7,9 +7,6 @@
 <?php
   $no = 0;
 ?>
-<div class="main-wrapper">
-      <div class="page-content">
-
          {{-- <nav class="page-breadcrumb">
             <ol class="breadcrumb">
                <li class="breadcrumb-item"><a href="#">Tables</a></li>
@@ -67,8 +64,6 @@
          </div>
 
       </div>
-   </div>
-</div>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 <script>  
