@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Property;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PropertyController extends Controller
 {
@@ -14,7 +15,8 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        return view('user.property.property_list');
+        $property = Property::all();
+        return view('user.property.property_list', compact('property'));
 
     }
 
@@ -62,8 +64,8 @@ class PropertyController extends Controller
      */
     public function show($id)
     {
-        // $property = Property::find($id);
-        // return view('user.property.property_detail');
+        $property = Property::find($id);
+        return view('user.property.property_detail');
     }
 
     /**
@@ -85,9 +87,22 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Property $property)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'picture' => 'required',
+            'price' => 'required',
+            'status' => 'required',
+            'street' => 'required',
+            'city' => 'required',
+            'provience' => 'required',
+            'description' => 'required',
+        ]);
+
+        Property::find($id)->update($request->all());
+
+        return redirect()->route('user.property.index')->with('success', 'Property Edited');
     }
 
     /**

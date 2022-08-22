@@ -14,21 +14,21 @@
         <div class="row">
             <div class="card shadow">
                 <div class="card-body pt-0">
-                    <form action="" method="post">
+                    <form action="{{ route('property.store')}}" method="POST" enctype="multipart/form-data" id="form">
                         @csrf
-                        <div class="form-check form-switch col-12 col-sm-6">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <div class="form-check form-switch col-12 col-sm-4">
                             <label class="form-check-label" for="flexSwitchCheckDefault">Iklankan Property Ini</label>
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" value="">
                         </div>
-                        <div style="margin-top: 20px" class="form-group col-12 col-sm-6">
+                        <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="name">Name</label>
                             <input type="text" class="form-control" name="name" placeholder="Name" value="">
                         </div>
-                        <div style="margin-top: 20px" class="form-group col-12 col-sm-6">
+                        <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="harga">Harga</label>
                             <input type="price" class="form-control" name="harga" placeholder="Harga" value="">
                         </div>
-                        <div style="margin-top: 20px" class="form-group col-12 col-sm-6">
+                        <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="status" class="form-label">Status</label>
                             <input class="form-control" list="status-list" id="status" placeholder="Pilih Status">
                             <datalist id="status-list">
@@ -36,11 +36,11 @@
                                 <option value="Disewakan">
                             </datalist>
                         </div>
-                        <div style="margin-top: 20px" class="form-group col-12 col-sm-6">
+                        <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="lokasi">Alamat Lokasi</label>
                             <input type="text" class="form-control" name="lokasi" placeholder="Lokasi" value="">
                         </div>
-                        <div style="margin-top: 20px" class="form-group col-12 col-sm-6">
+                        <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="kota">Kota</label>
                             <input class="form-control" id="kota" list="kota-list" placeholder="Kota" value="">
                             <datalist id="kota-list">
@@ -48,7 +48,7 @@
                                 <option value="Surabaya">
                             </datalist>
                         </div>
-                        <div style="margin-top: 20px" class="form-group col-12 col-sm-6">
+                        <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="provinsi">Provinsi</label>
                             <input class="form-control" id="provinsi" list="provinsi-list" placeholder="Provinsi"
                                 value="">
@@ -57,11 +57,11 @@
                                 <option value="Jawa Timur">
                             </datalist>
                         </div>
-                        <div style="margin-top: 20px" class="form-group col-12 col-sm-6">
+                        <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="deskripsi">Deskripsi</label>
                             <textarea class="form-control" name="deskripsi" placeholder="Deskripsi" value=""></textarea>
                         </div>
-                        <div style="margin-top: 20px" class="form-group col-12 col-sm-6">
+                        <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="formFile" class="form-label">Photo Property</label>
                             <input class="form-control" type="file" id="formFile">
                         </div>
