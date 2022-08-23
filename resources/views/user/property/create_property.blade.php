@@ -22,27 +22,27 @@
                         </div>
                         <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" name="name" placeholder="Name" value="">
+                            <input type="text" class="form-control" name="name" placeholder="Name">
                         </div>
                         <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="harga">Harga</label>
-                            <input type="price" class="form-control" name="harga" placeholder="Harga" value="">
+                            <input type="price" class="form-control" name="harga" placeholder="Harga">
                         </div>
                         <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="status" class="form-label">Status</label>
                             <input class="form-control" list="status-list" id="status" placeholder="Pilih Status">
                             <datalist id="status-list">
-                                <option value="Dijual">
-                                <option value="Disewakan">
+                                <option value="For Sale">
+                                <option value="For Rent">
                             </datalist>
                         </div>
                         <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="lokasi">Alamat Lokasi</label>
-                            <input type="text" class="form-control" name="lokasi" placeholder="Lokasi" value="">
+                            <input type="text" class="form-control" name="lokasi" placeholder="Lokasi">
                         </div>
                         <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="kota">Kota</label>
-                            <input class="form-control" id="kota" list="kota-list" placeholder="Kota" value="">
+                            <input class="form-control" id="kota" list="kota-list" placeholder="Kota">
                             <datalist id="kota-list">
                                 <option value="Jakarta">
                                 <option value="Surabaya">
@@ -60,6 +60,10 @@
                         <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="deskripsi">Deskripsi</label>
                             <textarea class="form-control" name="deskripsi" placeholder="Deskripsi" value=""></textarea>
+                        </div>
+                        <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
+                            <label for="type_property">Tipe Property</label>
+                            <input type="text" class="form-control" name="tipe_property" placeholder="Tipe Property">
                         </div>
                         <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="formFile" class="form-label">Photo Property</label>
