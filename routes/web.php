@@ -29,7 +29,14 @@ Route::get('/dashboard', function () {
 
 
 //property
-Route::resource('property', PropertyController::class);
+// Route::resource('property', PropertyController::class);
+Route::get('/property', [PropertyController::class,'index'])->name('property.index');
+Route::get('/property/create', [PropertyController::class,'create'])->name('property.create');
+Route::post('/property/store', [PropertyController::class,'store'])->name('property.store');
+Route::get('/property/show/{id}', [PropertyController::class,'show'])->name('property.show');
+Route::get('/property/edit{id}', [PropertyController::class,'edit'])->name('property.edit');
+Route::put('/property/update{id}', [PropertyController::class,'update'])->name('property.update');
+Route::get('/property/delete/{id}', [PropertyController::class,'destroy'])->name('property.destroy');
 
 //agency
 Route::get('/agency', function () {

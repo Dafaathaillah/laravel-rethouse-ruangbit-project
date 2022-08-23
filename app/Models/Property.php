@@ -10,20 +10,22 @@ class Property extends Model
     use HasFactory;
 
     protected $table = "property";
+    protected $primaryKey = 'id'; 
+    public $timestamps = false;
     protected $fillable=[
-        'name',
+        'type_property_id',
+        'name',        
         'price',
-        'status',
+        'status_property',
         'street',
-        'city',
-        'provience',
-        'type_property',
+        'city_id',
+        'provience_id',        
         'description'
     ];
 
-    public function typeProperty(){
-        return $this->belongsTo(TypeProperty::class);
-    }
+    // public function typeProperty(){
+    //     return $this->belongsTo(TypeProperty::class);
+    // }
 }
 
 

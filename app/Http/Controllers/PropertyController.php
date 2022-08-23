@@ -27,8 +27,11 @@ class PropertyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('user.property.create_property');
+    {        
+        $city = $city = DB::table('city')->get();
+        $province = $province = DB::table('province')->get();
+        $type_property = $type_property = DB::table('type_property')->get();
+        return view('user.property.create_property', compact('city','type_property', 'province'));
     }
 
     /**
@@ -37,24 +40,29 @@ class PropertyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         //
         $request->validate([
-            'name' => 'required',
-            'picture' => 'required',
+            'type_property_id' => 'required',
+            'name' => 'required',            
             'price' => 'required',
-            'status' => 'required',
-            'street' => 'required',
-            'city' => 'required',
-            'provience' => 'required',
-            'type_property' => 'required',
+            'status_property' => 'required',
+            'address' => 'required',
+            'city_id' => 'required',
+            'provience_id' => 'required',
             'description' => 'required',
+            // 'picture' => 'image|file|max:1024',
         ]);
 
-        Property::create($request->all());
+        // if ($request->file('image')) {
+        //     $request->file('image')->store('property-image');
+        // }
 
-        return redirect()->route('user.property.property_list')->with('success', 'Property Added');
+        Property::create($request->all());
+        // return view('user.property.property_list');
+        return redirect()->route('property.index');        
     }
 
     /**
@@ -91,13 +99,13 @@ class PropertyController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required',
-            'picture' => 'required',
+            'type_property_id' => 'required',
+            'name' => 'required',            
             'price' => 'required',
-            'status' => 'required',
-            'street' => 'required',
-            'city' => 'required',
-            'provience' => 'required',
+            'status_property' => 'required',
+            'address' => 'required',
+            'city_id' => 'required',
+            'provience_id' => 'required',
             'description' => 'required',
         ]);
 
