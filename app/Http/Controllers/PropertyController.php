@@ -48,6 +48,7 @@ class PropertyController extends Controller
             'street' => 'required',
             'city' => 'required',
             'provience' => 'required',
+            'type_property' => 'required',
             'description' => 'required',
         ]);
 

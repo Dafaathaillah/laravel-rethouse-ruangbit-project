@@ -17,6 +17,13 @@ class Property extends Model
         'street',
         'city',
         'provience',
+        'type_property',
         'description'
     ];
+
+    public function typeProperty(){
+        return $this->belongsTo(TypeProperty::class);
+    }
 }
+
+

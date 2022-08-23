@@ -146,128 +146,28 @@
                                     </li>
                                 </ul>
 
-
-
-                                <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade" id="pills-tab-one" role="tabpanel"
-                                        aria-labelledby="pills-tab-one">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="card__image card__box-v1">
-                                                    <div class="row no-gutters">
-                                                        <div class="col-md-4 col-lg-3 col-xl-4">
-                                                            @foreach ($property as $prt)
-                                                            <div class="card__image__header h-250">
-                                                                <a href="">
-                                                                    <div class="ribbon text-capitalize">sold out</div>
-                                                                    <img src="images/600x400.jpg" alt=""
-                                                                        class="img-fluid w100 img-transition">
-                                                                    <div class="info"> {{$prt->status_property}} </div>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4 col-lg-6 col-xl-5 my-auto">
-                                                                <div class="card__image__body">
-
-                                                                    <span
-                                                                        class="badge badge-primary text-capitalize mb-2">house</span>
-                                                                    <h6>
-                                                                        <a href="#">{{$prt->name}}</a>
-                                                                    </h6>
-                                                                    <div class="card__image__body-desc">
-
-                                                                        <p class="text-capitalize">
-                                                                            <i class="fa fa-map-marker"></i>
-                                                                            {{$prt->street}}
-                                                                        </p>
-                                                                    </div>
-
-                                                                    <ul class="list-inline card__content">
-                                                                        <li class="list-inline-item">
-
-                                                                            <span>
-                                                                                baths <br>
-                                                                                <i class="fa fa-bath"></i> 2
-                                                                            </span>
-                                                                        </li>
-                                                                        <li class="list-inline-item">
-                                                                            <span>
-                                                                                beds <br>
-                                                                                <i class="fa fa-bed"></i> 3
-                                                                            </span>
-                                                                        </li>
-                                                                        <li class="list-inline-item">
-                                                                            <span>
-                                                                                rooms <br>
-                                                                                <i class="fa fa-inbox"></i> 3
-                                                                            </span>
-                                                                        </li>
-                                                                        <li class="list-inline-item">
-                                                                            <span>
-                                                                                area <br>
-                                                                                <i class="fa fa-map"></i> 4300 sq ft
-                                                                            </span>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                        </div>
-                                                        <div
-                                                            class="col-md-4 col-lg-3 col-xl-3 my-auto card__image__footer-first">
-                                                            <div class="card__image__footer">
-                                                                <figure>
-                                                                    <img src="images/80x80.jpg" alt=""
-                                                                        class="img-fluid rounded-circle">
-                                                                </figure>
-                                                                <ul class="list-inline my-auto">
-                                                                    <li class="list-inline-item name">
-                                                                        <a href="#">
-                                                                            tom wilson
-                                                                        </a>
-
-                                                                    </li>
-
-
-                                                                </ul>
-                                                                <ul class="list-inline my-auto ml-auto price">
-                                                                    <li class="list-inline-item ">
-
-                                                                        <h6>{{$prt->price}}</h6>
-                                                                    </li>
-
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    @endforeach
-                                    <div class="tab-pane fade show active" id="pills-tab-two" role="tabpanel"
-                                        aria-labelledby="pills-tab-two">
-                                        <div class="row">
+                                <div class="tab-pane fade show active" id="pills-tab-two" role="tabpanel"
+                                    aria-labelledby="pills-tab-two">
+                                    <div class="row">
+                                        @foreach ($property as $prt)
                                             <div class="col-md-4 col-lg-4">
                                                 <div class="card__image card__box-v1">
-                                                    @foreach ($property as $prt)
-
-                                                    @endforeach
                                                     <div class="card__image-header h-250">
                                                         <div class="ribbon text-capitalize">featured</div>
                                                         <img src="images/600x400.jpg" alt=""
                                                             class="img-fluid w100 img-transition">
-                                                        <div class="info"> {{$prt->status_property}}</div>
+                                                        <div class="info"> {{ $prt->status_property }}</div>
                                                     </div>
                                                     <div class="card__image-body">
-                                                        <span class="badge badge-primary text-capitalize mb-2">house</span>
+                                                        <span
+                                                            class="badge badge-primary text-capitalize mb-2">{{ $prt->type_property }}</span>
                                                         <h6 class="text-capitalize">
-                                                            {{$prt->name}}
+                                                            {{ $prt->name }}
                                                         </h6>
 
                                                         <p class="text-capitalize">
                                                             <i class="fa fa-map-marker"></i>
-                                                            {{$prt->street}}
+                                                            {{ $prt->street }}
                                                         </p>
                                                         <ul class="list-inline card__content">
                                                             <li class="list-inline-item">
@@ -314,29 +214,31 @@
                                                         <ul class="list-inline my-auto ml-auto">
                                                             <li class="list-inline-item">
 
-                                                                <h6>Rp {{$prt->price}}</h6>
+                                                                <h6>Rp {{ $prt->price }}</h6>
                                                             </li>
 
                                                         </ul>
                                                     </div>
                                                 </div>
                                             </div>
-
-
-                                            <div class="cleafix"></div>
-                                        </div>
+                                        @endforeach
 
 
 
+
+                                        <div class="cleafix"></div>
                                     </div>
-                                    <!-- END FILTER VERTICAL -->
-                                </div>
+
+
+
+                                </div> <!-- END FILTER VERTICAL -->
                             </div>
                         </div>
-
                     </div>
+
                 </div>
             </div>
+        </div>
     </section>
     <!-- END LISTING LIST -->
 
