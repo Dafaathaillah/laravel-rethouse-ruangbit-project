@@ -49,7 +49,7 @@ class PropertyController extends Controller
             'name' => 'required',            
             'price' => 'required',
             'status_property' => 'required',
-            'address' => 'required',
+            'street' => 'required',
             'city_id' => 'required',
             'provience_id' => 'required',
             'description' => 'required',
@@ -62,7 +62,7 @@ class PropertyController extends Controller
 
         Property::create($request->all());
         // return view('user.property.property_list');
-        return redirect()->route('property.index');        
+        return redirect()->route('property.index')->with('success', 'Property Edited');        
     }
 
     /**

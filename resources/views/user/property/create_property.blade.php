@@ -37,8 +37,8 @@
 							</select>
                         </div>
                         <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
-                            <label for="address">Address</label>
-                            <input type="text" class="form-control" id="address" name="address" placeholder="address">
+                            <label for="street">Address</label>
+                            <input type="text" class="form-control" id="street" name="street" placeholder="address">
                         </div>
                         <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="city_id">City</label>
