@@ -17,7 +17,6 @@ class PropertyController extends Controller
     {
         $property = Property::all();
         return view('user.property.property_list', compact('property'));
-
     }
 
 
@@ -27,7 +26,7 @@ class PropertyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {        
+    {
         $city = $city = DB::table('city')->get();
         $province = $province = DB::table('province')->get();
         $type_property = $type_property = DB::table('type_property')->get();
@@ -46,7 +45,7 @@ class PropertyController extends Controller
         //
         $request->validate([
             'type_property_id' => 'required',
-            'name' => 'required',            
+            'name' => 'required',
             'price' => 'required',
             'status_property' => 'required',
             'street' => 'required',
@@ -62,7 +61,7 @@ class PropertyController extends Controller
 
         Property::create($request->all());
         // return view('user.property.property_list');
-        return redirect()->route('property.index')->with('success', 'Property Edited');        
+        return redirect()->route('property.index')->with('success', 'Property Edited');
     }
 
     /**
@@ -100,7 +99,7 @@ class PropertyController extends Controller
     {
         $request->validate([
             'type_property_id' => 'required',
-            'name' => 'required',            
+            'name' => 'required',
             'price' => 'required',
             'status_property' => 'required',
             'address' => 'required',

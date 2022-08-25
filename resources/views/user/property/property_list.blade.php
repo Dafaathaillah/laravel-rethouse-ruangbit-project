@@ -134,12 +134,6 @@
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="pill" href="#pills-tab-one" role="tab"
-                                            aria-controls="pills-tab-one" aria-selected="true">
-                                            <span class="fa fa-th-list"></span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
                                         <a class="nav-link active" data-toggle="pill" href="#pills-tab-two" role="tab"
                                             aria-controls="pills-tab-two" aria-selected="false">
                                             <span class="fa fa-th-large"></span></a>

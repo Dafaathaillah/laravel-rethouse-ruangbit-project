@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PropertyController;
@@ -19,13 +20,12 @@ use App\Http\Controllers\PropertyController;
 
 
 //User
-Route::get('/', function () {
-    return view('user.dashboard.dashboard');
-});
+// Route::get('/', function () {
+//     return view('user.dashboard.dashboard');
+// });
+Route::get('/', [DashboardController::class,'index']);
 
-Route::get('/dashboard', function () {
-    return view('user.dashboard.dashboard');
-});
+Route::get('/dashboard', [DashboardController::class,'index']);
 
 
 //property
