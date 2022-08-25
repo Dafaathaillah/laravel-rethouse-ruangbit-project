@@ -6,6 +6,7 @@ use App\Http\Controllers\ManageUserController;
 use App\Http\Controllers\ManageAdsController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\ManageAgencyController;
+use App\Http\Controllers\ManageLogoController;
 use App\Http\Controllers\ManageTermController;
 use App\Http\Controllers\ManageRoleController;
 /*
@@ -63,3 +64,5 @@ Route::get('/admin/agencies', [ManageAgencyController::class,'index'])->name('ad
 Route::get('/admin/term&condition', [ManageTermController::class,'index'])->name('admin.term.index');
 Route::post('/auth/save', [HomeController::class,'save'])->name('auth.save');
 Route::post('/auth/check', [HomeController::class,'check'])->name('auth.check');
+
+Route::resource('logo', ManageLogoController::class);

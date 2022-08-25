@@ -79,6 +79,7 @@ License: You must have a valid license purchased only from above link or https:/
 		</div>
 	</div>
 
+
 	<!-- core:js -->
 	<script src="{{ asset('assets/assets/core/core.js') }}"></script>
 	<!-- endinject -->
@@ -102,17 +103,17 @@ License: You must have a valid license purchased only from above link or https:/
 	<script src="{{ asset('assets/assets/datatables.net-bs4/dataTables.bootstrap4.js') }}">
 		<script>
 	<script src="{{ asset('assets/js/data-table.js') }}">
-	</script> 
+	</script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	@if (session('success'))
         <script>
             swal("Success!", "{{ session('success') }}", "success");
         </script>
-	@elseif (session('error'))	
+	@elseif (session('error'))
 		<script>
             swal("Error!", "{{ session('error') }}", "error");
         </script>
-	@elseif (session('alert'))	
+	@elseif (session('alert'))
 		<script>
             swal("Alert!", "{{ session('alert') }}", "alert");
         </script>

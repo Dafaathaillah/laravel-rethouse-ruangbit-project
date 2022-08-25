@@ -59,7 +59,13 @@ License: You must have a valid license purchased only from above link or https:/
 						<i class="link-icon" data-feather="edit-3"></i>
 						<span class="link-title">Manage T&C</span>
 					</a>
-				</li>				
+				</li>
+				<li class="nav-item">
+					<a href=" {{ route('logo.index')}} " class="nav-link">
+						<i class="link-icon" data-feather="image"></i>
+						<span class="link-title">Manage Logo</span>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</nav>
