@@ -99,7 +99,7 @@
                     <!-- Search bar.// -->
                     <ul class="navbar-nav ">
                         <li>
-                            <a href="#" class="btn btn-primary text-capitalize">
+                            <a href="{{route('property.index')}}" class="btn btn-primary text-capitalize">
                                 <i class="fa fa-plus-circle mr-1"></i> add listing</a>
                         </li>
                     </ul>
@@ -168,10 +168,7 @@
                                                                 <option selected>Type Property</option>
                                                                 <option>House</option>
                                                                 <option>Apartement </option>
-                                                                <option>Hotel</option>
-                                                                <option>Residential</option>
-                                                                <option>Land</option>
-                                                                <option>Luxury</option>
+
 
                                                             </select>
                                                         </div>

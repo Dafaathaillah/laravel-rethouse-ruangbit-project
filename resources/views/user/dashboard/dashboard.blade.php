@@ -147,7 +147,7 @@
 
                                     </ul>
                                 </div>
-                                <img alt="" src="images/600x400.jpg" class="img-fluid h-40 ">
+                                <img alt="" src="images/property.jpg" class="img-fluid h-40 ">
                             </div>
                         </div>
                     </a>

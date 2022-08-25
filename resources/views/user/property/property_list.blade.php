@@ -198,8 +198,8 @@
                                                         </figure>
                                                         <ul class="list-inline my-auto">
                                                             <li class="list-inline-item ">
-                                                                <a href="#">
-                                                                    tom wilson
+                                                                <a href="{{route('property.show',$prt->id)}}">
+                                                                    Show
                                                                 </a>
 
                                                             </li>
