@@ -14,7 +14,7 @@ class ManageLogoController extends Controller
      */
     public function index()
     {
-        $logo = ManageLogo::all();
+        $logo = ManageLogo::simplePaginate(3);
         return view('admin.logo.index', compact('logo'));
     }
 
@@ -52,7 +52,7 @@ class ManageLogoController extends Controller
         if ($request->hasFile('logo')) {
             $file = $request->file('logo');
             $ext = $file->getClientOriginalName();
-            $file->move('images\logo', $ext);
+            $file->move('storage\images\logo', $ext);
             $logos->logo = $ext;
         }
 

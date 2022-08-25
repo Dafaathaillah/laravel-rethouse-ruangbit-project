@@ -30,16 +30,16 @@
                                 <th>No</th>
                                 <th>Logo</th>
                                 <th>Keterangan</th>
-                                <th>Action</th>
+                                <th width="280px">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            $id = 1;
+                            $id = 0;
                         ?>
                             @foreach ($logo as $logos)
                             <tr>
-                                <td>{{ $id++}}</td>
+                                <td>{{ $id++ +1}}</td>
                                 <td><img src="{{asset('storage/images/logo/'.$logos->logo) }}" class="rounded float-left" style="width: 100px"></td>
                                 <td>{{ $logos->name}}</td>
                                 <td>
@@ -55,5 +55,6 @@
             </div>
         </div>
     </div>
+    {{ $logo->links() }}
 </div>
 @endsection
