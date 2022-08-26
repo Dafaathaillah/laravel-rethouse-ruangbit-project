@@ -62,10 +62,10 @@ class PropertyController extends Controller
         // Property::create($request->all());
 
         $properties = new Property();
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
+        if ($request->hasFile('picture')) {
+            $file = $request->file('picture');
             $ext = $file->getClientOriginalName();
-            $file->move('storage\images\image', $ext);
+            $file->move('storage\images\picture', $ext);
             $properties->logo = $ext;
         }
 
