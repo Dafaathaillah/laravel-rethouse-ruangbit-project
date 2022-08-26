@@ -16,6 +16,7 @@ class ManageLogoController extends Controller
     {
         $logo = ManageLogo::simplePaginate(3);
         return view('admin.logo.index', compact('logo'));
+        // var_dump($logo);
     }
 
     /**

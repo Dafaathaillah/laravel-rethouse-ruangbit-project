@@ -27,7 +27,7 @@
                                             id="topic_id">
                                             <option value="#" disabled>-- Pilih Hasil --</option>
                                             @foreach ($logo as $item )
-                                            <option class="text-center" colspan="6" value="{{ $item->$id }}">{{ $item->$name }}</option>
+                                            <option class="text-center" colspan="6" value="{{ $item->id }}">{{ $item->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
