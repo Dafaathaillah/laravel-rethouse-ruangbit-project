@@ -9,6 +9,9 @@ use App\Http\Controllers\ManageAgencyController;
 use App\Http\Controllers\ManageLogoController;
 use App\Http\Controllers\ManageTermController;
 use App\Http\Controllers\ManageRoleController;
+use App\Models\ManageLogo;
+use Illuminate\Support\Manager;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,3 +69,7 @@ Route::post('/auth/save', [HomeController::class,'save'])->name('auth.save');
 Route::post('/auth/check', [HomeController::class,'check'])->name('auth.check');
 
 Route::resource('logo', ManageLogoController::class);
+
+Route::get('admin/logo', [ManageLogoController::class,'index'])->name('admin.logo.index');
+Route::get('admin/logo/create', [ManageLogoController::class,'create'])->name('admin.logo.create');
+Route::post('admin/logo/store', [ManageLogoController::class,'store'])->name('admin.logo.store');

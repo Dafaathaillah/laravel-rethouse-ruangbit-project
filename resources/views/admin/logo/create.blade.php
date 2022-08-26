@@ -21,7 +21,7 @@
                     </ul>
                 </div>
                 @endif
-                <form method="post" action="{{ route('logo.store')}}" id="myForm" enctype="multipart/form-data">
+                <form method="post" action="{{ route('admin.logo.store')}}" id="myForm" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="logo">Logo</label>
@@ -40,7 +40,7 @@
                         @enderror --}}
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    <a class="btn btn-warning" href="{{ route('logo.index')}}">Kembali</a>
+                    <a class="btn btn-warning" href="{{ route('admin.logo.index')}}">Kembali</a>
                 </form>
             </div>
         </div>
