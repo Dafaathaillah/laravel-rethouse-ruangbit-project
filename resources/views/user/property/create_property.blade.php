@@ -77,6 +77,13 @@
                                 @endforeach
                             </select>
                         </div>
+                        <div style="margin-top: 20px" class="form-group col-12">
+                            <label for="logo">Logo</label>
+                            <div class="input-group">
+                                <input type="file" name="logo" class="form-control" id="logo" aria-describedby="logo">
+                                <label for="logo" class="input-group-text" style="line-height: 1.1rem">Upload</label>
+                            </div>
+                        </div>
                         {{-- <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
                             <label for="formFile" class="form-label">Photo Property</label>
                             <input class="form-control" @error('image') is-invalid @enderror type="file" id="image"
