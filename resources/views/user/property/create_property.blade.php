@@ -78,10 +78,10 @@
                             </select>
                         </div>
                         <div style="margin-top: 20px" class="form-group col-12">
-                            <label for="logo">Logo</label>
+                            <label for="picture">Picture</label>
                             <div class="input-group">
-                                <input type="file" name="logo" class="form-control" id="logo" aria-describedby="logo">
-                                <label for="logo" class="input-group-text" style="line-height: 1.1rem">Upload</label>
+                                <input type="file" name="picture" class="form-control" id="picture" aria-describedby="picture">
+                                <label for="picture" class="input-group-text" style="line-height: 1.1rem">Upload</label>
                             </div>
                         </div>
                         {{-- <div style="margin-top: 20px" class="form-group col-12 col-sm-4">

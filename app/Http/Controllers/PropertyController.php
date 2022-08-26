@@ -65,8 +65,8 @@ class PropertyController extends Controller
         if ($request->hasFile('picture')) {
             $file = $request->file('picture');
             $ext = $file->getClientOriginalName();
-            $file->move('storage\images\picture', $ext);
-            $properties->logo = $ext;
+            $file->move('storage\images\properties', $ext);
+            $properties->picture = $ext;
         }
 
         $properties->name = $request->input('type_property_id');

@@ -10,16 +10,17 @@ class Property extends Model
     use HasFactory;
 
     protected $table = "property";
-    protected $primaryKey = 'id'; 
+    protected $primaryKey = 'id';
     public $timestamps = false;
     protected $fillable=[
         'type_property_id',
-        'name',        
+        'name',
         'price',
         'status_property',
         'street',
+        'picture',
         'city_id',
-        'provience_id',        
+        'provience_id',
         'description'
     ];
 
