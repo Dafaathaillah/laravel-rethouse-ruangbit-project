@@ -87,72 +87,77 @@
                         <div style="margin-top: 20px" class="form-group col-md-12">
                             <label for="picture">Add ADS</label>
                             <div class="input-group">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="card">
-                                            <img src="images/360x300.jpg" class="card-image-top" alt="RETHOUSE">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Title</h5>
-                                                <p class="card-text">text card</p>
-                                                <p>
-                                                    isi apa aja
-                                                </p>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                                    <label class="form-check-label" for="inlineRadio1">pilih</label>
-                                                  </div>
+                                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#adscard" aria-expanded="false" aria-controls="collapseExample">
+                                    Click this button if you want to show list ads
+                                  </button>
+                                  <div class="collapse" id="adscard">
+                                    <div class="row">
+                                        <div class="col-md-6 mt-3">
+                                            <div class="card">
+                                                <img src="images/360x300.jpg" class="card-image-top" alt="RETHOUSE">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Title</h5>
+                                                    <p class="card-text">text card</p>
+                                                    <p>
+                                                        isi apa aja
+                                                    </p>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                        <label class="form-check-label" for="inlineRadio1">pilih</label>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mt-3">
+                                            <div class="card">
+                                                <img src="images/360x300.jpg" class="card-image-top" alt="RETHOUSE">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Title</h5>
+                                                    <p class="card-text">text card</p>
+                                                    <p>
+                                                        isi apa aja
+                                                    </p>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                        <label class="form-check-label" for="inlineRadio2">pilih</label>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mt-3">
+                                            <div class="card">
+                                                <img src="images/360x300.jpg" class="card-image-top" alt="RETHOUSE">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Title</h5>
+                                                    <p class="card-text">text card</p>
+                                                    <p>
+                                                        isi apa aja
+                                                    </p>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                                        <label class="form-check-label" for="inlineRadio3">Pilih</label>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mt-3">
+                                            <div class="card">
+                                                <img src="images/360x300.jpg" class="card-image-top" alt="RETHOUSE">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Title</h5>
+                                                    <p class="card-text">text card</p>
+                                                    <p>
+                                                        isi apa aja
+                                                    </p>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                                                        <label class="form-check-label" for="inlineRadio4">pilih </label>
+                                                      </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="card">
-                                            <img src="images/360x300.jpg" class="card-image-top" alt="RETHOUSE">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Title</h5>
-                                                <p class="card-text">text card</p>
-                                                <p>
-                                                    isi apa aja
-                                                </p>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                                    <label class="form-check-label" for="inlineRadio2">pilih</label>
-                                                  </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mt-3 justify-content-center">
-                                        <div class="card">
-                                            <img src="images/360x300.jpg" class="card-image-top" alt="RETHOUSE">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Title</h5>
-                                                <p class="card-text">text card</p>
-                                                <p>
-                                                    isi apa aja
-                                                </p>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                                    <label class="form-check-label" for="inlineRadio3">Pilih</label>
-                                                  </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mt-3 justify-content-center">
-                                        <div class="card">
-                                            <img src="images/360x300.jpg" class="card-image-top" alt="RETHOUSE">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Title</h5>
-                                                <p class="card-text">text card</p>
-                                                <p>
-                                                    isi apa aja
-                                                </p>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
-                                                    <label class="form-check-label" for="inlineRadio4">pilih </label>
-                                                  </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                  </div>
                             </div>
                         </div>
                         {{-- <div style="margin-top: 20px" class="form-group col-12 col-sm-4">
