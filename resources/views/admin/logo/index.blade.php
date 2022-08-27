@@ -25,9 +25,10 @@
                                         <label for="exampleFormControlSelect1">Pilih logo yang akan digunakan</label>
                                         <select class="form-control" id="exampleFormControlSelect1" name="topic_id"
                                             id="topic_id">
-                                            <option value="#" disabled>-- Pilih Hasil --</option>
+                                            <option class="text-center" value="#" disabled>-- Pilih Hasil --</option>
                                             @foreach ($logo as $item )
-                                            <option class="text-center" colspan="6" value="{{ $item->id }}">{{ $item->name }}</option>
+                                            <option class="text-center" colspan="6" value="{{ $item->id }}">{{
+                                                $item->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -75,8 +76,8 @@
                                                     class="rounded float-left" style="width: 100px"></td>
                                             <td>{{ $logos->name}}</td>
                                             <td>
-                                                <a class="nav-link" href="#" id="trash" data-id="{{ $logos->id }}"
-                                                    data-name="{{ $logos->name }}"><i class="link-icon"
+
+                                                <a class="nav-link" href="{{ route('admin.logo.delete', $logos->id)}}" id="trash"><i class="link-icon"
                                                         data-feather="trash-2"></i></a>
                                             </td>
                                         </tr>

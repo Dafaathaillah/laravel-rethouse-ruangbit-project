@@ -70,6 +70,7 @@ Route::post('/auth/check', [HomeController::class,'check'])->name('auth.check');
 
 Route::resource('logo', ManageLogoController::class);
 
-Route::get('admin/logo', [ManageLogoController::class,'index'])->name('admin.logo.index');
-Route::get('admin/logo/create', [ManageLogoController::class,'create'])->name('admin.logo.create');
-Route::post('admin/logo/store', [ManageLogoController::class,'store'])->name('admin.logo.store');
+Route::get('/admin/logo', [ManageLogoController::class,'index'])->name('admin.logo.index');
+Route::get('/admin/logo/create', [ManageLogoController::class,'create'])->name('admin.logo.create');
+Route::post('/admin/logo/store', [ManageLogoController::class,'store'])->name('admin.logo.store');
+Route::get('/admin/delete/logo/{id}', [ManageLogoController::class,'destroy'])->name('admin.logo.delete');
