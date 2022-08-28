@@ -21,18 +21,28 @@
                             <h5 class="card-title">List Logo Rethouse | RealEstate</h5>
                             <form class="cmxform" id="signupForm" method="get" action="#">
                                 <fieldset>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlSelect1">Pilih logo yang akan digunakan</label>
-                                        <select class="form-control" id="exampleFormControlSelect1" name="topic_id"
-                                            id="topic_id">
-                                            <option class="text-center" value="#" disabled>-- Pilih Hasil --</option>
-                                            @foreach ($logo as $item )
-                                            <option class="text-center" colspan="6" value="{{ $item->id }}">{{
-                                                $item->name }}</option>
-                                            @endforeach
-                                        </select>
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label for="exampleFormControlSelect1">Pilih logo yang akan digunakan</label>
+                                            <select class="form-control" id="exampleFormControlSelect1" name="topic_id"
+                                                id="topic_id">
+                                                <option class="text-center" value="#" disabled>-- Pilih Hasil --</option>
+                                                @foreach ($logo as $item )
+                                                <option class="text-center" colspan="6" value="{{ $item->id }}">{{
+                                                    $item->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            <input class="btn btn-primary mt-3" type="submit" value="Choose">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <div class="d-flex justify-content-center">
+                                                <label for="exampleFormControlSelect1">Logo yang dipilih
+                                                    <i class="link-icon" data-feather="corner-right-down"></i>
+                                            </label>
+                                            </div>
+                                            <img src="{{ ('images\pic_sample.jpg') }}" class="rounded float-right" width="300px">
+                                        </div>
                                     </div>
-                                    <input class="btn btn-primary" type="submit" value="Choose">
                                 </fieldset>
                             </form>
                         </div>
