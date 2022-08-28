@@ -111,10 +111,10 @@
                                                         <div class="card-footer">
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="inlineRadioOptions" id="inlineRadio3"
+                                                                    name="ads_id" id="ads_id"
                                                                     value="<?= $ads->id ?>">
                                                                 <label class="form-check-label"
-                                                                    for="inlineRadio3">Pilih</label>
+                                                                    for="ads_id">Pilih</label>
                                                             </div>
                                                         </div>
                                                     </div>
