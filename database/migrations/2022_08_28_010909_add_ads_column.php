@@ -14,7 +14,7 @@ class AddAdsColumn extends Migration
     public function up()
     {
         Schema::table('property', function (Blueprint $table) {
-            $table->integer('ads_list_id')->unsigned()->nullable();
+            $table->integer('ads_id')->unsigned()->nullable();
 
             $table->foreign('ads_id')->references('id')->on('ad_lists')->onDelete('NULL');
         });
