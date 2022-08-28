@@ -27,10 +27,11 @@ class PropertyController extends Controller
      */
     public function create()
     {
+        $ad_lists = $ad_lists = DB::table('ad_lists')->get();
         $city = $city = DB::table('city')->get();
         $province = $province = DB::table('province')->get();
         $type_property = $type_property = DB::table('type_property')->get();
-        return view('user.property.create_property', compact('city','type_property', 'province'));
+        return view('user.property.create_property', compact('city','type_property', 'province','ad_lists'));
     }
 
     /**
@@ -43,43 +44,45 @@ class PropertyController extends Controller
     public function store(Request $request)
     {
         //
-        // $request->validate([
-        //     'type_property_id' => 'required',
-        //     'name' => 'required',
-        //     'price' => 'required',
-        //     'status_property' => 'required',
-        //     'street' => 'required',
-        //     'city_id' => 'required',
-        //     'provience_id' => 'required',
-        //     'description' => 'required',
-        //     // 'picture' => 'image|file|max:1024',
-        // ]);
+        $request->validate([
+            'type_property_id' => 'required',
+            'name' => 'required',
+            'price' => 'required',
+            'status_property' => 'required',
+            'street' => 'required',
+            'city_id' => 'required',
+            'provience_id' => 'required',
+            'description' => 'required',
+            'ads_id'=>'required',
+            // 'picture' => 'image|file|max:1024',
+        ]);
 
         // if ($request->file('image')) {
         //     $request->file('image')->store('property-image');
         // }
 
-        // Property::create($request->all());
+        Property::create($request->all());
+        return redirect()->route('property.index');
+        // $properties = new Property();
+        // if ($request->hasFile('picture')) {
+        //     $file = $request->file('picture');
+        //     $ext = $file->getClientOriginalName();
+        //     $file->move('storage\images\properties', $ext);
+        //     $properties->picture = $ext;
+        // }
 
-        $properties = new Property();
-        if ($request->hasFile('picture')) {
-            $file = $request->file('picture');
-            $ext = $file->getClientOriginalName();
-            $file->move('storage\images\properties', $ext);
-            $properties->picture = $ext;
-        }
-
-        $properties->name = $request->input('type_property_id');
-        $properties->name = $request->input('name');
-        $properties->name = $request->input('price');
-        $properties->name = $request->input('status_property');
-        $properties->name = $request->input('street');
-        $properties->name = $request->input('city_id');
-        $properties->name = $request->input('provience_id');
-        $properties->name = $request->input('description');
-        $properties->save();
+        // $properties->name = $request->input('type_property_id');
+        // $properties->name = $request->input('name');
+        // $properties->name = $request->input('price');
+        // $properties->name = $request->input('status_property');
+        // $properties->name = $request->input('street');
+        // $properties->name = $request->input('city_id');
+        // $properties->name = $request->input('provience_id');
+        // $properties->name = $request->input('description');
+        // $properties->name = $request->input('ads_id');
+        // $properties->save();
         // return view('user.property.property_list');
-        return redirect()->route('property.index')->with('success', 'Property Edited');
+
     }
 
     /**

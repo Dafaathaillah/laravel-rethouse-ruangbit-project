@@ -148,7 +148,7 @@
                                                 <div class="card__image card__box-v1">
                                                     <div class="card__image-header h-250">
                                                         <div class="ribbon text-capitalize">featured</div>
-                                                        <img src="images/600x400.jpg" alt=""
+                                                        <img src="images/property4.jpg" alt=""
                                                             class="img-fluid w100 img-transition">
                                                         <div class="info"> {{ $prt->status_property }}</div>
                                                     </div>

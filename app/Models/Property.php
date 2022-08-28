@@ -21,7 +21,8 @@ class Property extends Model
         'picture',
         'city_id',
         'provience_id',
-        'description'
+        'description',
+        'ads_id'
     ];
 
     // public function typeProperty(){
