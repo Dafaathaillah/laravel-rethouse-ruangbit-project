@@ -13,5 +13,8 @@ class TypeProperty extends Model
     protected $fillable = [
         'name',
     ];
-}
 
+    public function property(){
+        return $this->hasMany(Property::class);
+    }
+}

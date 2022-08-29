@@ -22,12 +22,17 @@ class Property extends Model
         'city_id',
         'provience_id',
         'description',
-        'ads_id'
+        'ads_id',
+        'bedroom',
+        'bathroom',
+        'garage',
+        'property_size',
+        'features'
     ];
 
-    // public function typeProperty(){
-    //     return $this->belongsTo(TypeProperty::class);
-    // }
+    public function typeProperty(){
+        return $this->belongsTo(TypeProperty::class);
+    }
 }
 
 
