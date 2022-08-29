@@ -45,7 +45,7 @@
                             <div style="margin-top: 20px" class="form-group col-12 ">
                                 <label for="street">Address</label>
                                 <input type="text" class="form-control" id="street" name="street"
-                                    placeholder="address">
+                                    placeholder="Address">
                             </div>
                             <div style="margin-top: 20px" class="form-group col-12 ">
                                 <label for="city_id">City</label>
@@ -122,6 +122,36 @@
                                             @endforeach
 
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="form-group col-md-4">
+                                            <label for="bedroom">Bedroom</label>
+                                            <input type="number" class="form-control" id="bedroom" name="bedroom">
+                                          </div>
+                                          <div class="form-group col-md-4">
+                                            <label for="bathroom">Bathroom</label>
+                                            <input type="number" class="form-control" id="bathroom" name="bathroom">
+                                          </div>
+                                          <div class="form-group col-md-4">
+                                            <label for="garage">Garage</label>
+                                            <input type="number" class="form-control" id="garage" name="garage">
+                                          </div>
+                                          <div class="form-group col-md-4">
+                                            <label for="property_size">Property Size</label>
+                                            <input type="text" class="form-control" id="property_size" name="property_size">
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div style="margin-top: 20px" class="form-group col-12 ">
+                                        <label for="features">Features</label>
+                                        <textarea class="form-control" id="features" name="features" placeholder="Features of Property"></textarea>
                                     </div>
                                 </div>
                             </div>

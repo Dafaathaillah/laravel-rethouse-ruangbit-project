@@ -106,18 +106,16 @@
                               <ul class="property__detail-info-list list-unstyled">
                                  <li><b>Property ID:</b> {{$property->id}}</li>
                                  <li><b>Price:</b> Rp {{$property->price}}</li>
-                                 <li><b>Property Size:</b> 1466 Sq Ft</li>
-                                 <li><b>Bedrooms:</b> 4</li>
-                                 <li><b>Bathrooms:</b> 2</li>
+                                 <li><b>Property Size:</b> {{$property->property_size}}</li>
+                                 <li><b>Bedrooms:</b> {{$property->bedroom}}</li>
+                                 <li><b>Bathrooms:</b> {{$property->bathroom}}</li>
                               </ul>
                            </div>
                            <div class="col-md-6 col-lg-6">
                               <ul class="property__detail-info-list list-unstyled">
-                                 <li><b>Garage:</b> 1</li>
-                                 <li><b>Garage Size:</b> 458 SqFt</li>
-                                 <li><b>Year Built:</b> 2019-01-09</li>
-                                 <li><b>Property Type:</b> Full Family Home</li>
-                                 <li><b>Property Status:</b> For rent</li>
+                                 <li><b>Garage:</b> {{$property->garage}}</li>
+                                 <li><b>Property Type:</b> {{$property->typeProperty->name}}</li>
+                                 <li><b>Property Status:</b> {{$property->status_property}}</li>
                               </ul>
                            </div>
                         </div>
@@ -127,18 +125,16 @@
                               <ul class="property__detail-info-list list-unstyled">
                                  <li><b>Property ID:</b> {{$property->id}}</li>
                                  <li><b>Price:</b> Rp {{$property->price}} </li>
-                                 <li><b>Property Size:</b> 1466 Sq Ft</li>
-                                 <li><b>Bedrooms:</b> 4</li>
-                                 <li><b>Bathrooms:</b> 2</li>
+                                 <li><b>Property Size:</b> {{$property->property_size}} m2</li>
+                                 <li><b>Bedrooms:</b> {{$property->bedroom}} </li>
+                                 <li><b>Bathrooms:</b> {{$property->bathroom}}</li>
                               </ul>
                            </div>
                            <div class="col-md-6 col-lg-6">
                               <ul class="property__detail-info-list list-unstyled">
-                                 <li><b>Garage:</b> 1</li>
-                                 <li><b>Garage Size:</b> 458 SqFt</li>
-                                 <li><b>Year Built:</b> 2019-01-09</li>
-                                 <li><b>Property Type:</b> Full Family Home</li>
-                                 <li><b>Property Status:</b> For rent</li>
+                                 <li><b>Garage:</b> {{$property->garage}}</li>
+                                 <li><b>Property Type:</b> {{$property->typeProperty->name}}</li>
+                                 <li><b>Property Status:</b> {{$property->status_property}}</li>
                               </ul>
                            </div>
                         </div>
@@ -154,19 +150,7 @@
                   <div class="single__detail-features">
                      <h5 class="text-capitalize detail-heading">features</h5>
                      <ul class="list-unstyled icon-checkbox">
-                        <li>air conditioning</li>
-                        <li>swiming pool</li>
-                        <li>Central Heating</li>
-                        <li>spa & massage</li>
-                        <li>pets allow</li>
-
-                        <li>air conditioning</li>
-                        <li>gym</li>
-                        <li>alarm</li>
-
-                        <li>window Covering</li>
-                        <li>free wiFi</li>
-                        <li>car parking </li>
+                        <li>{{$property->features}}</li>
                      </ul>
                   </div>
                   <!-- END FEATURES -->

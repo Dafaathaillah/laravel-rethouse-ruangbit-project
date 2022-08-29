@@ -54,7 +54,12 @@ class PropertyController extends Controller
             'provience_id' => 'required',
             'description' => 'required',
             'ads_id'=>'required',
-            // 'picture' => 'image|file|max:1024',
+            'bedroom' => 'required',
+            'bathroom' => 'required',
+            'garage' => 'required',
+            'property_size' => 'required',
+            'features' => 'required'
+        //     // 'picture' => 'image|file|max:1024',
         ]);
 
         // if ($request->file('image')) {
@@ -63,7 +68,7 @@ class PropertyController extends Controller
 
         Property::create($request->all());
 
-        $properties = new Property();
+        // $properties = new Property();
         // if ($request->hasFile('picture')) {
         //     $file = $request->file('picture');
         //     $ext = $file->getClientOriginalName();
@@ -71,16 +76,16 @@ class PropertyController extends Controller
         //     $properties->picture = $ext;
         // }
 
-        $properties->name = $request->input('type_property_id');
-        $properties->name = $request->input('name');
-        $properties->name = $request->input('price');
-        $properties->name = $request->input('status_property');
-        $properties->name = $request->input('street');
-        $properties->name = $request->input('city_id');
-        $properties->name = $request->input('provience_id');
-        $properties->name = $request->input('description');
-        $properties->name = $request->input('ads_id');
-        $properties->save();
+        // $properties->name = $request->input('type_property_id');
+        // $properties->name = $request->input('name');
+        // $properties->name = $request->input('price');
+        // $properties->name = $request->input('status_property');
+        // $properties->name = $request->input('street');
+        // $properties->name = $request->input('city_id');
+        // $properties->name = $request->input('provience_id');
+        // $properties->name = $request->input('description');
+        // $properties->name = $request->input('ads_id');
+        // $properties->save();
         // return view('user.property.property_list');
         return redirect()->route('property.index');
 

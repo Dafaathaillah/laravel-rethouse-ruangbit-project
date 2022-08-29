@@ -43,8 +43,8 @@
                     <div class="section__breadcrumb-v1">
                         <ol class="breadcrumb mb-0 bg-light">
                             <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> </a></li>
-                            <li class="breadcrumb-item"> <a href="#">Property</a></li>
-                            <li class="breadcrumb-item active"> <span class="text-capitalize"> Luxury family home</span>
+                            <li class="breadcrumb-item"> <a href="{{route('property.index')}}">Property</a></li>
+                            <li class="breadcrumb-item active"> <span class="text-capitalize"> List Property</span>
                             </li>
 
                         </ol>
@@ -168,25 +168,25 @@
 
                                                                 <span>
                                                                     baths <br>
-                                                                    <i class="fa fa-bath"></i> 2
+                                                                    <i class="fa fa-bath"></i> {{$prt->bathroom}}
                                                                 </span>
                                                             </li>
                                                             <li class="list-inline-item">
                                                                 <span>
                                                                     beds <br>
-                                                                    <i class="fa fa-bed"></i> 3
+                                                                    <i class="fa fa-bed"></i> {{$prt->bedroom}}
                                                                 </span>
                                                             </li>
                                                             <li class="list-inline-item">
                                                                 <span>
                                                                     rooms <br>
-                                                                    <i class="fa fa-inbox"></i> 3
+                                                                    <i class="fa fa-inbox"></i> {{$prt->garage}}
                                                                 </span>
                                                             </li>
                                                             <li class="list-inline-item">
                                                                 <span>
                                                                     area <br>
-                                                                    <i class="fa fa-map"></i> 4300 sq ft
+                                                                    <i class="fa fa-map"></i> {{$prt->property_size}} m2
                                                                 </span>
                                                             </li>
                                                         </ul>
