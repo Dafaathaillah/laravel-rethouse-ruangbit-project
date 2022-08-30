@@ -35,6 +35,7 @@ class Property extends Model
     public function typeProperty(){
         return $this->belongsTo(TypeProperty::class);
     }
+    
 }
 
 
