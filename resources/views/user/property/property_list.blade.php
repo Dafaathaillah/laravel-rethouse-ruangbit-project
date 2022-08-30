@@ -148,9 +148,15 @@
                                                 <div class="card__image card__box-v1">
                                                     <div class="card__image-header h-250">
                                                         <div class="ribbon text-capitalize">featured</div>
-                                                        <img src="images/property4.jpg" alt=""
-                                                            class="img-fluid w100 img-transition">
-                                                        <div class="info"> {{ $prt->status_property }}</div>
+                                                        @if($prt->image)
+                                                            <img src="{{ asset('storage/' . $prt->image)}}" alt=""
+                                                                class="img-fluid w100 img-transition">
+                                                            <div class="info"> {{ $prt->status_property }}</div>
+                                                        @else
+                                                            <img src="images/property4.jpg" alt=""
+                                                                class="img-fluid w100 img-transition">
+                                                            <div class="info"> {{ $prt->status_property }}</div>
+                                                        @endif
                                                     </div>
                                                     <div class="card__image-body">
                                                         <span

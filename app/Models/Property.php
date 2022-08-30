@@ -18,7 +18,7 @@ class Property extends Model
         'price',
         'status_property',
         'street',
-        'picture',
+        'image',
         'city_id',
         'provience_id',
         'description',
