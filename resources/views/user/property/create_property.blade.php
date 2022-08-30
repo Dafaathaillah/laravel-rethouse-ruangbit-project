@@ -144,6 +144,10 @@
                                             <label for="property_size">Property Size</label>
                                             <input type="text" class="form-control" id="property_size" name="property_size">
                                           </div>
+                                          <div class="form-group col-md-4">
+                                            <label for="area">Area</label>
+                                            <input type="text" class="form-control" id="area" name="area">
+                                          </div>
                                     </div>
                                 </div>
                             </div>

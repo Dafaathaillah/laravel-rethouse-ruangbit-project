@@ -133,6 +133,7 @@
                            <div class="col-md-6 col-lg-6">
                               <ul class="property__detail-info-list list-unstyled">
                                  <li><b>Garage:</b> {{$property->garage}}</li>
+                                 <li><b>Area:</b> {{$property->area}} m2</li>
                                  <li><b>Property Type:</b> {{$property->typeProperty->name}}</li>
                                  <li><b>Property Status:</b> {{$property->status_property}}</li>
                               </ul>
@@ -152,6 +153,7 @@
                      <ul class="list-unstyled icon-checkbox">
                         <li>{{$property->features}}</li>
                      </ul>
+
                   </div>
                   <!-- END FEATURES -->
 

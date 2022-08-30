@@ -186,7 +186,7 @@
                                                             <li class="list-inline-item">
                                                                 <span>
                                                                     area <br>
-                                                                    <i class="fa fa-map"></i> {{$prt->property_size}} m2
+                                                                    <i class="fa fa-map"></i> {{$prt->area}} m2
                                                                 </span>
                                                             </li>
                                                         </ul>

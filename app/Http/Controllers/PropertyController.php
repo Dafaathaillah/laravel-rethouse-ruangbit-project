@@ -58,6 +58,7 @@ class PropertyController extends Controller
             'bathroom' => 'required',
             'garage' => 'required',
             'property_size' => 'required',
+            'area' => 'required',
             'features' => 'required'
         //     // 'picture' => 'image|file|max:1024',
         ]);

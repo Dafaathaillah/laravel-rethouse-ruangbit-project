@@ -27,6 +27,7 @@ class Property extends Model
         'bathroom',
         'garage',
         'property_size',
+        'area',
         'features'
     ];
 
