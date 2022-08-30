@@ -14,12 +14,8 @@ class PropertyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {                        
-        // if (request('search')) {                        
-        //     $property = $property = DB::table('property')->where('name', 'like', '%' . request('search' . '%'))->get();
-        // }         
-        $property = $property = DB::table('property')->where('name', 'like', '%' . request('search') . '%')->orWhere('street', 'like', '%' . request('search') . '%')->get();
-        echo $property;
+    {                                        
+        $property = $property = DB::table('property')->where('name', 'like', '%' . request('search') . '%')->orWhere('street', 'like', '%' . request('search') . '%')->get();        
         return view('user.property.property_list', compact('property'));
     }
 

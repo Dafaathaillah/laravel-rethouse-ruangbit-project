@@ -142,9 +142,9 @@
                                             <span class="fa fa-th-large"></span></a>
                                     </li>
                                 </ul>
-
                                 <div class="tab-pane fade show active" id="pills-tab-two" role="tabpanel"
-                                    aria-labelledby="pills-tab-two">
+                                    aria-labelledby="pills-tab-two">                                    
+                                    @if($property != "[]")
                                     <div class="row">
                                         @foreach ($property as $prt)
                                             <div class="col-md-4 col-lg-4">
@@ -230,9 +230,12 @@
 
                                         <div class="cleafix"></div>
                                     </div>
-
-
-
+                                    @else
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <h1 class="text-center">Pencarian Tidak ditemukan</h1>
+                                    @endif
                                 </div> <!-- END FILTER VERTICAL -->
                             </div>
                         </div>
