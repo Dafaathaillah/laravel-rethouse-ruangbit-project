@@ -23,8 +23,8 @@
                                 <fieldset>
                                     <div class="row">
                                         <div class="form-group col-md-6">
-                                            <label for="exampleFormControlSelect1">Pilih logo yang akan digunakan</label>
-                                            <select class="form-control" id="exampleFormControlSelect1" name="topic_id"
+                                            <label for="select_logo">Pilih logo yang akan digunakan</label>
+                                            <select class="form-control" id="select_logo" name="select_logo"
                                                 id="topic_id">
                                                 <option class="text-center" value="#" disabled>-- Pilih Hasil --</option>
                                                 @foreach ($logo as $item )
@@ -36,11 +36,11 @@
                                         </div>
                                         <div class="form-group col-md-6">
                                             <div class="d-flex justify-content-center">
-                                                <label for="exampleFormControlSelect1">Logo yang dipilih
+                                                <label for="select_logo">Logo yang dipilih
                                                     <i class="link-icon" data-feather="corner-right-down"></i>
                                             </label>
                                             </div>
-                                            <img src="{{ ('images\pic_sample.jpg') }}" class="rounded float-right" width="300px">
+                                            <img src="{{ asset('images\pic_sample.jpg') }}" class="rounded float-right" width="300px">
                                         </div>
                                     </div>
                                 </fieldset>
