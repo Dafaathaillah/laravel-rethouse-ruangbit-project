@@ -13,15 +13,19 @@
                         Add Property
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('property.store') }}" id="myForm">
+                        <form method="post" action="{{ route('property.store') }}" id="myForm" enctype="multipart/form-data">
                             @csrf
                             <div style="margin-top: 20px" class="form-group col-12">
                                 <label for="picture">Picture</label>
                                 <div class="input-group">
-                                    <input type="file" name="picture" class="form-control" id="picture"
-                                        aria-describedby="picture">
-                                    <label for="picture" class="input-group-text"
-                                        style="line-height: 1.1rem">Upload</label>
+                                    <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="image"
+                                        aria-describedby="image">
+                                    <label for="image" class="input-group-text" style="line-height: 1.1rem">Upload</label>
+                                    @error('image')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div style="margin-top: 20px" class="form-group col-12 ">

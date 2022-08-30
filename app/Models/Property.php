@@ -16,6 +16,7 @@ class Property extends Model
         'type_property_id',
         'name',
         'price',
+        'image',
         'status_property',
         'street',
         'picture',

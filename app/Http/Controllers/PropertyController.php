@@ -43,8 +43,8 @@ class PropertyController extends Controller
 
     public function store(Request $request)
     {
-        //
-        $request->validate([
+        $validateData = $request->validate([
+            'image' => 'image|file',
             'type_property_id' => 'required',
             'name' => 'required',
             'price' => 'required',
@@ -60,33 +60,13 @@ class PropertyController extends Controller
             'property_size' => 'required',
             'area' => 'required',
             'features' => 'required'
-        //     // 'picture' => 'image|file|max:1024',
+            // 'picture' => 'image|file|max:1024',
         ]);
+        if ($request->file('image')) {
+            $validateData['image'] = $request->file('image')->store('property-images');
+        }
 
-        // if ($request->file('image')) {
-        //     $request->file('image')->store('property-image');
-        // }
-
-        Property::create($request->all());
-
-        // $properties = new Property();
-        // if ($request->hasFile('picture')) {
-        //     $file = $request->file('picture');
-        //     $ext = $file->getClientOriginalName();
-        //     $file->move('storage\images\properties', $ext);
-        //     $properties->picture = $ext;
-        // }
-
-        // $properties->name = $request->input('type_property_id');
-        // $properties->name = $request->input('name');
-        // $properties->name = $request->input('price');
-        // $properties->name = $request->input('status_property');
-        // $properties->name = $request->input('street');
-        // $properties->name = $request->input('city_id');
-        // $properties->name = $request->input('provience_id');
-        // $properties->name = $request->input('description');
-        // $properties->name = $request->input('ads_id');
-        // $properties->save();
+        Property::create($validateData);
         // return view('user.property.property_list');
         return redirect()->route('property.index');
 
