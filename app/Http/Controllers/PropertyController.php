@@ -15,7 +15,7 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $property = Property::all();
+        $property = $property = DB::table('property')->where('name', 'like', '%' . request('search') . '%')->orWhere('street', 'like', '%' . request('search') . '%')->get();
         return view('user.property.property_list', compact('property'));
     }
 
