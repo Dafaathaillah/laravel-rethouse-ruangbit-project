@@ -126,6 +126,21 @@
                                             @endforeach
 
                                         </div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <label for="image_transaction">Receipt of Payment</label>
+                                                <div class="input-group">
+                                                    <input type="file" name="image_transaction" class="form-control @error('image_transaction') is-invalid @enderror" id="image_transaction"
+                                                        aria-describedby="image_transaction">
+                                                    <label for="image_transaction" class="input-group-text" style="line-height: 1.1rem">Upload</label>
+                                                    @error('image_transaction')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -29,13 +29,14 @@ class Property extends Model
         'garage',
         'property_size',
         'area',
-        'features'
+        'features',
+        'image_transaction'
     ];
 
     public function typeProperty(){
         return $this->belongsTo(TypeProperty::class);
     }
-    
+
 }
 
 

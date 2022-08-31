@@ -123,31 +123,31 @@
                                         <li class="list-inline-item">
                                             Baths
                                             <span>
-                                                <i class="fa fa-bath"></i> 2
+                                                <i class="fa fa-bath"></i> {{$prts->bathroom}}
                                             </span>
                                         </li>
                                         <li class="list-inline-item">
                                             Beds
                                             <span>
-                                                <i class="fa fa-bed"></i> 2
+                                                <i class="fa fa-bed"></i> {{$prts->bedroom}}
                                             </span>
                                         </li>
                                         <li class="list-inline-item">
                                             Rooms
                                             <span>
-                                                <i class="fa fa-inbox"></i> 3
+                                                <i class="fa fa-inbox"></i> {{$prts->bedroom}}
                                             </span>
                                         </li>
                                         <li class="list-inline-item">
                                             Area
                                             <span>
-                                                <i class="fa fa-map"></i> 1450 sq ft
+                                                <i class="fa fa-map"></i> {{$prts->area}} M2
                                             </span>
                                         </li>
 
                                     </ul>
                                 </div>
-                                <img alt="" src="images/property.jpg" class="img-fluid h-40 ">
+                                <img alt="" src="{{ asset('storage/' . $prts->image) }}" class="img-fluid h-40 ">
                             </div>
                         </div>
                     </a>
@@ -198,31 +198,31 @@
                                         <li class="list-inline-item">
                                             Baths
                                             <span>
-                                                <i class="fa fa-bath"></i> 2
+                                                <i class="fa fa-bath"></i> {{$prts->bathroom}}
                                             </span>
                                         </li>
                                         <li class="list-inline-item">
                                             Beds
                                             <span>
-                                                <i class="fa fa-bed"></i> 2
+                                                <i class="fa fa-bed"></i> {{$prts->bedroom}}
                                             </span>
                                         </li>
                                         <li class="list-inline-item">
                                             Rooms
                                             <span>
-                                                <i class="fa fa-inbox"></i> 3
+                                                <i class="fa fa-inbox"></i> {{$prts->bedroom}}
                                             </span>
                                         </li>
                                         <li class="list-inline-item">
                                             Area
                                             <span>
-                                                <i class="fa fa-map"></i> 1450 sq ft
+                                                <i class="fa fa-map"></i> {{$prts->area}} M2
                                             </span>
                                         </li>
 
                                     </ul>
                                 </div>
-                                <img alt="" src="images/600x400.jpg" class="img-fluid h-40 ">
+                                <img alt="" src="{{ asset('storage/' . $prts->image) }}" class="img-fluid h-40 ">
                             </div>
                         </div>
                     </a>

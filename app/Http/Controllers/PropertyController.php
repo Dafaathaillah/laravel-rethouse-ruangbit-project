@@ -59,11 +59,16 @@ class PropertyController extends Controller
             'garage' => 'required',
             'property_size' => 'required',
             'area' => 'required',
-            'features' => 'required'
+            'features' => 'required',
+            'image_transaction' => 'image|file'
             // 'picture' => 'image|file|max:1024',
         ]);
         if ($request->file('image')) {
             $validateData['image'] = $request->file('image')->store('property-images');
+        }
+
+        if ($request->file('image_transaction')) {
+            $validateData['image_transaction'] = $request->file('image_transaction')->store('transaction-images');
         }
 
         Property::create($validateData);
