@@ -76,3 +76,11 @@ Route::post('/admin/logo/store', [ManageLogoController::class,'store'])->name('a
 Route::get('/admin/delete/logo/{id}', [ManageLogoController::class,'destroy'])->name('admin.logo.delete');
 Route::get('/admin/edit/logo/{id}', [ManageLogoController::class,'edit'])->name('admin.logo.edit');
 Route::put('/admin/update/logo/{id}', [ManageLogoController::class,'update'])->name('admin.logo.update');
+
+Route::get('/admin/termCondition', [ManageTermController::class,'index'])->name('admin.term.index');
+Route::get('/admin/termCondition/create', [ManageTermController::class,'create'])->name('admin.term.create');
+Route::post('/admin/termCondition/store', [ManageTermController::class,'store'])->name('admin.term.store');
+Route::get('/admin/termCondition/show/{id}', [ManageTermController::class,'show'])->name('admin.term.show');
+Route::get('/admin/termCondition/edit{id}', [ManageTermController::class,'edit'])->name('admin.term.edit');
+Route::put('/admin/termCondition/update{id}', [ManageTermController::class,'update'])->name('admin.term.update');
+Route::get('/admin/termCondition/delete/{id}', [ManageTermController::class,'destroy'])->name('admin.term.destroy');
