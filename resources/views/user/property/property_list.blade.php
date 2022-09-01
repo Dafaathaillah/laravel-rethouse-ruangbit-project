@@ -157,7 +157,7 @@
                                                     <div class="card__image-header h-250">
                                                         <div class="ribbon text-capitalize">featured</div>
                                                         @if ($prt->image)
-                                                            <img src="{{ asset('storage/' . $prt->image) }}"
+                                                            <img src="{{ asset('storage/property-images/' . $prt->image) }}"
                                                                 alt="" class="img-fluid w100 img-transition">
                                                             <div class="info"> {{ $prt->status_property }}</div>
                                                         @else
