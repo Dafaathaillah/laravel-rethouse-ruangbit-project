@@ -43,37 +43,63 @@ class PropertyController extends Controller
 
     public function store(Request $request)
     {
-        $validateData = $request->validate([
-            'image' => 'image|file',
-            'type_property_id' => 'required',
-            'name' => 'required',
-            'price' => 'required',
-            'status_property' => 'required',
-            'street' => 'required',
-            'city_id' => 'required',
-            'provience_id' => 'required',
-            'description' => 'required',
-            'ads_id'=>'required',
-            'bedroom' => 'required',
-            'bathroom' => 'required',
-            'garage' => 'required',
-            'property_size' => 'required',
-            'area' => 'required',
-            'features' => 'required',
-            'image_transaction' => 'image|file'
-            // 'picture' => 'image|file|max:1024',
-        ]);
-        if ($request->file('image')) {
-            $validateData['image'] = $request->file('image')->store('property-images');
+        // $validateData = $request->validate([
+        //     'image' => 'image|file',
+        //     'type_property_id' => 'required',
+        //     'name' => 'required',
+        //     'price' => 'required',
+        //     'status_property' => 'required',
+        //     'street' => 'required',
+        //     'city_id' => 'required',
+        //     'provience_id' => 'required',
+        //     'description' => 'required',
+        //     'ads_id'=>'required',
+        //     'bedroom' => 'required',
+        //     'bathroom' => 'required',
+        //     'garage' => 'required',
+        //     'property_size' => 'required',
+        //     'area' => 'required',
+        //     'features' => 'required',
+        //     'image_transaction' => 'image|file'
+        //     // 'picture' => 'image|file|max:1024',
+        // ]);
+        // if ($request->file('image')) {
+        //     $validateData['image'] = $request->file('image')->store('property-images');
+        // }
+
+        // if ($request->file('image_transaction')) {
+        //     $validateData['image_transaction'] = $request->file('image_transaction')->store('transaction-images');
+        // }
+
+        // Property::create($validateData);
+        // // return view('user.property.property_list');
+        // return redirect()->route('property.index');
+        $prt = new Property();
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $ext = $file->getClientOriginalName();
+            $file->move('storage/property-images', $ext);
+            $prt->image = $ext;
         }
 
-        if ($request->file('image_transaction')) {
-            $validateData['image_transaction'] = $request->file('image_transaction')->store('transaction-images');
-        }
+        $prt->name = $request->input('name');
+        $prt->type_property_id = $request->input('type_property_id');
+        $prt->price = $request->input('price');
+        $prt->status_property = $request->input('status_property');
+        $prt->street = $request->input('street');
+        $prt->city_id = $request->input('city_id');
+        $prt->provience_id = $request->input('provience_id');
+        $prt->ads_id = $request->input('ads_id');
+        $prt->bedroom = $request->input('bedroom');
+        $prt->bathroom = $request->input('bathroom');
+        $prt->garage = $request->input('garage');
+        $prt->property_size = $request->input('property_size');
+        $prt->area = $request->input('area');
+        $prt->features = $request->input('features');
+        $prt->image_transaction = $request->input('image_transaction');
+        $prt->save();
+        return redirect()->route('property.index')-> with('success', 'Data Berhasil Ditambah');
 
-        Property::create($validateData);
-        // return view('user.property.property_list');
-        return redirect()->route('property.index');
 
     }
 
