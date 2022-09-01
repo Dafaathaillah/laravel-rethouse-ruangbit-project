@@ -14,9 +14,8 @@ class ManageLogoController extends Controller
      */
     public function index()
     {
-        $logo = ManageLogo::all();
+        $logo = ManageLogo::simplePaginate(3);
         return view('admin.logo.index', compact('logo'));
-
         // var_dump($logo);
     }
 
@@ -81,11 +80,9 @@ class ManageLogoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ManageLogo $logo)
     {
-        $logo = ManageLogo::find($id);
-        return view('admin.logo.edit', compact('logo'));
-
+        return view('admin.logo.create', compact('logo'));
     }
 
     /**
@@ -97,34 +94,7 @@ class ManageLogoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-            'logo' => 'required'
-        ]);
-
-        // $seedsData = $request->all();
-
-        // if ($logo = $request->file('logo')) {
-        //     $destinationPath = 'storage\images\logo';
-        //     $logo_image = date('YmdHis') . "." . $logo->getClientOriginalExtension();
-        //     $logo->move($destinationPath, $logo_image);
-        //     $seedsData['logo'] = "$logo_image";
-        // }else{
-        //     unset($seedsData['logo']);
-        // }
-
-        // $logos->update($seedsData);
-        $logos = ManageLogo::find($id);
-        if ($request->hasFile('logo')) {
-            $file = $request->file('logo');
-            $ext = $file->getClientOriginalName();
-            $file->move('storage\images\logo', $ext);
-            $logos->logo = $ext;
-        }
-
-        $logos->name = $request->input('name');
-        $logos->update();
-        return redirect()->route('logo.index')-> with('success', 'Logo Berhasil Ditambah');
+        //
     }
 
     /**

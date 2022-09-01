@@ -74,3 +74,5 @@ Route::get('/admin/logo', [ManageLogoController::class,'index'])->name('admin.lo
 Route::get('/admin/logo/create', [ManageLogoController::class,'create'])->name('admin.logo.create');
 Route::post('/admin/logo/store', [ManageLogoController::class,'store'])->name('admin.logo.store');
 Route::get('/admin/delete/logo/{id}', [ManageLogoController::class,'destroy'])->name('admin.logo.delete');
+Route::get('/admin/edit/logo/{id}', [ManageLogoController::class,'edit'])->name('admin.logo.edit');
+Route::put('/admin/update/logo/{id}', [ManageLogoController::class,'update'])->name('admin.logo.update');
