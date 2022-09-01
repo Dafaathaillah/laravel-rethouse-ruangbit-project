@@ -133,6 +133,7 @@
                            <div class="col-md-6 col-lg-6">
                               <ul class="property__detail-info-list list-unstyled">
                                  <li><b>Garage:</b> {{$property->garage}}</li>
+                                 <li><b>Area:</b> {{$property->area}} m2</li>
                                  <li><b>Property Type:</b> {{$property->typeProperty->name}}</li>
                                  <li><b>Property Status:</b> {{$property->status_property}}</li>
                               </ul>
@@ -152,6 +153,7 @@
                      <ul class="list-unstyled icon-checkbox">
                         <li>{{$property->features}}</li>
                      </ul>
+
                   </div>
                   <!-- END FEATURES -->
 
@@ -174,19 +176,16 @@
                                  <figure>
                                     <img src="images/floorplan.jpg" alt="" class="img-fluid">
                                  </figure>
-
                                  Excepteur sint ocaec at cupdatat proident suntin culpa qui officia
                                  deserunt mol anim id esa laborum
                                  perspiciat.
                                  Duis aute irure dolor reprehenderit in voluptate velit essle cillum
                                  dolore eu fugiat nulla pariatur.
-
                               </div>
                            </div>
                         </div>
                         <div class="card">
                            <div class="card-header" role="tab" id="headingTwo">
-
                               <a class="collapsed text-capitalize" data-toggle="collapse" href="#collapseTwo"
                                  aria-expanded="false" aria-controls="collapseTwo">
                                  second floor <span class="badge badge-light rounded p-1 ml-2">460 sq
@@ -203,7 +202,6 @@
                                  provide innovative solutions
                                  with the best. tempor incididunt ut labore et dolor empor tempor
                                  incididunt innovative solutions
-
                               </div>
                            </div>
                         </div>
@@ -224,11 +222,9 @@
                                  provide innovative solutions
                                  with the best. tempor incididunt ut labore et dolor empor tempor
                                  incididunt innovative solutions
-
                               </div>
                            </div>
                         </div>
-
                      </div>
                   </div> --}}
                   <!-- END FLOR PLAN -->
@@ -242,7 +238,6 @@
                                  <i class="icon fa fa-play text-white"></i>
                               </a>
                            </div>
-
                         </figure>
                      </div>
                   </div> --}}
@@ -727,17 +722,14 @@
                {{-- <div class="products__filter mb-30">
                   <div class="products__filter__group">
                      <div class="products__filter__header">
-
                         <h5 class="text-center text-capitalize">simulation calculator </h5>
                      </div>
                      <div class="products__filter__body">
                         <div class="form-group">
                            <label>Sale Price</label>
-
                            <div class="input-group">
                               <div class="input-group-prepend">
                                  <span class="input-group-text">$</span>
-
                               </div>
                               <input type="text" class="form-control" placeholder="$130.000">
                            </div>
@@ -754,22 +746,17 @@
                         <div class="form-group">
                            <label>Long Term (Years)</label>
                            <select class="select_option wide">
-
                               <option value="1">10</option>
                               <option value="2">15</option>
                               <option value="3">20</option>
                               <option value="4">25</option>
                            </select>
-
                         </div>
-
                         <div class="form-group">
                            <label>Interest Rate</label>
-
                            <div class="input-group">
                               <div class="input-group-prepend">
                                  <span class="input-group-text">%</span>
-
                               </div>
                               <input type="text" class="form-control" placeholder="10%">
                            </div>
@@ -780,7 +767,6 @@
                            <button class="btn btn-primary text-capitalize btn-block"> calculate
                               <i class="fa fa-calculator ml-1"></i>
                            </button>
-
                         </div>
                      </div>
                   </div>
@@ -813,14 +799,12 @@
                            <h6 class="text-capitalize">
                               <a href="#">vila in coral gables</a>
                            </h6>
-
                            <p class="text-capitalize">
                               <i class="fa fa-map-marker"></i>
                               west flaminggo road, las vegas
                            </p>
                            <ul class="list-inline card__content">
                               <li class="list-inline-item">
-
                                  <span>
                                     baths <br>
                                     <i class="fa fa-bath"></i> 2
@@ -855,16 +839,12 @@
                                  <a href="#">
                                     tom wilson <br>
                                  </a>
-
                               </li>
-
                            </ul>
                            <ul class="list-inline my-auto ml-auto">
                               <li class="list-inline-item">
-
                                  <h6 class="text-primary">$350.000</h6>
                               </li>
-
                            </ul>
                         </div>
                      </div>
@@ -882,14 +862,12 @@
                            <h6 class="text-capitalize">
                               <a href="#">Ample Apartment At Last Floor</a>
                            </h6>
-
                            <p class="text-capitalize">
                               <i class="fa fa-map-marker"></i>
                               west flaminggo road, las vegas
                            </p>
                            <ul class="list-inline card__content">
                               <li class="list-inline-item">
-
                                  <span>
                                     baths <br>
                                     <i class="fa fa-bath"></i> 2
@@ -924,16 +902,12 @@
                                  <a href="#">
                                     tom wilson <br>
                                  </a>
-
                               </li>
-
                            </ul>
                            <ul class="list-inline my-auto ml-auto">
                               <li class="list-inline-item">
-
                                  <h6 class="text-primary">$350.000</h6>
                               </li>
-
                            </ul>
                         </div>
                      </div>
@@ -951,14 +925,12 @@
                            <h6 class="text-capitalize">
                               <a href="#">Contemporary Apartment</a>
                            </h6>
-
                            <p class="text-capitalize">
                               <i class="fa fa-map-marker"></i>
                               west flaminggo road, las vegas
                            </p>
                            <ul class="list-inline card__content">
                               <li class="list-inline-item">
-
                                  <span>
                                     baths <br>
                                     <i class="fa fa-bath"></i> 2
@@ -993,16 +965,12 @@
                                  <a href="#">
                                     tom wilson <br>
                                  </a>
-
                               </li>
-
                            </ul>
                            <ul class="list-inline my-auto ml-auto">
                               <li class="list-inline-item">
-
                                  <h6 class="text-primary">$350.000</h6>
                               </li>
-
                            </ul>
                         </div>
                      </div>
@@ -1020,14 +988,12 @@
                            <h6 class="text-capitalize">
                               <a href="#">Family Home For Sale</a>
                            </h6>
-
                            <p class="text-capitalize">
                               <i class="fa fa-map-marker"></i>
                               west flaminggo road, las vegas
                            </p>
                            <ul class="list-inline card__content">
                               <li class="list-inline-item">
-
                                  <span>
                                     baths <br>
                                     <i class="fa fa-bath"></i> 2
@@ -1062,16 +1028,12 @@
                                  <a href="#">
                                     tom wilson <br>
                                  </a>
-
                               </li>
-
                            </ul>
                            <ul class="list-inline my-auto ml-auto">
                               <li class="list-inline-item">
-
                                  <h6 class="text-primary">$350.000</h6>
                               </li>
-
                            </ul>
                         </div>
                      </div>
@@ -1089,14 +1051,12 @@
                            <h6 class="text-capitalize">
                               <a href="#">184 Lexington Avenue</a>
                            </h6>
-
                            <p class="text-capitalize">
                               <i class="fa fa-map-marker"></i>
                               west flaminggo road, las vegas
                            </p>
                            <ul class="list-inline card__content">
                               <li class="list-inline-item">
-
                                  <span>
                                     baths <br>
                                     <i class="fa fa-bath"></i> 2
@@ -1131,16 +1091,12 @@
                                  <a href="#">
                                     tom wilson <br>
                                  </a>
-
                               </li>
-
                            </ul>
                            <ul class="list-inline my-auto ml-auto">
                               <li class="list-inline-item">
-
                                  <h6 class="text-primary">$350.000</h6>
                               </li>
-
                            </ul>
                         </div>
                      </div>
@@ -1158,14 +1114,12 @@
                            <h6 class="text-capitalize">
                               <a href="#">Luxury Villa With Pool</a>
                            </h6>
-
                            <p class="text-capitalize">
                               <i class="fa fa-map-marker"></i>
                               west flaminggo road, las vegas
                            </p>
                            <ul class="list-inline card__content">
                               <li class="list-inline-item">
-
                                  <span>
                                     baths <br>
                                     <i class="fa fa-bath"></i> 2
@@ -1200,16 +1154,12 @@
                                  <a href="#">
                                     tom wilson <br>
                                  </a>
-
                               </li>
-
                            </ul>
                            <ul class="list-inline my-auto ml-auto">
                               <li class="list-inline-item">
-
                                  <h6 class="text-primary">$350.000</h6>
                               </li>
-
                            </ul>
                         </div>
                      </div>
@@ -1226,14 +1176,12 @@
                            <h6 class="text-capitalize">
                               <a href="#">The Citizen Apartment 5th Floor</a>
                            </h6>
-
                            <p class="text-capitalize">
                               <i class="fa fa-map-marker"></i>
                               west flaminggo road, las vegas
                            </p>
                            <ul class="list-inline card__content">
                               <li class="list-inline-item">
-
                                  <span>
                                     baths <br>
                                     <i class="fa fa-bath"></i> 2
@@ -1268,16 +1216,12 @@
                                  <a href="#">
                                     tom wilson <br>
                                  </a>
-
                               </li>
-
                            </ul>
                            <ul class="list-inline my-auto ml-auto">
                               <li class="list-inline-item">
-
                                  <h6 class="text-primary">$350.000</h6>
                               </li>
-
                            </ul>
                         </div>
                      </div>
@@ -1295,14 +1239,12 @@
                            <h6 class="text-capitalize">
                               <a href="#">Family Home For Sale</a>
                            </h6>
-
                            <p class="text-capitalize">
                               <i class="fa fa-map-marker"></i>
                               west flaminggo road, las vegas
                            </p>
                            <ul class="list-inline card__content">
                               <li class="list-inline-item">
-
                                  <span>
                                     baths <br>
                                     <i class="fa fa-bath"></i> 2
@@ -1337,27 +1279,21 @@
                                  <a href="#">
                                     tom wilson
                                  </a>
-
                               </li>
-
                            </ul>
                            <ul class="list-inline my-auto ml-auto">
                               <li class="list-inline-item">
-
                                  <h6 class="text-primary">$350.000</h6>
                               </li>
-
                            </ul>
                         </div>
                      </div>
                   </div>
-
                </div>
             </div>
          </div>
       </div> --}}
       <!-- END SIMILIAR PROPERTY -->
-
    </div>
 </section>
 <!-- END SINGLE DETAIL -->

@@ -16,6 +16,7 @@ class Property extends Model
         'type_property_id',
         'name',
         'price',
+        'image',
         'status_property',
         'street',
         'picture',
@@ -27,12 +28,13 @@ class Property extends Model
         'bathroom',
         'garage',
         'property_size',
-        'features'
+        'area',
+        'features',
+        'image_transaction'
     ];
 
     public function typeProperty(){
         return $this->belongsTo(TypeProperty::class);
     }
+
 }
-
-

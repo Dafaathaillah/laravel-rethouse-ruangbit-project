@@ -9,8 +9,7 @@ use App\Http\Controllers\ManageAgencyController;
 use App\Http\Controllers\ManageLogoController;
 use App\Http\Controllers\ManageTermController;
 use App\Http\Controllers\ManageRoleController;
-use App\Models\ManageLogo;
-use Illuminate\Support\Manager;
+use App\Http\Controllers\PropertyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,3 +83,11 @@ Route::get('/admin/termCondition/show/{id}', [ManageTermController::class,'show'
 Route::get('/admin/termCondition/edit{id}', [ManageTermController::class,'edit'])->name('admin.term.edit');
 Route::put('/admin/termCondition/update{id}', [ManageTermController::class,'update'])->name('admin.term.update');
 Route::get('/admin/termCondition/delete/{id}', [ManageTermController::class,'destroy'])->name('admin.term.destroy');
+
+Route::get('/property', [PropertyController::class,'index'])->name('property.index');
+Route::get('/property/create', [PropertyController::class,'create'])->name('property.create');
+Route::post('/property/store', [PropertyController::class,'store'])->name('property.store');
+Route::get('/property/show/{id}', [PropertyController::class,'show'])->name('property.show');
+Route::get('/property/edit{id}', [PropertyController::class,'edit'])->name('property.edit');
+Route::put('/property/update{id}', [PropertyController::class,'update'])->name('property.update');
+Route::get('/property/delete/{id}', [PropertyController::class,'destroy'])->name('property.destroy');

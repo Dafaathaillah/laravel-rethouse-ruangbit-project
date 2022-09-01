@@ -15,7 +15,7 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $property = Property::all();
+        $property = $property = DB::table('property')->where('name', 'like', '%' . request('search') . '%')->orWhere('street', 'like', '%' . request('search') . '%')->get();
         return view('user.property.property_list', compact('property'));
     }
 
@@ -43,8 +43,8 @@ class PropertyController extends Controller
 
     public function store(Request $request)
     {
-        //
-        $request->validate([
+        $validateData = $request->validate([
+            'image' => 'image|file',
             'type_property_id' => 'required',
             'name' => 'required',
             'price' => 'required',
@@ -58,34 +58,20 @@ class PropertyController extends Controller
             'bathroom' => 'required',
             'garage' => 'required',
             'property_size' => 'required',
-            'features' => 'required'
-        //     // 'picture' => 'image|file|max:1024',
+            'area' => 'required',
+            'features' => 'required',
+            'image_transaction' => 'image|file'
+            // 'picture' => 'image|file|max:1024',
         ]);
+        if ($request->file('image')) {
+            $validateData['image'] = $request->file('image')->store('property-images');
+        }
 
-        // if ($request->file('image')) {
-        //     $request->file('image')->store('property-image');
-        // }
+        if ($request->file('image_transaction')) {
+            $validateData['image_transaction'] = $request->file('image_transaction')->store('transaction-images');
+        }
 
-        Property::create($request->all());
-
-        // $properties = new Property();
-        // if ($request->hasFile('picture')) {
-        //     $file = $request->file('picture');
-        //     $ext = $file->getClientOriginalName();
-        //     $file->move('storage\images\properties', $ext);
-        //     $properties->picture = $ext;
-        // }
-
-        // $properties->name = $request->input('type_property_id');
-        // $properties->name = $request->input('name');
-        // $properties->name = $request->input('price');
-        // $properties->name = $request->input('status_property');
-        // $properties->name = $request->input('street');
-        // $properties->name = $request->input('city_id');
-        // $properties->name = $request->input('provience_id');
-        // $properties->name = $request->input('description');
-        // $properties->name = $request->input('ads_id');
-        // $properties->save();
+        Property::create($validateData);
         // return view('user.property.property_list');
         return redirect()->route('property.index');
 

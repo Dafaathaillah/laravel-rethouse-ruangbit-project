@@ -13,15 +13,19 @@
                         Add Property
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('property.store') }}" id="myForm">
+                        <form method="post" action="{{ route('property.store') }}" id="myForm" enctype="multipart/form-data">
                             @csrf
                             <div style="margin-top: 20px" class="form-group col-12">
                                 <label for="picture">Picture</label>
                                 <div class="input-group">
-                                    <input type="file" name="picture" class="form-control" id="picture"
-                                        aria-describedby="picture">
-                                    <label for="picture" class="input-group-text"
-                                        style="line-height: 1.1rem">Upload</label>
+                                    <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="image"
+                                        aria-describedby="image">
+                                    <label for="image" class="input-group-text" style="line-height: 1.1rem">Upload</label>
+                                    @error('image')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div style="margin-top: 20px" class="form-group col-12 ">
@@ -122,6 +126,21 @@
                                             @endforeach
 
                                         </div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <label for="image_transaction">Receipt of Payment</label>
+                                                <div class="input-group">
+                                                    <input type="file" name="image_transaction" class="form-control @error('image_transaction') is-invalid @enderror" id="image_transaction"
+                                                        aria-describedby="image_transaction">
+                                                    <label for="image_transaction" class="input-group-text" style="line-height: 1.1rem">Upload</label>
+                                                    @error('image_transaction')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -143,6 +162,10 @@
                                           <div class="form-group col-md-4">
                                             <label for="property_size">Property Size</label>
                                             <input type="text" class="form-control" id="property_size" name="property_size">
+                                          </div>
+                                          <div class="form-group col-md-4">
+                                            <label for="area">Area</label>
+                                            <input type="text" class="form-control" id="area" name="area">
                                           </div>
                                     </div>
                                 </div>

@@ -17,4 +17,5 @@ class TypeProperty extends Model
     public function property(){
         return $this->hasMany(Property::class);
     }
+
 }
