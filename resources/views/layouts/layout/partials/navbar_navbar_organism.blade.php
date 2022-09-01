@@ -60,7 +60,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Pages </a>
                         <ul class="dropdown-menu animate fade-up">
- 
+
                             <li><a class="dropdown-item icon-arrow" href="#"> Property Listing </a>
                                 <ul class="submenu dropdown-menu  animate fade-up">
                                     <li><a class="dropdown-item" href="/listing-style-v1.html"> Style 1</a></li>
@@ -86,9 +86,9 @@
                                     <li><a class="dropdown-item" href="/single-detail-v4.html">Style 4</a></li>
                                     <li><a class="dropdown-item" href="/single-detail-v5.html">Style 5</a></li>
                                 </ul>
- 
+
                             </li>
- 
+
                             <li><a class="dropdown-item icon-arrow" href="#"> Agent </a>
                                 <ul class="submenu dropdown-menu  animate fade-up">
                                     <li><a class="dropdown-item" href="/agents-v1.html">Style 1</a></li>
@@ -110,25 +110,25 @@
                             <li><a class="dropdown-item" href="/404.html"> 404 Error </a>
                         </ul>
                     </li>
- 
+
                     <li class="nav-item dropdown">
                         <a class="nav-link active dropdown-toggle" href="#" data-toggle="dropdown"> Blog </a>
                         <ul class="dropdown-menu dropdown-menu-left animate fade-up">
                             <li><a class="dropdown-item" href="/blog.html"> Blog </a>
                             </li>
                             <li><a class="dropdown-item" href="/blog-single.html"> Blog Single </a></li>
- 
+
                         </ul>
                     </li>
- 
+
                     <li class="nav-item"><a class="nav-link" href="/contact.html"> contact </a></li>
                 </ul>
- 
- 
+
+
                 <!-- Search bar.// -->
                 <ul class="navbar-nav">
                     <li>
-                        <a href="#" class="btn btn-primary text-capitalize">
+                        <a href="{{route('property.create')}}" class="btn btn-primary text-capitalize">
                             <i class="fa fa-plus-circle mr-1"></i> add listing</a>
                     </li>
                 </ul>
@@ -137,7 +137,7 @@
                     <div class="container">
                         <div class="input-group ">
                             <form action="#">
- 
+
                                 <div class="row no-gutters mt-3">
                                     <div class="col">
                                         <input class="form-control border-secondary border-right-0 rounded-0"
@@ -150,7 +150,7 @@
                                         </a>
                                     </div>
                                 </div>
- 
+
                             </form>
                         </div>
                     </div>
@@ -162,9 +162,9 @@
     <!-- END NAVBAR -->
     <!-- BREADCRUMB -->
     <div class="bg-theme-overlay">
- 
+
     @yield('title_image')
- 
+
     </div>
     <!-- END BREADCRUMB -->
  </header>

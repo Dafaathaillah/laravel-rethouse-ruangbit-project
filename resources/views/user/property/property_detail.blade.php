@@ -13,7 +13,7 @@
                <ol class="breadcrumb mb-0 bg-light">
                   <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> </a></li>
                   <li class="breadcrumb-item"> <a href="#">Pages</a></li>
-                  <li class="breadcrumb-item active"> <span class="text-capitalize"> Luxury family home</span>
+                  <li class="breadcrumb-item active"> <span class="text-capitalize"> {{$property->name}}</span>
                   </li>
 
                </ol>
@@ -28,13 +28,13 @@
       <div class="row">
          <div class="col-md-9 col-lg-8">
             <div class="single__detail-area-title">
-               <h3 class="text-capitalize">Luxury Family Home</h3>
-               <p> 166 welling street, collingwood, vic 3066</p>
+               <h3 class="text-capitalize">{{$property->name}}</h3>
+               <p> {{$property->street}}</p>
             </div>
          </div>
          <div class="col-md-3 col-lg-4">
             <div class="single__detail-area-price">
-               <h4 class="text-capitalize text-gray">$13.000/mo</h4>
+               <h4 class="text-capitalize text-gray">Rp {{$property->price}}</h4>
                <ul class="list-inline">
                   <li class="list-inline-item">
                      <a href="#" class="badge badge-primary p-2 rounded"><i class="fa fa-exchange"></i></a>
@@ -58,17 +58,17 @@
    <div class="slider__property-carousel-opacity owl-carousel owl-theme">
       <div class="item">
          <a href="#">
-            <img src="images/1920x1080.jpg" alt="" class="img-fluid">
+            <img src="images/property.jpg" alt="" class="img-fluid">
          </a>
       </div>
       <div class="item">
          <a href="#">
-            <img src="images/1920x1080.jpg" alt="" class="img-fluid">
+            <img src="images/property2.jpg" alt="" class="img-fluid">
          </a>
       </div>
       <div class="item">
          <a href="#">
-            <img src="images/1920x1080.jpg" alt="" class="img-fluid">
+            <img src="images/property3.jpg" alt="" class="img-fluid">
          </a>
       </div>
 
@@ -90,28 +90,7 @@
                   <div class="single__detail-desc">
                      <h5 class="text-capitalize detail-heading mt-0">description</h5>
                      <div class="show__more">
-                        <p>Evans Tower very high demand corner junior one bedroom plus a large balcony
-                           boasting
-                           full open NYC views. You need to see the views to believe them. Mint condition
-                           with
-                           new hardwood floors. Lots of closets plus washer and dryer.</p>
-                        <p>
-                           Fully furnished. Elegantly appointed condominium unit situated on premier
-                           location.
-                           PS6. The wide entry hall leads to a large living room with dining area. This
-                           expansive 2 bedroom and 2 renovated marble bathroom apartment has great windows.
-                           Despite the interior views, the apartments Southern and Eastern exposures allow
-                           for
-                           lovely natural light to fill every room. The master suite is surrounded by
-                           handcrafted milkwork and features incredible walk-in closet and storage space.
-                        </p>
-                        <p>Fully furnished. Elegantly appointed condominium unit situated on premier
-                           location. PS6. The wide entry hall leads to a large living room with dining
-                           area. This expansive 2 bedroom and 2 renovated marble bathroom apartment has
-                           great windows. Despite the interior views, the apartments Southern and Eastern
-                           exposures allow for lovely natural light to fill every room. The master suite is
-                           surrounded by handcrafted milkwork and features incredible walk-in closet and
-                           storage space.</p>
+                        <p>{{$property->description}}</p>
                         <a href="javascript:void(0)" class="show__more-button ">read more</a>
                      </div>
                   </div>
@@ -125,20 +104,18 @@
                         <div class="row">
                            <div class="col-md-6 col-lg-6">
                               <ul class="property__detail-info-list list-unstyled">
-                                 <li><b>Property ID:</b> RV151</li>
-                                 <li><b>Price:</b> $484,400</li>
-                                 <li><b>Property Size:</b> 1466 Sq Ft</li>
-                                 <li><b>Bedrooms:</b> 4</li>
-                                 <li><b>Bathrooms:</b> 2</li>
+                                 <li><b>Property ID:</b> {{$property->id}}</li>
+                                 <li><b>Price:</b> Rp {{$property->price}}</li>
+                                 <li><b>Property Size:</b> {{$property->property_size}}</li>
+                                 <li><b>Bedrooms:</b> {{$property->bedroom}}</li>
+                                 <li><b>Bathrooms:</b> {{$property->bathroom}}</li>
                               </ul>
                            </div>
                            <div class="col-md-6 col-lg-6">
                               <ul class="property__detail-info-list list-unstyled">
-                                 <li><b>Garage:</b> 1</li>
-                                 <li><b>Garage Size:</b> 458 SqFt</li>
-                                 <li><b>Year Built:</b> 2019-01-09</li>
-                                 <li><b>Property Type:</b> Full Family Home</li>
-                                 <li><b>Property Status:</b> For rent</li>
+                                 <li><b>Garage:</b> {{$property->garage}}</li>
+                                 <li><b>Property Type:</b> {{$property->typeProperty->name}}</li>
+                                 <li><b>Property Status:</b> {{$property->status_property}}</li>
                               </ul>
                            </div>
                         </div>
@@ -146,20 +123,18 @@
                         <div class="row">
                            <div class="col-md-6 col-lg-6">
                               <ul class="property__detail-info-list list-unstyled">
-                                 <li><b>Property ID:</b> RV151</li>
-                                 <li><b>Price:</b> $484,400</li>
-                                 <li><b>Property Size:</b> 1466 Sq Ft</li>
-                                 <li><b>Bedrooms:</b> 4</li>
-                                 <li><b>Bathrooms:</b> 2</li>
+                                 <li><b>Property ID:</b> {{$property->id}}</li>
+                                 <li><b>Price:</b> Rp {{$property->price}} </li>
+                                 <li><b>Property Size:</b> {{$property->property_size}} m2</li>
+                                 <li><b>Bedrooms:</b> {{$property->bedroom}} </li>
+                                 <li><b>Bathrooms:</b> {{$property->bathroom}}</li>
                               </ul>
                            </div>
                            <div class="col-md-6 col-lg-6">
                               <ul class="property__detail-info-list list-unstyled">
-                                 <li><b>Garage:</b> 1</li>
-                                 <li><b>Garage Size:</b> 458 SqFt</li>
-                                 <li><b>Year Built:</b> 2019-01-09</li>
-                                 <li><b>Property Type:</b> Full Family Home</li>
-                                 <li><b>Property Status:</b> For rent</li>
+                                 <li><b>Garage:</b> {{$property->garage}}</li>
+                                 <li><b>Property Type:</b> {{$property->typeProperty->name}}</li>
+                                 <li><b>Property Status:</b> {{$property->status_property}}</li>
                               </ul>
                            </div>
                         </div>
@@ -175,25 +150,13 @@
                   <div class="single__detail-features">
                      <h5 class="text-capitalize detail-heading">features</h5>
                      <ul class="list-unstyled icon-checkbox">
-                        <li>air conditioning</li>
-                        <li>swiming pool</li>
-                        <li>Central Heating</li>
-                        <li>spa & massage</li>
-                        <li>pets allow</li>
-
-                        <li>air conditioning</li>
-                        <li>gym</li>
-                        <li>alarm</li>
-
-                        <li>window Covering</li>
-                        <li>free wiFi</li>
-                        <li>car parking </li>
+                        <li>{{$property->features}}</li>
                      </ul>
                   </div>
                   <!-- END FEATURES -->
 
                   <!-- FLOR PLAN -->
-                  <div class="single__detail-features">
+                  {{-- <div class="single__detail-features">
                      <h5 class="text-capitalize detail-heading">floor plan</h5>
                      <!-- FLOR PLAN IMAGE -->
                      <div id="accordion" class="floorplan" role="tablist">
@@ -267,9 +230,9 @@
                         </div>
 
                      </div>
-                  </div>
+                  </div> --}}
                   <!-- END FLOR PLAN -->
-                  <div class="single__detail-features">
+                  {{-- <div class="single__detail-features">
                      <h5 class="text-capitalize detail-heading">property video</h5>
                      <div class="single__detail-features-video">
                         <figure class=" mb-0">
@@ -282,7 +245,7 @@
 
                         </figure>
                      </div>
-                  </div>
+                  </div> --}}
 
                   <!-- LOCATION -->
                   <div class="single__detail-features">
@@ -761,7 +724,7 @@
                </div>
                <!-- END FORM FILTER -->
                <!-- FORM FILTER -->
-               <div class="products__filter mb-30">
+               {{-- <div class="products__filter mb-30">
                   <div class="products__filter__group">
                      <div class="products__filter__header">
 
@@ -821,7 +784,7 @@
                         </div>
                      </div>
                   </div>
-               </div>
+               </div> --}}
 
                <!-- END FORM FILTER -->
 
@@ -830,7 +793,7 @@
       </div>
 
       <!-- SIMILIAR PROPERTY -->
-      <div class="row">
+      {{-- <div class="row">
          <div class="col-lg-12">
             <div class="similiar__item">
                <h6 class="text-capitalize detail-heading">
@@ -1392,7 +1355,7 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> --}}
       <!-- END SIMILIAR PROPERTY -->
 
    </div>
