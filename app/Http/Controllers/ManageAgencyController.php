@@ -25,9 +25,9 @@ class ManageAgencyController extends Controller
     public function index()
     {
     //fungsi eloquent menampilkan data menggunakan pagination
-    $agency = $agency = DB::table('agency')->get(); // Mengambil semua isi tabel    
-    return view('admin.agency.index', compact('agency'));    
-    }   
+    $agency = $agency = DB::table('agency')->get(); // Mengambil semua isi tabel
+    return view('admin.agency.index', compact('agency'));
+    }
 
     public function show($id)
     {
@@ -45,7 +45,7 @@ class ManageAgencyController extends Controller
     {
     //melakukan validasi data
         $request->validate([
-            'name' => 'required',        
+            'name' => 'required',
         ]);
         //fungsi eloquent untuk menambah data
         Agency::create($request->all());
@@ -60,12 +60,12 @@ class ManageAgencyController extends Controller
         $agency = DB::table('agency')->where('id', $id)->first();;
         return view('admin.agency.edit', compact('agency'));
     }
-    
+
     public function update(Request $request, $id)
     {
         //melakukan validasi data
         $request->validate([
-            'name' => 'required',        
+            'name' => 'required',
             // 'agent_status' => 'required',
         ]);
         //fungsi eloquent untuk mengupdate data inputan kita
@@ -73,7 +73,7 @@ class ManageAgencyController extends Controller
         //jika data berhasil diupdate, akan kembali ke halaman utama
         return redirect()->route('admin.agency.index')->with('success', 'Agency Update Successfully!');;
         }
-        
+
         public function destroy( $id)
         {
         //fungsi eloquent untuk menghapus data

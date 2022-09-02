@@ -6,8 +6,7 @@ Website: https://www.nobleui.com
 Contact: nobleui123@gmail.com
 Purchase: https://1.envato.market/nobleui_admin
 License: You must have a valid license purchased only from above link or https://themeforest.net/user/nobleui/portfolio/ in order to legally use the theme for your project.
--->
-<html lang="en">
+--> <html lang="en">
 
 <head>
 	<meta charset="UTF-8">
@@ -102,7 +101,7 @@ License: You must have a valid license purchased only from above link or https:/
 	<script src="{{ asset('assets/assets/datatables.net/jquery.dataTables.js') }}"></script>
 	<script src="{{ asset('assets/assets/datatables.net-bs4/dataTables.bootstrap4.js') }}">
 		<script>
-	<script src="{{ asset('assets/js/data-table.js') }}">
+	<script src="{{ asset('assets/js/data-table.js') }}"><script>
 	</script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	@if (session('success'))
@@ -119,5 +118,4 @@ License: You must have a valid license purchased only from above link or https:/
         </script>
 	@endif
 </body>
-
-</html>
+    </html>

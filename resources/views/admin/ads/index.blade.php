@@ -1,224 +1,104 @@
 @extends('layouts\layout_admin\master_admin')
 
 @section('title')
-   | Dashboard-Admin
+| Dashboard-Admin
 @endsection
 
 @section('content')
-<div class="main-wrapper">
-      <div class="page-content">
-
-         {{-- <nav class="page-breadcrumb">
-            <ol class="breadcrumb">
-               <li class="breadcrumb-item"><a href="#">Tables</a></li>
-               <li class="breadcrumb-item active" aria-current="page">Data Table</li>
-            </ol>
-         </nav> --}}
-
-         <div class="row">
-            <div class="col-md-12 grid-margin stretch-card">
-         <div class="card">
-           <div class="card-body">
-             <h6 class="card-title">User Managements</h6>
-             {{-- <p class="card-description">Read the <a href="https://datatables.net/" target="_blank"> Official DataTables Documentation </a>for a full list of instructions and other options.</p> --}}
-             <div class="table-responsive">
-               <table id="dataTableExample" class="table">
-                 <thead>
-                   <tr>
-                     <th>Name</th>
-                     <th>Email</th>
-                     <th>Phone</th>
-                     <th>Gender</th>
-                     <th>Status</th>
-                     <th>Action</th>
-                   </tr>
-                 </thead>
-                 <tbody>
-                   <tr>
-                     <td>Tiger Nixon</td>
-                     <td>System Architect</td>
-                     <td>Edinburgh</td>
-                     <td>61</td>
-                     <td>2011/04/25</td>
-                     <td>$320,800</td>
-                   </tr>
-                   <tr>
-                     <td>Garrett Winters</td>
-                     <td>Accountant</td>
-                     <td>Tokyo</td>
-                     <td>63</td>
-                     <td>2011/07/25</td>
-                     <td>$170,750</td>
-                   </tr>
-                   <tr>
-                     <td>Ashton Cox</td>
-                     <td>Junior Technical Author</td>
-                     <td>San Francisco</td>
-                     <td>66</td>
-                     <td>2009/01/12</td>
-                     <td>$86,000</td>
-                   </tr>
-                   <tr>
-                     <td>Cedric Kelly</td>
-                     <td>Senior Javascript Developer</td>
-                     <td>Edinburgh</td>
-                     <td>22</td>
-                     <td>2012/03/29</td>
-                     <td>$433,060</td>
-                   </tr>
-                   <tr>
-                     <td>Airi Satou</td>
-                     <td>Accountant</td>
-                     <td>Tokyo</td>
-                     <td>33</td>
-                     <td>2008/11/28</td>
-                     <td>$162,700</td>
-                   </tr>
-                   <tr>
-                     <td>Brielle Williamson</td>
-                     <td>Integration Specialist</td>
-                     <td>New York</td>
-                     <td>61</td>
-                     <td>2012/12/02</td>
-                     <td>$372,000</td>
-                   </tr>
-                   <tr>
-                     <td>Herrod Chandler</td>
-                     <td>Sales Assistant</td>
-                     <td>San Francisco</td>
-                     <td>59</td>
-                     <td>2012/08/06</td>
-                     <td>$137,500</td>
-                   </tr>
-                   <tr>
-                     <td>Rhona Davidson</td>
-                     <td>Integration Specialist</td>
-                     <td>Tokyo</td>
-                     <td>55</td>
-                     <td>2010/10/14</td>
-                     <td>$327,900</td>
-                   </tr>
-                   <tr>
-                     <td>Colleen Hurst</td>
-                     <td>Javascript Developer</td>
-                     <td>San Francisco</td>
-                     <td>39</td>
-                     <td>2009/09/15</td>
-                     <td>$205,500</td>
-                   </tr>
-                   <tr>
-                     <td>Sonya Frost</td>
-                     <td>Software Engineer</td>
-                     <td>Edinburgh</td>
-                     <td>23</td>
-                     <td>2008/12/13</td>
-                     <td>$103,600</td>
-                   </tr>
-                   <tr>
-                     <td>Jena Gaines</td>
-                     <td>Office Manager</td>
-                     <td>London</td>
-                     <td>30</td>
-                     <td>2008/12/19</td>
-                     <td>$90,560</td>
-                   </tr>
-                   <tr>
-                     <td>Quinn Flynn</td>
-                     <td>Support Lead</td>
-                     <td>Edinburgh</td>
-                     <td>22</td>
-                     <td>2013/03/03</td>
-                     <td>$342,000</td>
-                   </tr>
-                   <tr>
-                     <td>Charde Marshall</td>
-                     <td>Regional Director</td>
-                     <td>San Francisco</td>
-                     <td>36</td>
-                     <td>2008/10/16</td>
-                     <td>$470,600</td>
-                   </tr>
-                   <tr>
-                     <td>Haley Kennedy</td>
-                     <td>Senior Marketing Designer</td>
-                     <td>London</td>
-                     <td>43</td>
-                     <td>2012/12/18</td>
-                     <td>$313,500</td>
-                   </tr>
-                   <tr>
-                 <td>Tatyana Fitzpatrick</td>
-                     <td>Regional Director</td>
-                     <td>London</td>
-                     <td>19</td>
-                     <td>2010/03/17</td>
-                     <td>$385,750</td>
-                   </tr>
-                   <tr>
-                     <td>Michael Silva</td>
-                     <td>Marketing Designer</td>
-                     <td>London</td>
-                     <td>66</td>
-                     <td>2012/11/27</td>
-                     <td>$198,500</td>
-                   </tr>
-                   <tr>
-                     <td>Paul Byrd</td>
-                     <td>Chief Financial Officer (CFO)</td>
-                     <td>New York</td>
-                     <td>64</td>
-                     <td>2010/06/09</td>
-                     <td>$725,000</td>
-                   </tr>
-                   <tr>
-                     <td>Gloria Little</td>
-                     <td>Systems Administrator</td>
-                     <td>New York</td>
-                     <td>59</td>
-                     <td>2009/04/10</td>
-                     <td>$237,500</td>
-                   </tr>
-                   <tr>
-                     <td>Bradley Greer</td>
-                     <td>Software Engineer</td>
-                     <td>London</td>
-                     <td>41</td>
-                     <td>2012/10/13</td>
-                     <td>$132,000</td>
-                   </tr>
-                   <tr>
-                     <td>Dai Rios</td>
-                     <td>Personnel Lead</td>
-                     <td>Edinburgh</td>
-                     <td>35</td>
-                     <td>2012/09/26</td>
-                     <td>$217,500</td>
-                   </tr>
-                   <tr>
-                     <td>Jenette Caldwell</td>
-                     <td>Development Lead</td>
-                     <td>New York</td>
-                     <td>30</td>
-                     <td>2011/09/03</td>
-                     <td>$345,000</td>
-                   </tr>
-                   <tr>
-                     <td>Yuri Berry</td>
-                     <td>Chief Marketing Officer (CMO)</td>
-                     <td>New York</td>
-                     <td>40</td>
-                     <td>2009/06/25</td>
-                     <td>$675,000</td>
-                   </tr>
-                 </tbody>
-               </table>
-             </div>
-           </div>
-         </div>
+{{-- <nav class="page-breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Tables</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+    </ol>
+</nav> --}}
+<div class="row">
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 grid-margin stretch-card">
+                        <div class="card-body">
+                            <h6 class="card-title">Manage Logo</h6>
+                            <br>
+                            {{-- <a class="btn btn-primary px-1 py-1" href="{{ route('admin.logo.create')}}"><i
+                                class="link-icon p-1" data-feather="plus"></i>Add Logo</a> --}}
+                            {{-- <p class="card-description">Read the <a href="https://datatables.net/" target="_blank">
+                                    Official DataTables Documentation </a>for a full list of instructions and other
+                                options.
+                            </p> --}}
+                            <div class="table-responsive">
+                                <table id="dataTableExample" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Picture</th>
+                                            <th>Type Property</th>
+                                            <th>Price</th>
+                                            <th>Request Ads</th>
+                                            <th>Start ADS</th>
+                                            <th>End ADS</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $no = 0;
+                                        ?>
+                                        @foreach ($ads as $adv )
+                                        <tr>
+                                            <td>{{ $no++ +1 }}</td>
+                                            <td><img src="{{asset('storage/images/logo/20220831023629.jpg')}}"
+                                                    class="rounded float-left" style="width: 100px"></td>
+                                            <td>
+                                                <?php
+                                                if ($adv->type_property_id == 1) {
+                                                   echo "House";
+                                                }elseif ($adv->type_property_id == 2) {
+                                                    echo "Apartment";
+                                                }elseif ($adv->type_property_id == 3) {
+                                                    echo "Land";
+                                                }
+                                            ?>
+                                            </td>
+                                            <td>{{number_format($adv->price)}}</td>
+                                            <td>
+                                                <?php
+                                                if ($adv->ads_id == 1) {
+                                                   echo "No ADS";
+                                                }elseif ($adv->ads_id == 2) {
+                                                    echo "1 bulan | Rp 125,000.00";
+                                                }elseif ($adv->ads_id == 3) {
+                                                    echo "3 bulan | Rp 375,000.00";
+                                                }elseif ($adv->ads_id == 4) {
+                                                    echo "6 bulan | Rp 750,000.00";
+                                                }
+                                            ?>
+                                            </td>
+                                            <td>{{($adv->start_ads)}}</td>
+                                            <td>{{($adv->end_ads)}}</td>
+                                            <td>
+                                                @if ($adv->start_ads == null)
+                                                    <span class="badge badge-danger text-dark">Free</span>
+                                                @elseif ($adv->start_ads != null)
+                                                    <span class="badge badge-primary text-dark">Advertise</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-primary px-1 py-1" href="{{ route('admin.ads.edit', $adv->id)}}"><i
+                                                    class="link-icon p-1" data-feather="edit"></i></a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    {{ $ads->links() }}
+                </div>
             </div>
-         </div>
-
-      </div>
-   </div>
+        </div>
+    </div>
 </div>
 @endsection

@@ -30,7 +30,9 @@ class Property extends Model
         'property_size',
         'area',
         'features',
-        'image_transaction'
+        'image_transaction',
+        'start_ads',
+        'end_ads'
     ];
 
     public function typeProperty(){

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ads;
+use App\Models\Property;
 use Illuminate\Http\Request;
 use DB;
 
@@ -25,7 +27,29 @@ class ManageAdsController extends Controller
     public function index()
     {
     //fungsi eloquent menampilkan data menggunakan pagination
-    $ads = $ads = DB::table('advertisements')->get(); // Mengambil semua isi tabel    
-    return view('admin.ads.index', compact('ads'));    
-    }   
+    $ads = Property::simplePaginate(7); // Mengambil semua isi tabel
+    return view('admin.ads.index', compact('ads'));
+    }
+
+    public function edit($id)
+    {
+        $ads = Property::find($id);
+        return view('admin.ads.edit', compact('ads'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'start_ads' => 'required',
+            'end_ads' => 'required'
+        ]);
+        $ads = Property::find($id);
+
+
+        $ads->name = $request->input('ads_start');
+        $ads->name = $request->input('ads_start');
+        $ads->update();
+        return redirect()->route('admin.ads.index')-> with('success', 'Ads Berhasil Ditambah');
+    }
+
 }
