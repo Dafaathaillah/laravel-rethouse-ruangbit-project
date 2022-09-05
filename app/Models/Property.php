@@ -14,6 +14,7 @@ class Property extends Model
     public $timestamps = false;
     protected $fillable=[
         'type_property_id',
+        'id_user',
         'name',
         'price',
         'image',
@@ -35,6 +36,10 @@ class Property extends Model
 
     public function typeProperty(){
         return $this->belongsTo(TypeProperty::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class, 'id_user');
     }
 
 }
