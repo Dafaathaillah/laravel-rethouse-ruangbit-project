@@ -16,9 +16,9 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-12 grid-margin stretch-card">
+                    <div class="col-md-12 grid-margin">
                         <div class="card-body">
-                            <h6 class="card-title">Manage Logo</h6>
+                            <h6 class="card-title">Manage ADS</h6>
                             <br>
                             {{-- <a class="btn btn-primary px-1 py-1" href="{{ route('admin.logo.create')}}"><i
                                 class="link-icon p-1" data-feather="plus"></i>Add Logo</a> --}}
@@ -35,6 +35,7 @@
                                             <th>Type Property</th>
                                             <th>Price</th>
                                             <th>Request Ads</th>
+                                            <th>Bukti Transfer</th>
                                             <th>Start ADS</th>
                                             <th>End ADS</th>
                                             <th>Status</th>
@@ -75,6 +76,7 @@
                                                 }
                                             ?>
                                             </td>
+                                            <td>{{($adv->image_transaction)}}</td>
                                             <td>{{($adv->start_ads)}}</td>
                                             <td>{{($adv->end_ads)}}</td>
                                             <td>

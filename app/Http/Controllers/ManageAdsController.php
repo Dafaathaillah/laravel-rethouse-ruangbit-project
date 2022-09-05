@@ -46,8 +46,8 @@ class ManageAdsController extends Controller
         $ads = Property::find($id);
 
 
-        $ads->name = $request->input('ads_start');
-        $ads->name = $request->input('ads_start');
+        $ads->start_ads = $request->input('start_ads');
+        $ads->end_ads = $request->input('end_ads');
         $ads->update();
         return redirect()->route('admin.ads.index')-> with('success', 'Ads Berhasil Ditambah');
     }

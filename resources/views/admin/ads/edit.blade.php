@@ -30,7 +30,7 @@
                         <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker"
                             inline="true">
                             <label for="example">start ads...</label>
-                            <input placeholder="Select start date" type="date" name="start_ads" value="{{ $ads->start_ads }} id="satrt_ads" class="form-control">
+                            <input placeholder="Select start date" type="date" name="start_ads" value="{{ $ads->start_ads }}" id="datepicker" class="form-control">
                             <i class="fas fa-calendar input-prefix"></i>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                         <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker"
                             inline="true">
                             <label for="example">end_ads...</label>
-                            <input placeholder="Select end date" type="date" name="end_ads" value="{{ $ads->end_ads }} id="end_ands" class="form-control">
+                            <input placeholder="Select end date" type="date" name="end_ads" value="{{ $ads->end_ads }}" id="datepicker" class="form-control">
                             <i class="fas fa-calendar input-prefix"></i>
                         </div>
                     </div>
@@ -49,4 +49,11 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function() {
+ $("#datepicker").datepicker({
+     format: 'dd-mm-yy'
+ });
+})
+</script>
 @endsection
