@@ -60,6 +60,7 @@ Route::get('/admin/agencies/delete/{id}', [ManageAgencyController::class,'destro
 
 Route::get('/admin/advertisements', [ManageAdsController::class,'index'])->name('admin.ads.index');
 Route::get('/admin/advertisements/create', [ManageAdsController::class,'create'])->name('admin.ads.create');
+Route::get('/admin/advertisements/show/{id}', [ManageAdsController::class,'show'])->name('admin.ads.show');
 Route::get('/admin/edit/advertisements/{id}', [ManageAdsController::class,'edit'])->name('admin.ads.edit');
 Route::put('/admin/update/advertisements/{id}', [ManageAdsController::class,'update'])->name('admin.ads.update');
 

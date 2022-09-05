@@ -37,11 +37,17 @@ class ManageAdsController extends Controller
         return view('admin.ads.edit', compact('ads'));
     }
 
+    public function show($id)
+    {
+        $ads = Property::find($id);
+        return view('admin.ads.detail', compact('ads'));
+    }
+
     public function update(Request $request, $id)
     {
         $request->validate([
-            'start_ads' => 'required',
-            'end_ads' => 'required'
+            'start_ads' => 'nullable',
+            'end_ads' => 'nullable'
         ]);
         $ads = Property::find($id);
 
