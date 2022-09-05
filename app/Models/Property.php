@@ -15,6 +15,7 @@ class Property extends Model
     protected $fillable=[
         'type_property_id',
         'name',
+        'id_user',
         'price',
         'image',
         'status_property',
@@ -37,6 +38,10 @@ class Property extends Model
 
     public function typeProperty(){
         return $this->belongsTo(TypeProperty::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class, 'id_user');
     }
 
 }

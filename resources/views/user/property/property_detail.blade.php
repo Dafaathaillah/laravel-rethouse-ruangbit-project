@@ -481,11 +481,11 @@
 
                            <ul class="list-unstyled mb-0">
                               <li>
-                                 <h5 class="text-capitalize">jhon doe</h5>
+                                 <h5 class="text-capitalize">{{$property->user->name}}</h5>
                               </li>
-                              <li><a href="tel:123456"><i class="fa fa-phone-square mr-1"></i>(123)456-7890</a></li>
+                              <li><a href="tel:123456"><i class="fa fa-phone-square mr-1"></i>{{$property->user->contact}}</a></li>
                               <li><a href="javascript:void(0)"><i class=" fa fa-building mr-1"></i>
-                                    Company name</a>
+                                    {{$property->user->company}}</a>
                               </li>
                               <li> <a href="javascript:void(0)" class="text-primary">View My Listing</a>
                               </li>

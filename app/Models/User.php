@@ -19,15 +19,15 @@ class User extends Model
      * @var array<int, string>
      */
     protected $table = "users";
-    protected $primaryKey = 'id'; 
+    protected $primaryKey = 'id';
     protected $fillable = [
-        'role_id',        
+        'role_id',
         'user_img',
-        'name',        
+        'name',
         'email',
-        'contact',        
+        'contact',
         'gender',
-        'agent_status',        
+        'agent_status',
         'password',
     ];
 
@@ -49,4 +49,8 @@ class User extends Model
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function property(){
+        return $this->hasMany(Property::class);
+    }
 }
