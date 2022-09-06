@@ -22,7 +22,7 @@
                      <a href="#">
                          <div class="card__image-hover-style-v3">
                              <div class="card__image-hover-style-v3-thumb h-230">
-                                 <img src="images/600x400.jpg" alt="" class="img-fluid w-100">
+                                 <img src="{{ asset('images/600x400.jpg') }}" alt="" class="img-fluid w-100">
                              </div>
                              <div class="overlay">
                                  <div class="desc">
