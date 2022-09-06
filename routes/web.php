@@ -6,6 +6,7 @@ use App\Http\Controllers\ManageUserController;
 use App\Http\Controllers\ManageAdsController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KprController;
 use App\Http\Controllers\ManageAgencyController;
 use App\Http\Controllers\ManageLogoController;
 use App\Http\Controllers\ManageTermController;
@@ -91,3 +92,5 @@ Route::get('/property/show/{id}', [PropertyController::class,'show'])->name('pro
 Route::get('/property/edit{id}', [PropertyController::class,'edit'])->name('property.edit');
 Route::put('/property/update{id}', [PropertyController::class,'update'])->name('property.update');
 Route::get('/property/delete/{id}', [PropertyController::class,'destroy'])->name('property.destroy');
+
+Route::resource('kpr', KprController::class);
