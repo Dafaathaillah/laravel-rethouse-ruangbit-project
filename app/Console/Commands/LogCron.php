@@ -14,7 +14,7 @@ class LogCron extends Command
      *
      * @var string
      */
-    protected $signature = 'delete:property';
+    protected $signature = 'delete:end_ads';
 
     /**
      * The console command description.
