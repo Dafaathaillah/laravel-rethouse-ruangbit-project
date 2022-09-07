@@ -27,11 +27,12 @@ class PropertyController extends Controller
      */
     public function create()
     {
+        $users = $users = DB::table('users')->get();
         $ad_lists = $ad_lists = DB::table('ad_lists')->get();
         $city = $city = DB::table('city')->get();
         $province = $province = DB::table('province')->get();
         $type_property = $type_property = DB::table('type_property')->get();
-        return view('user.property.create_property', compact('city','type_property', 'province','ad_lists'));
+        return view('user.property.create_property', compact('city','type_property', 'province','ad_lists','users'));
     }
 
     /**
@@ -80,8 +81,15 @@ class PropertyController extends Controller
             $file->move('storage/property-images', $ext);
             $prt->image = $ext;
         }
+        if ($request->hasFile('image_transaction')) {
+            $file = $request->file('image_transaction');
+            $ext = $file->getClientOriginalName();
+            $file->move('storage/transaction-images', $ext);
+            $prt->image = $ext;
+        }
 
         $prt->name = $request->input('name');
+        // $prt->id_user = $request->input('id_user');
         $prt->type_property_id = $request->input('type_property_id');
         $prt->price = $request->input('price');
         $prt->status_property = $request->input('status_property');
