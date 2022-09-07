@@ -11,8 +11,8 @@
          <div class="col-lg-12">
             <div class="section__breadcrumb-v1">
                <ol class="breadcrumb mb-0 bg-light">
-                  <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> </a></li>
-                  <li class="breadcrumb-item"> <a href="#">Pages</a></li>
+                  <li class="breadcrumb-item"><a href="{{ route('property.index')}}"><i class="fa fa-home"></i> </a></li>
+                  <li class="breadcrumb-item"> <a href="{{ route('property.index')}}">Pages</a></li>
                   <li class="breadcrumb-item active"> <span class="text-capitalize"> {{$property->name}}</span>
                   </li>
 
@@ -58,7 +58,7 @@
    <div class="slider__property-carousel-opacity owl-carousel owl-theme">
       <div class="item">
          <a href="#">
-            <img src="images/property.jpg" alt="" class="img-fluid">
+            <img src="{{ asset('storage/property-images/' . $property->image) }}" alt="" class="img-fluid">
          </a>
       </div>
       <div class="item">

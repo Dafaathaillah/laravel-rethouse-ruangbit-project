@@ -96,6 +96,7 @@ class PropertyController extends Controller
         $prt->street = $request->input('street');
         $prt->city_id = $request->input('city_id');
         $prt->provience_id = $request->input('provience_id');
+        $prt->description = $request->input('description');
         $prt->ads_id = $request->input('ads_id');
         $prt->bedroom = $request->input('bedroom');
         $prt->bathroom = $request->input('bathroom');
