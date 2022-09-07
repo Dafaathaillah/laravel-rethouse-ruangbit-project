@@ -6,6 +6,7 @@ use App\Http\Controllers\ManageUserController;
 use App\Http\Controllers\ManageAdsController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KprAdminController;
 use App\Http\Controllers\KprController;
 use App\Http\Controllers\ManageAgencyController;
 use App\Http\Controllers\ManageLogoController;
@@ -94,3 +95,6 @@ Route::put('/property/update{id}', [PropertyController::class,'update'])->name('
 Route::get('/property/delete/{id}', [PropertyController::class,'destroy'])->name('property.destroy');
 
 Route::resource('kpr', KprController::class);
+
+
+Route::resource('kpr-admin', KprAdminController::class);
