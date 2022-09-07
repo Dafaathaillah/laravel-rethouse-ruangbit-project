@@ -147,7 +147,7 @@
 
                                     </ul>
                                 </div>
-                                <img alt="" src="{{ asset('storage/' . $prts->image) }}" class="img-fluid h-40 ">
+                                <img alt="" src="{{ asset('storage/property-images/' . $prts->image) }}" class="img-fluid h-40 ">
                             </div>
                         </div>
                     </a>
@@ -222,7 +222,7 @@
 
                                     </ul>
                                 </div>
-                                <img alt="" src="{{ asset('storage/' . $prts->image) }}" class="img-fluid h-40 ">
+                                <img alt="" src="{{ asset('storage/property-images/' . $prts->image) }}" class="img-fluid h-40 ">
                             </div>
                         </div>
                     </a>
