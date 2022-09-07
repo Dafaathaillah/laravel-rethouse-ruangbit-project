@@ -178,7 +178,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="col border-left">
                                                         <div class="row">
                                                             <div class="col-6 px-0">
                                                                 <span class="label">Tenor Max:</span>
@@ -228,7 +228,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="col border-left">
                                                         <div class="row">
                                                             <div class="col-6 px-0">
                                                                 <span class="label">Tenor Max:</span>
@@ -278,7 +278,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="col border-left">
                                                         <div class="row">
                                                             <div class="col-6 px-0">
                                                                 <span class="label">Tenor Max:</span>
