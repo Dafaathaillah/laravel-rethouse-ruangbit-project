@@ -6,6 +6,7 @@ use App\Models\Property;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
+use phpDocumentor\Reflection\Types\Null_;
 
 class LogCron extends Command
 {
@@ -14,7 +15,7 @@ class LogCron extends Command
      *
      * @var string
      */
-    protected $signature = 'delete:end_ads';
+    protected $signature = 'update:end_ads';
 
     /**
      * The console command description.
@@ -44,7 +45,7 @@ class LogCron extends Command
         // Log::info("Cron is working fine!");
 
         Property::where('end_ads', '<', Carbon::now())->each(function ($property) {
-            $property->delete();
+            $property->update(['start_ads' => null, 'end_ads' => null]);
         });
 
         /*

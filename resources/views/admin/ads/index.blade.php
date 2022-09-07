@@ -66,9 +66,9 @@
                                             <td>{{($adv->start_ads)}}</td>
                                             <td>{{($adv->end_ads)}}</td>
                                             <td>
-                                                @if ($adv->start_ads == null)
+                                                @if ($adv->end_ads == null)
                                                 <span class="badge badge-danger text-dark">Free</span>
-                                                @elseif ($adv->start_ads != null)
+                                                @elseif ($adv->end_ads != null)
                                                 <span class="badge badge-primary text-dark">Advertise</span>
                                                 @endif
                                             </td>
