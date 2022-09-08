@@ -47,7 +47,7 @@
                                         @foreach ($ads as $adv )
                                         <tr>
                                             <td>{{ $no++ +1 }}</td>
-                                            <td><img src="{{asset('storage/images/logo/20220831023629.jpg')}}"
+                                            <td><img src="{{asset('storage/property-images/' .$adv->image)}}"
                                                     class="rounded float-left" style="width: 100px"></td>
                                             <td>
                                                 <?php

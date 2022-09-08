@@ -27,11 +27,12 @@ class PropertyController extends Controller
      */
     public function create()
     {
+        $users = $users = DB::table('users')->get();
         $ad_lists = $ad_lists = DB::table('ad_lists')->get();
         $city = $city = DB::table('city')->get();
         $province = $province = DB::table('province')->get();
         $type_property = $type_property = DB::table('type_property')->get();
-        return view('user.property.create_property', compact('city','type_property', 'province','ad_lists'));
+        return view('user.property.create_property', compact('city','type_property', 'province','ad_lists','users'));
     }
 
     /**
@@ -89,6 +90,7 @@ class PropertyController extends Controller
         $prt->street = $request->input('street');
         $prt->city_id = $request->input('city_id');
         $prt->provience_id = $request->input('provience_id');
+        $prt->description = $request->input('description');
         $prt->ads_id = $request->input('ads_id');
         $prt->bedroom = $request->input('bedroom');
         $prt->bathroom = $request->input('bathroom');

@@ -44,7 +44,7 @@
                         <ol class="breadcrumb mb-0 bg-light">
                             <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> </a></li>
                             <li class="breadcrumb-item"> <a href="#">Property</a></li>
-                            <li class="breadcrumb-item active"> <span class="text-capitalize"> Luxury family home</span>
+                            <li class="breadcrumb-item active"> <span class="text-capitalize"> List Property</span>
                             </li>
 
                         </ol>
@@ -155,7 +155,9 @@
                                             <div class="col-md-4 col-lg-4">
                                                 <div class="card__image card__box-v1">
                                                     <div class="card__image-header h-250">
-                                                        <div class="ribbon text-capitalize">featured</div>
+                                                        @if ($prt->end_ads != null)
+                                                            <div class="ribbon text-capitalize">Advertise</div>
+                                                        @endif
                                                         @if ($prt->image)
                                                             <img src="{{ asset('storage/property-images/' . $prt->image) }}"
                                                                 alt="" class="img-fluid w100 img-transition">
