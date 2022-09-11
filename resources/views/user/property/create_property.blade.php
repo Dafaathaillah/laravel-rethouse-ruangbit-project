@@ -18,18 +18,34 @@
                             @csrf
                             <div style="margin-top: 20px" class="form-group col-12">
                                 <label for="picture">Picture</label>
-                                <div class="input-group">
-                                    <input type="file" name="image"
-                                        class="form-control @error('image') is-invalid @enderror" id="image"
-                                        aria-describedby="image">
-                                    <label for="image" class="input-group-text"
-                                        style="line-height: 1.1rem">Upload</label>
+                                <div class="dropzone dz-clickable @error('image') is-invalid @enderror" name="image[]"
+                                    id="image">
+                                    <div class="dz-default dz-message"><h5>Drop images here</h5></div>
                                     @error('image')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
+                                <script type="text/javascript">
+                                    Dropzone.options.dropzone = {
+                                        maxFilesize: 12,
+                                        renameFile: function(file) {
+                                            var dt = new Date();
+                                            var time = dt.getTime();
+                                            return time + file.name;
+                                        },
+                                        acceptedFiles: ".jpeg,.jpg,.png,.gif",
+                                        addRemoveLinks: true,
+                                        timeout: 5000,
+                                        success: function(file, response) {
+                                            console.log(response);
+                                        },
+                                        error: function(file, response) {
+                                            return false;
+                                        }
+                                    };
+                                </script>
                             </div>
                             <div style="margin-top: 20px" class="form-group col-12 ">
                                 <label for="name">Name</label>
@@ -49,36 +65,39 @@
                                     <option value="Sold OUt">Sold out</option>
                                 </select>
                             </div>
-                            <div style="margin-top: 20px" class="form-group col-12 ">
+                            <div style="margin-top: 20px" class="form-group col-md-12 ">
                                 <label for="street">Address</label>
                                 <input type="text" class="form-control" id="street" name="street"
                                     placeholder="Address">
                             </div>
-                            <div style="margin-top: 20px" class="form-group col-12 ">
-                                <label for="city_id">City</label>
-                                <select class="form-control" id="city_id" name="city_id">
-                                    <option value="#" disabled selected>Choose City</option>
-                                    @foreach ($city as $cty)
-                                        {
-                                        <option value="<?= $cty->id ?>">
-                                            <?= $cty->name ?>
-                                        </option>
-                                        }
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div style="margin-top: 20px" class="form-group col-12 ">
-                                <label for="provinsi">Provinsi</label>
-                                <select class="form-control" id="provience_id" name="provience_id">
-                                    <option value="#" disabled selected>Choose Provience</option>
-                                    @foreach ($province as $prov)
-                                        {
-                                        <option value="<?= $prov->id ?>">
-                                            <?= $prov->name ?>
-                                        </option>
-                                        }
-                                    @endforeach
-                                </select>
+                            <div class="row">
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <div class="form-group col-md-5 ">
+                                    <label for="city_id">City</label>
+                                    <select class="form-control" id="city_id" name="city_id">
+                                        <option value="#" disabled selected>Choose City</option>
+                                        @foreach ($city as $cty)
+                                            {
+                                            <option value="<?= $cty->id ?>">
+                                                <?= $cty->name ?>
+                                            </option>
+                                            }
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-5 ">
+                                    <label for="provinsi">Province</label>
+                                    <select class="form-control" id="provience_id" name="provience_id">
+                                        <option value="#" disabled selected>Choose Provience</option>
+                                        @foreach ($province as $prov)
+                                            {
+                                            <option value="<?= $prov->id ?>">
+                                                <?= $prov->name ?>
+                                            </option>
+                                            }
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                             <div style="margin-top: 20px" class="form-group col-12 ">
                                 <label for="deskripsi">Description Property</label>
@@ -97,58 +116,18 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div style="margin-top: 20px" class="form-group col-md-12">
-                                <label for="picture">Add ADS</label>
-                                <div class="input-group">
-                                    <button class="btn btn-primary" type="button" data-toggle="collapse"
-                                        data-target="#adscard" aria-expanded="false" aria-controls="collapseExample">
-                                        Click this button if you want to show list ads
-                                    </button>
-                                    <div class="collapse" id="adscard">
-                                        <div class="card mt-2">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    @foreach ($ad_lists as $ads)
-                                                        <div class="col-md-6 mt-3">
-                                                            <div class="card bg-light" style="width: 20rem">
-                                                                <div class="card-body text-center">
-                                                                    <h5 class="card-title">{{ $ads->title }}</h5>
-                                                                    <p class="card-text">{{ $ads->description }}</p>
-                                                                    <p class="card-text"><small class="text-muted">Rp
-                                                                            {{ $ads->ad_price }}</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="card-footer">
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio"
-                                                                            name="ads_id" id="ads_id"
-                                                                            value="<?= $ads->id ?>">
-                                                                        <label class="form-check-label"
-                                                                            for="ads_id">Pilih</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    @endforeach
-
-                                                </div>
-                                                <label for="image_transaction" class="mt-3">Receipt of Payment</label>
-                                                <div class="input-group">
-                                                    <input type="file" name="image_transaction"
-                                                        class="form-control @error('image_transaction') is-invalid @enderror"
-                                                        id="image_transaction" aria-describedby="image_transaction">
-                                                    <label for="image_transaction" class="input-group-text"
-                                                        style="line-height: 1.1rem">Upload</label>
-                                                    @error('image_transaction')
-                                                        <div class="invalid-feedback">
-                                                            {{ $message }}
-                                                        </div>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div style="margin-top: 20px" class="form-group col-12 ">
+                                <label for="type_property_id">Advertise</label>
+                                <select class="form-control" id="type_property_id" name="type_property_id">
+                                    <option value="#" disabled selected>Choose Advertise</option>
+                                    @foreach ($ad_lists as $ads)
+                                        {
+                                        <option value="<?= $ads->id ?>">
+                                            <?= $ads->title ?>
+                                        </option>
+                                        }
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="card">
                                 <div class="card-body">
@@ -178,19 +157,6 @@
                                             <label for="features">Features</label>
                                             <textarea class="form-control" id="features" name="features" placeholder="Features of Property"></textarea>
                                         </div>
-                                        {{-- <div style="margin-top: 20px" class="form-group col-12 ">
-                                            <label for="id_user">User</label>
-                                            <select class="form-control" id="id_user" name="id_user">
-                                                <option value="#" disabled selected>Choose User</option>
-                                                @foreach ($users as $usr)
-                                                    {
-                                                    <option value="<?= $usr->id ?>">
-                                                        <?= $usr->name ?>
-                                                    </option>
-                                                    }
-                                                @endforeach
-                                            </select>
-                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -209,3 +175,32 @@
         </div>
     </div>
 @endsection
+
+{{-- @push('script-internal')
+   <script>
+      var uploadedDocumentMap = {}
+      Dropzone.options.documentDropzone = {
+         url: '{{ route('property.storeMedia') }}',
+         maxFilesize: 2, // MB
+         addRemoveLinks: true,
+         acceptedFiles: ".jpeg,.jpg,.png,.gif",
+         headers: {
+            'X-CSRF-TOKEN': "{{ csrf_token() }}"
+         },
+         success: function(file, response) {
+            $('form').append('<input type="hidden" name="image[]" value="' + response.name + '">')
+            uploadedDocumentMap[file.name] = response.name
+         },
+         removedfile: function(file) {
+            file.previewElement.remove()
+            var name = ''
+            if (typeof file.file_name !== 'undefined') {
+               name = file.file_name
+            } else {
+               name = uploadedDocumentMap[file.name]
+            }
+            $('form').find('input[name="image[]"][value="' + name + '"]').remove()
+         }
+      }
+   </script>
+@endpush --}}
