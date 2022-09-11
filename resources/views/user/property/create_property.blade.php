@@ -59,8 +59,8 @@
                                             placeholder="Price">
                                     </div>
                                     <div class="form-group col-4 ">
-                                        <label for="status_property" class="form-label shadow-sm">Status</label>
-                                        <select class="form-control" id="status_property" name="status_property">
+                                        <label for="status_property" class="form-label">Status</label>
+                                        <select class="form-control shadow-sm" id="status_property" name="status_property">
                                             <option value="#" disabled selected>Choose Status</option>
                                             <option value="For Sell">For Sell</option>
                                             <option value="For Rent">For Rent</option>
