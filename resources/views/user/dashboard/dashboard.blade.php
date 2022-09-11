@@ -118,8 +118,10 @@
                                     </div>
                                     <div class="card__image-content">
                                         <div class="card__image-content-desc">
-                                            <h6> {{ $prts->name }}</h6>
-                                            <p class="mb-0"> Rp {{ $prts->price }}</p>
+                                            <div class="container">
+                                                <h6> {{ $prts->name }}</h6>
+                                                <p class="mb-0"> Rp {{ $prts->price }}</p>
+                                            </div>
                                         </div>
                                         <ul class="list-inline card__hidden-content">
                                             <li class="list-inline-item">
