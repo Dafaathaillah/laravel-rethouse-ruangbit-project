@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Property;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DB;
 
@@ -22,9 +25,11 @@ class DashboardAdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function admin()
     {
-    //fungsi eloquent menampilkan data menggunakan pagination    
-    return view('admin.dashboard.index');    
-    }   
+        $users = User::count();
+        $property = Property::count();
+        $ads = Property::where('start_ads', '!=' , Null)->count();
+        return view('admin/dashboard/index', compact('users', 'property', 'ads'));
+    }
 }

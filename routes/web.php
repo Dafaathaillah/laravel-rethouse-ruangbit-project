@@ -36,7 +36,7 @@ Route::get('/', [DashboardController::class,'index']);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/auth/login', [HomeController::class,'login'])->name('auth.login');
 Route::get('/auth/register', [HomeController::class,'register'])->name('auth.register');
-Route::get('/admin', [DashboardAdminController::class,'index'])->name('admin.dashboard.index');
+Route::get('/admin', [DashboardAdminController::class,'admin'])->name('admin.dashboard.index');
 
 Route::get('/admin/users', [ManageUserController::class,'index'])->name('admin.user.index');
 Route::get('/admin/users/show/{id}', [ManageUserController::class,'show'])->name('admin.user.show');
