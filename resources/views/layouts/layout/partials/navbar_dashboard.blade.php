@@ -5,7 +5,7 @@
         <!-- NAVBAR -->
         <nav class="navbar navbar-hover navbar-expand-lg navbar-soft navbar-transparent">
             <div class="container">
-                <a class="navbar-brand" href="/homepage-v1.html">
+                <a class="navbar-brand" href="{{route("dashboard")}}">
                     <img src="images/logo-blue.png" alt="">
                     <img src="images/logo-blue-stiky.png" alt="">
                 </a>
@@ -17,78 +17,17 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link active dropdown-toggle" href="#" data-toggle="dropdown"> Home </a>
                             <ul class="dropdown-menu dropdown-menu-left animate fade-up">
-                                <li><a class="dropdown-item" href="/homepage-v1.html"> Home version one </a>
+                                <li><a class="dropdown-item" href="{{route("dashboard")}}"> Dashboard </a>
                                 </li>
-                                <li><a class="dropdown-item" href="homepage-v2.html"> Home version two </a></li>
-                                <li><a class="dropdown-item" href="/homepage-v3.html"> Home version three </a></li>
-                                <li><a class="dropdown-item" href="/homepage-v4.html"> Home version four </a></li>
-                                <li><a class="dropdown-item" href="/homepage-v5.html"> Home version five </a></li>
+                                <li><a class="dropdown-item" href="{{route("property.index")}}"> Property </a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Pages </a>
                             <ul class="dropdown-menu animate fade-up">
 
-                                <li><a class="dropdown-item icon-arrow" href="#"> Property Listing </a>
-                                    <ul class="submenu dropdown-menu  animate fade-up">
-                                        <li><a class="dropdown-item" href="/listing-style-v1.html"> Style 1</a></li>
-                                        <li><a class="dropdown-item" href="/listing-style-v2.html"> Style 2</a></li>
-                                        <li><a class="dropdown-item" href="/listing-style-v3.html"> Style 3</a></li>
-                                        <li><a class="dropdown-item" href="/listing-style-v4.html"> Style 4</a></li>
-                                        <li><a class="dropdown-item" href="/listing-style-v5.html"> Style 5</a></li>
-
-                                        <li><a class="dropdown-item icon-arrow" href="">Submenu item 3 </a>
-                                            <ul class="submenu dropdown-menu  animate fade-up">
-                                                <li><a class="dropdown-item" href="">Multi level 1</a></li>
-                                                <li><a class="dropdown-item" href="">Multi level 2</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="dropdown-item" href="">Submenu item 4</a></li>
-                                        <li><a class="dropdown-item" href="">Submenu item 5</a></li>
-                                    </ul>
+                                <li><a class="dropdown-item icon-arrow" href="{{route("property.index")}}"> Property Listing </a>
                                 </li>
-                                <li><a class="dropdown-item icon-arrow" href="#"> Property single detail </a>
-                                    <ul class="submenu dropdown-menu  animate fade-up">
-                                        <li><a class="dropdown-item" href="/single-detail-v1.html">Style 1</a></li>
-                                        <li><a class="dropdown-item" href="/single-detail-v2.html">Style 2</a></li>
-                                        <li><a class="dropdown-item" href="/single-detail-v3.html">Style 3</a></li>
-                                        <li><a class="dropdown-item" href="/single-detail-v4.html">Style 4</a></li>
-                                        <li><a class="dropdown-item" href="/single-detail-v5.html">Style 5</a></li>
-                                    </ul>
-                                </li>
-
-                                <li><a class="dropdown-item icon-arrow" href="#"> Agent </a>
-                                    <ul class="submenu dropdown-menu  animate fade-up">
-                                        <li><a class="dropdown-item" href="/agents-v1.html">Style 1</a></li>
-                                        <li><a class="dropdown-item" href="/agents-v2.html">Style 2</a></li>
-                                        <li><a class="dropdown-item" href="/agents-detail.html">Agent detail</a></li>
-                                    </ul>
-                                </li>
-                                <li><a class="dropdown-item icon-arrow" href="#"> Agency </a>
-                                    <ul class="submenu dropdown-menu  animate fade-up">
-                                        <li><a class="dropdown-item" href="/agency-v1.html">Style 1</a></li>
-                                        <li><a class="dropdown-item" href="/agency-v2.html">Style 2</a></li>
-                                        <li><a class="dropdown-item" href="/agency-detail.html">Agency detail</a></li>
-                                    </ul>
-                                </li>
-                                <li><a class="dropdown-item" href="/about-us.html">About us </a>
-                                <li><a class="dropdown-item" href="/login.html">Login </a>
-                                <li><a class="dropdown-item" href="/register.html"> Register </a>
-                                <li><a class="dropdown-item" href="/contact.html"> Contact </a>
-                                <li><a class="dropdown-item" href="/404.html"> 404 Error </a>
-                            </ul>
-                        </li>
-
-
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle" href="#" data-toggle="dropdown"> Blog </a>
-                            <ul class="dropdown-menu dropdown-menu-left animate fade-up">
-                                <li><a class="dropdown-item" href="/blog.html"> Blog </a>
-                                </li>
-                                <li><a class="dropdown-item" href="/blog-single.html"> Blog Single </a></li>
-
-
                             </ul>
                         </li>
 

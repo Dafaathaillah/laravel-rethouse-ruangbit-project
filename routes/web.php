@@ -25,7 +25,7 @@ use App\Http\Controllers\PropertyController;
 // });
 Route::get('/', [DashboardController::class,'index']);
 
-Route::get('/dashboard', [DashboardController::class,'index']);
+Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
 
 
 //property
