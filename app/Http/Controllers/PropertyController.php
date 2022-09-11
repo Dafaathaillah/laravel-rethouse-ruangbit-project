@@ -18,8 +18,8 @@ class PropertyController extends Controller
         $property = $property = DB::table('property')
         ->where('name', 'like', '%' . request('search') . '%')
         ->orWhere('street', 'like', '%' . request('search') . '%')
+        ->orderByDesc('start_ads')
         ->get();
-        $priority_ads = Property::where('');
         return view('user.property.property_list', compact('property'));
     }
 
