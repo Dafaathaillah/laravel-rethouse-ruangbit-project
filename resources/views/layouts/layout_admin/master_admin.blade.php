@@ -64,11 +64,7 @@ License: You must have a valid license purchased only from above link or https:/
                     </div>
                 </div>
                 <div class="container">
-                    <div class="card">
-                        <div class="card-body">
                             @yield('content')
-                        </div>
-                    </div>
                 </div>
             </div>
 

@@ -44,15 +44,15 @@
                                             <td>{{ ++$no; }}</td>
                                             <td>{{ $trm->name }}</td>
                                             <td>
-                                                <a class="btn btn-success"
-                                                    href="{{ route('admin.term.show',$trm->id) }}"><i class="link-icon"
-                                                        data-feather="eye"></i></a>
-                                                <a class="btn btn-primary"
-                                                    href="{{ route('admin.term.edit',$trm->id) }}"><i class="link-icon"
-                                                        data-feather="edit"></i></a>
-                                                <a class="btn btn-primary delete" href="#" id="trash"
+                                                <a class="btn btn-primary px-1 py-1"
+                                                    href="{{ route('admin.term.show',$trm->id) }}}"><i
+                                                        class="link-icon p-1" data-feather="eye"></i></a>
+                                                <a class="btn btn-primary px-1 py-1"
+                                                    href="{{ route('admin.term.edit',$trm->id) }}"><i
+                                                        class="link-icon p-1" data-feather="edit"></i></a>
+                                                <a class="btn btn-primary px-1 py-1 delete" href="#" id="trash"
                                                     data-id="{{ $trm->id }}" data-name="{{ $trm->name }}"><i
-                                                        class="link-icon" data-feather="trash-2"></i></a>
+                                                        class="link-icon p-1" data-feather="trash"></i></a>
                                             </td>
                                         </tr>
                                         @csrf

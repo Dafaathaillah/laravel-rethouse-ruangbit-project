@@ -28,24 +28,24 @@ class ManageUserController extends Controller
     public function index()
     {
     //fungsi eloquent menampilkan data menggunakan pagination
-    $user = $user = DB::table('users')->get(); // Mengambil semua isi tabel    
-    return view('admin.users.index', compact('user'));    
-    }        
-    
+    $user = $user = DB::table('users')->simplePaginate(5); // Mengambil semua isi tabel
+    return view('admin.users.index', compact('user'));
+    }
+
     public function show($id)
     {
     //menampilkan detail data dengan menemukan/berdasarkan id user
     $user = User::find($id);
     return view('admin.users.detail', compact('user'));
     }
-    
+
     public function store(Request $request)
     {
     //melakukan validasi data
     $request->validate([
         'name' => 'required',
         'email' => 'required',
-        'contact' => 'required', 
+        'contact' => 'required',
         'gender' => 'required',
         'agent_status' => 'required',
     ]);
@@ -62,14 +62,14 @@ class ManageUserController extends Controller
     $user = DB::table('users')->where('id', $id)->first();;
     return view('admin.users.edit', compact('user'));
     }
-    
+
     public function update(Request $request, $id)
     {
     //melakukan validasi data
     $request->validate([
         'name' => 'required',
         'email' => 'required',
-        'contact' => 'required', 
+        'contact' => 'required',
         'gender' => 'required',
         // 'agent_status' => 'required',
     ]);
@@ -78,7 +78,7 @@ class ManageUserController extends Controller
     //jika data berhasil diupdate, akan kembali ke halaman utama
     return redirect()->route('admin.user.index')->with('success', 'User Update Successfully!');;
     }
-    
+
     public function destroy( $id)
     {
     //fungsi eloquent untuk menghapus data

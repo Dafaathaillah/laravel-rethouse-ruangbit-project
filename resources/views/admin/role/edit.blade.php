@@ -7,7 +7,7 @@
 
 <div class="container mt-5">
    <div class="row justify-content-center align-items-center">
-      <div class="card" style="width: 48rem;">
+      <div class="card col-8" style="width: 48rem;">
          <div class="card-header">
             Edit Role
          </div>

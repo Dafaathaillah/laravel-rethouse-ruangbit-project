@@ -7,15 +7,15 @@
 @section('content')
 <div class="container mt-5">
     <div class="row justify-content-center align-items-center">
-        <div class="card" style="width: 24rem;">
+        <div class="card col-8" style="width: 24rem;">
             <div class="card-header">
             Detail Role
             </div>
             <div class="card-body">
-                <ul class="list-group list-group-flush">
-                <li class="list-group-item"><b>Role Id: </b>{{$role->id}}</li>                
-                <li class="list-group-item"><b>Role Name: </b>{{$role->name}}</li>                
-                </ul>
+                <div class="row">
+                    <li class="list-group-item col-6"><b>Role Id: </b>{{$role->id}}</li>
+                    <li class="list-group-item col-6 border-top"><b>Role Name: </b>{{$role->name}}</li>
+                </div>
             </div>
             <a class="btn btn-primary" href="{{ route('admin.role.index') }}">Kembali</a>
         </div>

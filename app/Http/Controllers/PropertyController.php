@@ -15,7 +15,11 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $property = $property = DB::table('property')->where('name', 'like', '%' . request('search') . '%')->orWhere('street', 'like', '%' . request('search') . '%')->get();
+        $property = $property = DB::table('property')
+        ->where('name', 'like', '%' . request('search') . '%')
+        ->orWhere('street', 'like', '%' . request('search') . '%')
+        ->get();
+        $priority_ads = Property::where('');
         return view('user.property.property_list', compact('property'));
     }
 

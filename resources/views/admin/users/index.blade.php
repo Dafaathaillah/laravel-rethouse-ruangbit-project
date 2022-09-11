@@ -24,7 +24,7 @@
                         DataTables Documentation </a>for a full list of instructions and other options.</p> --}}
                 <br>
                 <div class="table-responsive">
-                    <table id="dataTableExample" class="table">
+                    <table id="dataTableExample" class="table mb-3">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -50,14 +50,15 @@
                                 <td>Normal User</td>
                                 @endif
                                 <td>
-
-                                    <a class="nav-link" href="{{ route('admin.user.show',$usr->id) }}"><i
-                                            class="link-icon" data-feather="eye"></i></a>
-                                    <a class="nav-link" href="{{ route('admin.user.edit',$usr->id) }}"><i
-                                            class="link-icon" data-feather="edit"></i></a>
-                                    <a class="nav-link" href="#" id="trash" data-id="{{ $usr->id }}"
-                                        data-name="{{ $usr->name }}"><i class="link-icon"
-                                            data-feather="trash-2"></i></a>
+                                    <a class="btn btn-primary px-1 py-1"
+                                        href="{{ route('admin.user.show',$usr->id) }}}"><i class="link-icon p-1"
+                                            data-feather="eye"></i></a>
+                                    <a class="btn btn-primary px-1 py-1"
+                                        href="{{ route('admin.user.edit',$usr->id) }}"><i class="link-icon p-1"
+                                            data-feather="edit"></i></a>
+                                    <a class="btn btn-primary px-1 py-1 delete" href="#" id="trash"
+                                        data-id="{{ $usr->id }}" data-name="{{ $usr->name }}"><i class="link-icon p-1"
+                                            data-feather="trash"></i></a>
 
                                 </td>
                                 {{-- <td>
@@ -77,6 +78,7 @@
                         </tbody>
                     </table>
                 </div>
+                {{ $user->links() }}
             </div>
         </div>
     </div>

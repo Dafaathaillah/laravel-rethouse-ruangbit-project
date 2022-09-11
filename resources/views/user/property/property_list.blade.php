@@ -132,12 +132,9 @@
                                                 Based Properties
                                             </a>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="javascript:void(0)">Low to High Price</a>
+                                                <a class="dropdown-item" href="#">Low to High Price</a>
                                                 <a class="dropdown-item" href="javascript:void(0)">High to Low Price
                                                 </a>
-                                                <a class="dropdown-item" href="javascript:void(0)">Sell Properties</a>
-
-                                                <a class="dropdown-item" href="javascript:void(0)">Rent Properties</a>
                                             </div>
                                         </div>
                                     </li>
@@ -223,7 +220,7 @@
                                                         <ul class="list-inline my-auto ml-auto">
                                                             <li class="list-inline-item">
 
-                                                                <h6>Rp {{ $prt->price }}</h6>
+                                                                <h6>Rp {{ number_format($prt->price) }}</h6>
                                                             </li>
 
                                                         </ul>
@@ -231,20 +228,12 @@
                                                 </div>
                                             </div>
                                         @endforeach
-
-
-
-
                                         <div class="cleafix"></div>
                                     </div>
-
-
-
                                 </div> <!-- END FILTER VERTICAL -->
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
