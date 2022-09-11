@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Property;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,7 +21,8 @@ class PropertyController extends Controller
         ->orWhere('street', 'like', '%' . request('search') . '%')
         ->orderByDesc('start_ads')
         ->get();
-        return view('user.property.property_list', compact('property'));
+        $ldate = Carbon::today();
+        return view('user.property.property_list', compact('property', 'ldate'));
     }
 
 
@@ -36,7 +38,8 @@ class PropertyController extends Controller
         $city = $city = DB::table('city')->get();
         $province = $province = DB::table('province')->get();
         $type_property = $type_property = DB::table('type_property')->get();
-        return view('user.property.create_property', compact('city','type_property', 'province','ad_lists','users'));
+        $ldate = Carbon::today();
+        return view('user.property.create_property', compact('city','type_property', 'province','ad_lists','users', 'ldate'));
     }
 
     /**
