@@ -43,12 +43,14 @@
                                     {{ Session::get('fail' )}}
                                 </div>
                             @endif
+                            @if(session()->has('success'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('success')}}                                
+                              </div>
+                            @endif
                             @csrf
                             <a href="#" class="btn btn-facebook btn-block mb-2 text-white"> <i
-                                    class="fa fa-facebook"></i> &nbsp; Sign
-                                in
-                                with
-                                Facebook</a>
+                                    class="fa fa-facebook"></i> &nbsp; Sign in with Facebook</a>
                             <a href="#" class="btn btn-primary btn-block mb-4"> <i class="fa fa-google"></i> &nbsp;
                                 Sign in with
                                 Google</a>
@@ -75,7 +77,7 @@
                     </div> <!-- card-body.// -->
                 </div> <!-- card .// -->
 
-                <p class="text-center mt-4">Don't have account? <a href="#">Sign up</a></p>
+                <p class="text-center mt-4">Don't have account? <a href="{{ route('auth.register')}}">Sign up</a></p>
             </div>
         </div>
     </div>

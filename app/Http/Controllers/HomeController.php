@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User_testing;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use DB;
 
 class HomeController extends Controller
 {
@@ -42,7 +43,7 @@ class HomeController extends Controller
     public function save(Request $request){
         $request->validate([
             'name'=>'required',
-            'email'=>'required|email|unique:user_testing',
+            'email'=>'required|email|unique:users',
             'contact'=>'required',
             'password'=>'required|min:5|max:12'
         ]);
@@ -56,38 +57,43 @@ class HomeController extends Controller
         $save = $user->save();
 
         if ($save) {
-            return back()->with('success', 'New User has been succesfuly');
+            $request->session()->flash('success', 'Registration was successful, Please login!');
+            return redirect('/auth/login');
         } else {
             return back()->with('fail', 'Something wrong, try again later');
         }
         
     }
 
+    protected function authenticated(){
+        Auth::logoutOtherDevices($currentPassword);
+    }
     public function check(Request $request){
+        $user = $user = DB::table('users')->get();
         $credentials = $request->validate([            
             'email'=>'required|email',            
-            'password'=>'required|min:5|max:12'
-        ]);
-
-        // $userInfo = User_testing::where('email', '=', $request->email)->first();
+            'password'=>'required|min:3|max:12'
+        ]);        
+        // $userInfo = User_testing::where('email', '=', $request->email)->first();        
+        
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');            
+            Auth::logoutOtherDevices(request('password'));
+            return redirect()->intended('/admin');            
+            dd('berhasil login');
         } else {
             return back()->with('fail', 'Login Failed!');
-        }
+        }                
+    }
 
-        
-        // if ($userInfo) {
-        //     return back()->with('fail', 'We do not recognize your email address');
-        // } else {
-        //     if (Hash::check($request->password, $userInfo->password)) {
-        //         $request->session()->put('loggedUser', $userInfo->id);
-        //         return redirect('user/dashboard');
-        //     } else {
-        //         return back()->with('fail', 'Incorrect password');
-        //     }            
-        // }        
+    public function logout(Request $request){
+        Auth::logout();
+ 
+        $request->session()->invalidate();
+    
+        $request->session()->regenerateToken();
+    
+        return redirect('/');
     }
 }

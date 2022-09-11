@@ -99,7 +99,7 @@
                     <!-- Search bar.// -->
                     <ul class="navbar-nav ">
                         <li>
-                            <a href="#" class="btn btn-primary text-capitalize">
+                            <a href="{{route('property.index')}}" class="btn btn-primary text-capitalize">
                                 <i class="fa fa-plus-circle mr-1"></i> add listing</a>
                         </li>
                     </ul>
@@ -163,69 +163,9 @@
                                                 aria-labelledby="buy-tab">
                                                 <div class=" search__container">
                                                     <div class="row input-group no-gutters">
+                                                            <input type="text" name="search" class="form-control" id="search" placeholder="cari lokasi, area, nama property, nama agent" style="font-size: 1.3em">
                                                         <div class="col-lg-2">
-                                                            <select class="select_option form-control" name="select">
-                                                                <option selected>Type Property</option>
-                                                                <option>House</option>
-                                                                <option>Apartement </option>
-                                                                <option>Hotel</option>
-                                                                <option>Residential</option>
-                                                                <option>Land</option>
-                                                                <option>Luxury</option>
-
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <select class="select_option form-control" name="select">
-                                                                <option data-display="Area From">Area From </option>
-                                                                <option>1500</option>
-                                                                <option>1200</option>
-                                                                <option>900</option>
-                                                                <option>600</option>
-                                                                <option>300</option>
-                                                                <option>100</option>
-
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <select class="select_option form-control" name="select">
-                                                                <option data-display="Bedrooms">Bedrooms</option>
-                                                                <option>1</option>
-                                                                <option>2</option>
-                                                                <option>3</option>
-                                                                <option>4</option>
-                                                                <option>5</option>
-                                                                <option>6</option>
-                                                                <option>7</option>
-                                                                <option>8</option>
-                                                                <option>9</option>
-
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <select class="select_option form-control" name="select">
-                                                                <option data-display="Bathrooms">Bathrooms</option>
-                                                                <option>1</option>
-                                                                <option>2</option>
-                                                                <option>3</option>
-                                                                <option>4</option>
-                                                                <option>5</option>
-
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <select class="select_option form-control" name="select">
-                                                                <option data-display="Locations">Locations</option>
-                                                                <option>United Kingdom</option>
-                                                                <option>American Samoa</option>
-                                                                <option>Belgium</option>
-                                                                <option>Canada</option>
-                                                                <option>Delaware</option>
-
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-lg-2 input-group-append">
-                                                            <button class="btn btn-primary btn-block" type="submit">
+                                                            <button class="btn btn-primary btn-block" type="submit" style="line-height: 2.2rem">
                                                                 <i class="fa fa-search"></i> <span
                                                                     class="ml-1 text-uppercase">search</span>
                                                             </button>
@@ -237,69 +177,9 @@
                                                 aria-labelledby="rent-tab">
                                                 <div class=" search__container">
                                                     <div class="row input-group no-gutters">
+                                                            <input type="text" name="search" class="form-control" id="search" placeholder="cari lokasi, area, nama property, nama agent" style="font-size: 1.3em">
                                                         <div class="col-lg-2">
-                                                            <select class="select_option form-control" name="select">
-                                                                <option selected>Type Property</option>
-                                                                <option>House</option>
-                                                                <option>Apartement </option>
-                                                                <option>Hotel</option>
-                                                                <option>Residential</option>
-                                                                <option>Land</option>
-                                                                <option>Luxury</option>
-
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <select class="select_option form-control" name="select">
-                                                                <option data-display="Area From">Area From </option>
-                                                                <option>1500</option>
-                                                                <option>1200</option>
-                                                                <option>900</option>
-                                                                <option>600</option>
-                                                                <option>300</option>
-                                                                <option>100</option>
-
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <select class="select_option form-control" name="select">
-                                                                <option data-display="Bedrooms">Bedrooms</option>
-                                                                <option>1</option>
-                                                                <option>2</option>
-                                                                <option>3</option>
-                                                                <option>4</option>
-                                                                <option>5</option>
-                                                                <option>6</option>
-                                                                <option>7</option>
-                                                                <option>8</option>
-                                                                <option>9</option>
-
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <select class="select_option form-control" name="select">
-                                                                <option data-display="Bathrooms">Bathrooms</option>
-                                                                <option>1</option>
-                                                                <option>2</option>
-                                                                <option>3</option>
-                                                                <option>4</option>
-                                                                <option>5</option>
-
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <select class="select_option form-control" name="select">
-                                                                <option data-display="Locations">Locations</option>
-                                                                <option>United Kingdom</option>
-                                                                <option>American Samoa</option>
-                                                                <option>Belgium</option>
-                                                                <option>Canada</option>
-                                                                <option>Delaware</option>
-
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-lg-2 input-group-append">
-                                                            <button class="btn btn-primary btn-block" type="submit">
+                                                            <button class="btn btn-primary btn-block" type="submit" style="line-height: 2.2rem">
                                                                 <i class="fa fa-search"></i> <span
                                                                     class="ml-1 text-uppercase">search</span>
                                                             </button>

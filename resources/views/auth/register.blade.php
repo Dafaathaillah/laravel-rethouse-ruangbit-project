@@ -113,9 +113,10 @@
                     <span class="custom-control-label"> I am agree with <a href="#">terms and contitions</a> </span>
                 </label>
             </div> <!-- form-group end.// -->
-        </form>
-    </div><!-- card-body.// -->
+        </form>        
+    </div><!-- card-body.// -->    
 </div>
+<p class="text-center mt-4">Have account? <a href="{{ route('auth.login')}}">&#8592 Back to Login</a></p>
                 </div>
             </div>
         </div>
