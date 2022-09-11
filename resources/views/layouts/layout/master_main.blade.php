@@ -24,7 +24,7 @@
 
     <link rel="manifest" href="{{ asset('site.webmanifest') }}">
     <!-- favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" href="{{ asset('icon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/icon.png') }}">
     <meta name="theme-color" content="#3454d1">
     <link href="{{ asset('./css/styles.css?fd365619e86ad9137a29') }}" rel="stylesheet">
 </head>
