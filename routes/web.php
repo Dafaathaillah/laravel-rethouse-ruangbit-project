@@ -30,6 +30,8 @@ use App\Http\Controllers\PropertyController;
 //     return view('layouts.layout.master_main');
 // });
 Route::get('/', [DashboardController::class,'index']);
+
+Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
 // Route::get('/dashboardadmin', function () {
 //     return view('admin.dashboard.dashboard');
 // });
