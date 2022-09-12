@@ -120,7 +120,7 @@
                                         <div class="card__image-content-desc">
                                             <div class="container">
                                                 <h6> {{ $prts->name }}</h6>
-                                                <p class="mb-0"> Rp {{ $prts->price }}</p>
+                                                <p class="mb-0"> Rp {{ number_format($prts->price) }}</p>
                                             </div>
                                         </div>
                                         <ul class="list-inline card__hidden-content">
@@ -197,7 +197,7 @@
                                     <div class="card__image-content">
                                         <div class="card__image-content-desc">
                                             <h6> {{ $prts->name }}</h6>
-                                            <p class="mb-0"> Rp {{ $prts->price }}</p>
+                                            <p class="mb-0"> Rp {{ number_format($prts->price) }}</p>
                                         </div>
                                         <ul class="list-inline card__hidden-content">
                                             <li class="list-inline-item">
