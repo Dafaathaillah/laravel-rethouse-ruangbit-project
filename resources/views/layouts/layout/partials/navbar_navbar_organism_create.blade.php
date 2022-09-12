@@ -7,7 +7,7 @@
                 <div class="col-sm-12 col-md-5">
                     <div class="topbar-left">
                         <div class="topbar-text">
-                            {{ $ldate }}
+                            {{-- {{ $ldate }} --}}
                         </div>
                     </div>
                 </div>
