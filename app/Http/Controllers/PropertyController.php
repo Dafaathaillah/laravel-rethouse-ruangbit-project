@@ -83,11 +83,11 @@ class PropertyController extends Controller
         // // return view('user.property.property_list');
         // return redirect()->route('property.index');
         $prt = new Property();
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
+        if ($request->hasFile('dzfile')) {
+            $file = $request->file('dzfile');
             $ext = $file->getClientOriginalName();
             $file->move('storage/property-images', $ext);
-            $prt->image = $ext;
+            $prt->image = json_encode([$ext]);
         }
 
         $prt->name = $request->input('name');
@@ -121,7 +121,8 @@ class PropertyController extends Controller
     public function show($id)
     {
         $property = Property::find($id);
-        return view('user.property.property_detail', compact('property'));
+        $ldate = Carbon::today();
+        return view('user.property.property_detail', compact('property','ldate'));
     }
 
     /**
