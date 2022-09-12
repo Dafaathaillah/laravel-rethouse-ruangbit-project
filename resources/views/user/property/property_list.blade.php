@@ -230,6 +230,9 @@
                                         @endforeach
                                         <div class="cleafix"></div>
                                     </div>
+                                    <div class="mt-3 d-flex justify-content-center">
+                                        {{ $property->links() }}
+                                    </div>
                                 </div> <!-- END FILTER VERTICAL -->
                             </div>
                         </div>
