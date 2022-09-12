@@ -25,7 +25,7 @@ class DashboardAdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function admin()
+    public function index()
     {
         $users = User::count();
         $property = Property::count();

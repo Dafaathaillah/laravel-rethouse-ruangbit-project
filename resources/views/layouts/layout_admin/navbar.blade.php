@@ -33,6 +33,7 @@ License: You must have a valid license purchased only from above link or https:/
 							class="font-weight-medium ml-1 mr-1 d-none d-md-inline-block">Indonesia</span>
 					</a>
 				</li>
+				@auth
 				<li class="nav-item dropdown nav-profile">
 					<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button"
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -44,22 +45,28 @@ License: You must have a valid license purchased only from above link or https:/
 								<img src="{{ asset('images\pic_sample.jpg') }}" alt="">
 							</div>
 							<div class="info text-center">
-								<p class="name font-weight-bold mb-0">Warrent Buffet</p>
-								<p class="email text-muted mb-3">investasimasadepan69@gmail.com</p>
+								<p class="name font-weight-bold mb-0">Welcome, {{ auth()->user()->name }}</p>
+								<p class="email text-muted mb-3">{{ auth()->user()->email }}</p>
 							</div>
 						</div>
 						<div class="dropdown-body">
 							<ul class="profile-nav p-0 pt-3">
 								<li class="nav-item">
-									<a href="#" class="nav-link">
-										<i data-feather="log-out"></i>
-										<span>Log Out</span>
-									</a>
+									<form action="{{ route('auth.logout') }}" action="post">
+										@csrf
+										<button type="submit" class="dropdown-item">Log Out</button>
+									</form>									
 								</li>
 							</ul>
 						</div>
 					</div>
 				</li>
+				@else
+				<li class="nav-item dropdown nav-profile">
+					<a href="{{ route('auth.login')}}" title="">Login</a> / <a href="{{ route('auth.register')}}" title="">Register</a>
+				</li>				
+				@endauth
+				
 			</ul>
 		</div>
 	</nav>
