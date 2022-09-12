@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Property;
-<<<<<<< HEAD
 use Carbon\Carbon;
-=======
->>>>>>> origin/auth
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -19,7 +16,6 @@ class PropertyController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
         $property = $property = DB::table('property')
         ->where('name', 'like', '%' . request('search') . '%')
         ->orWhere('street', 'like', '%' . request('search') . '%')
@@ -27,10 +23,6 @@ class PropertyController extends Controller
         ->simplePaginate(6);
         $ldate = Carbon::today();
         return view('user.property.property_list', compact('property', 'ldate'));
-=======
-        $property = $property = DB::table('property')->where('name', 'like', '%' . request('search') . '%')->orWhere('street', 'like', '%' . request('search') . '%')->get();
-        return view('user.property.property_list', compact('property'));
->>>>>>> origin/auth
     }
 
 
@@ -41,20 +33,13 @@ class PropertyController extends Controller
      */
     public function create()
     {
-<<<<<<< HEAD
         $users = $users = DB::table('users')->get();
-=======
->>>>>>> origin/auth
         $ad_lists = $ad_lists = DB::table('ad_lists')->get();
         $city = $city = DB::table('city')->get();
         $province = $province = DB::table('province')->get();
         $type_property = $type_property = DB::table('type_property')->get();
-<<<<<<< HEAD
         $ldate = Carbon::today();
         return view('user.property.create_property', compact('city','type_property', 'province','ad_lists','users', 'ldate'));
-=======
-        return view('user.property.create_property', compact('city','type_property', 'province','ad_lists'));
->>>>>>> origin/auth
     }
 
     /**
@@ -98,19 +83,11 @@ class PropertyController extends Controller
         // // return view('user.property.property_list');
         // return redirect()->route('property.index');
         $prt = new Property();
-<<<<<<< HEAD
         if ($request->hasFile('dzfile')) {
             $file = $request->file('dzfile');
             $ext = $file->getClientOriginalName();
             $file->move('storage/property-images', $ext);
             $prt->image = json_encode([$ext]);
-=======
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $ext = $file->getClientOriginalName();
-            $file->move('storage/property-images', $ext);
-            $prt->image = $ext;
->>>>>>> origin/auth
         }
 
         $prt->name = $request->input('name');
@@ -120,10 +97,7 @@ class PropertyController extends Controller
         $prt->street = $request->input('street');
         $prt->city_id = $request->input('city_id');
         $prt->provience_id = $request->input('provience_id');
-<<<<<<< HEAD
         $prt->description = $request->input('description');
-=======
->>>>>>> origin/auth
         $prt->ads_id = $request->input('ads_id');
         $prt->bedroom = $request->input('bedroom');
         $prt->bathroom = $request->input('bathroom');
@@ -147,12 +121,8 @@ class PropertyController extends Controller
     public function show($id)
     {
         $property = Property::find($id);
-<<<<<<< HEAD
         $ldate = Carbon::today();
         return view('user.property.property_detail', compact('property','ldate'));
-=======
-        return view('user.property.property_detail', compact('property'));
->>>>>>> origin/auth
     }
 
     /**
