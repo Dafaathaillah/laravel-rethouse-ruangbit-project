@@ -32,12 +32,6 @@
                             </ul>
                         </li>
                     </ul>
-                    </li>
-
-                    <li class="nav-item"><a class="nav-link" href="/contact.html"> contact </a></li>
-                    </ul>
-
-
                     <!-- Search bar.// -->
                     <ul class="navbar-nav ">
                         <li>
