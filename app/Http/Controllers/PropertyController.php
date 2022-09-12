@@ -20,7 +20,7 @@ class PropertyController extends Controller
         ->where('name', 'like', '%' . request('search') . '%')
         ->orWhere('street', 'like', '%' . request('search') . '%')
         ->orderByDesc('start_ads')
-        ->get();
+        ->simplePaginate(6);
         $ldate = Carbon::today();
         return view('user.property.property_list', compact('property', 'ldate'));
     }

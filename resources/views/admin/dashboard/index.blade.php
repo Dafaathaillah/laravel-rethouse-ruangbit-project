@@ -16,7 +16,7 @@
     <div class="col-12 col-xl-12 stretch-card">
         <div class="row flex-grow">
             <div class="col-md-4 grid-margin stretch-card">
-                <div class="card">
+                <div class="card shadow">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-baseline">
                             <h6 class="card-title mb-0">Users</h6>
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="col-md-4 grid-margin stretch-card">
-                <div class="card">
+                <div class="card shadow">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-baseline">
                             <h6 class="card-title mb-0">Property</h6>
@@ -104,7 +104,7 @@
                 </div>
             </div>
             <div class="col-md-4 grid-margin stretch-card">
-                <div class="card">
+                <div class="card shadow">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-baseline">
                             <h6 class="card-title mb-0">Property With Ads</h6>
@@ -149,7 +149,7 @@
         </div>
     </div>
 </div> <!-- row -->
-<div class="card">
+<div class="card shadow">
     <div class="card-body">
         <div class="d-flex justify-content-between align-items-baseline mb-2">
             <h6 class="card-title mb-0">Monthly sales</h6>

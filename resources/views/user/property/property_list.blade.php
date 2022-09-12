@@ -56,7 +56,7 @@
     <!-- END BREADCRUMB -->
     <div class="search__area bg__shadow">
         <div class="container">
-            <div class="bg__overlay-black p-4">
+            <div class="bg__overlay-black p-4 shadow mb-3">
                 <div class="search__property">
                     <div class="position-relative">
                         <ul class="nav nav-tabs nav-tabs-02 mb-3 justify-content-start" id="pills-tab" role="tablist">
@@ -123,7 +123,7 @@
                         <div class="col-lg-12">
                             <div class="tabs__custom-v2 ">
                                 <!-- FILTER VERTICAL -->
-                                <ul class="nav nav-pills myTab" role="tablist">
+                                <ul class="nav nav-pills myTab shadow-sm" role="tablist">
                                     <li class="list-inline-item mr-auto">
                                         <span class="title-text">Sort by</span>
                                         <div class="btn-group">
@@ -150,8 +150,8 @@
                                     <div class="row">
                                         @foreach ($property as $prt)
                                             <div class="col-md-4 col-lg-4">
-                                                <div class="card__image card__box-v1">
-                                                    <div class="card__image-header h-250">
+                                                <div class="card__image card__box-v1 rounded">
+                                                    <div class="card__image-header h-250 rounded shadow-sm">
                                                         @if ($prt->end_ads != null)
                                                             <div class="ribbon text-capitalize">Advertise</div>
                                                         @endif
@@ -229,6 +229,9 @@
                                             </div>
                                         @endforeach
                                         <div class="cleafix"></div>
+                                    </div>
+                                    <div class="mt-3 d-flex justify-content-center">
+                                        {{ $property->links() }}
                                     </div>
                                 </div> <!-- END FILTER VERTICAL -->
                             </div>

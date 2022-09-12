@@ -94,18 +94,18 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="title__head-v2">
-                        <h2 class="text-capitalize">featured property</h2>
-                        <p class="text-capitalize">Handpicked Exclusive Properties By Our Team.</p>
+                        <h2 class="text-capitalize">property with ads</h2>
+                        {{-- <p class="text-capitalize">Handpicked Exclusive Properties By Our Team.</p> --}}
                     </div>
                 </div>
             </div>
             <div class="recent__property-carousel owl-carousel owl-theme">
-                @foreach ($property as $prts)
+                @foreach ($ads as $prts)
                     <div class="item">
                         <!-- CARD IMAGE -->
                         <a href="#">
                             <div class="card__image-hover h-250">
-                                <div class="card__image-hover-overlay">
+                                <div class="card__image-hover-overlay rounded">
                                     <div class="listing-badges">
                                         @if ($prts->end_ads != null)
                                             <span class="featured">
@@ -120,7 +120,7 @@
                                         <div class="card__image-content-desc">
                                             <div class="container">
                                                 <h6> {{ $prts->name }}</h6>
-                                                <p class="mb-0"> Rp {{ $prts->price }}</p>
+                                                <p class="mb-0"> Rp {{ number_format($prts->price) }}</p>
                                             </div>
                                         </div>
                                         <ul class="list-inline card__hidden-content">
@@ -159,8 +159,6 @@
                     </div>
                     <!--End foreach-->
                 @endforeach
-
-
             </div>
         </div>
     </section>
@@ -199,7 +197,7 @@
                                     <div class="card__image-content">
                                         <div class="card__image-content-desc">
                                             <h6> {{ $prts->name }}</h6>
-                                            <p class="mb-0"> Rp {{ $prts->price }}</p>
+                                            <p class="mb-0"> Rp {{ number_format($prts->price) }}</p>
                                         </div>
                                         <ul class="list-inline card__hidden-content">
                                             <li class="list-inline-item">
