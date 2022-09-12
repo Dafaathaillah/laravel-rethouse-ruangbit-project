@@ -24,7 +24,11 @@
                         DataTables Documentation </a>for a full list of instructions and other options.</p> --}}
                 <br>
                 <div class="table-responsive">
+<<<<<<< HEAD
                     <table id="dataTableExample" class="table mb-3">
+=======
+                    <table id="dataTableExample" class="table">
+>>>>>>> origin/auth
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -50,6 +54,7 @@
                                 <td>Normal User</td>
                                 @endif
                                 <td>
+<<<<<<< HEAD
                                     <a class="btn btn-primary px-1 py-1"
                                         href="{{ route('admin.user.show',$usr->id) }}}"><i class="link-icon p-1"
                                             data-feather="eye"></i></a>
@@ -59,6 +64,16 @@
                                     <a class="btn btn-primary px-1 py-1 delete" href="#" id="trash"
                                         data-id="{{ $usr->id }}" data-name="{{ $usr->name }}"><i class="link-icon p-1"
                                             data-feather="trash"></i></a>
+=======
+
+                                    <a class="nav-link" href="{{ route('admin.user.show',$usr->id) }}"><i
+                                            class="link-icon" data-feather="eye"></i></a>
+                                    <a class="nav-link" href="{{ route('admin.user.edit',$usr->id) }}"><i
+                                            class="link-icon" data-feather="edit"></i></a>
+                                    <a class="nav-link" href="#" id="trash" data-id="{{ $usr->id }}"
+                                        data-name="{{ $usr->name }}"><i class="link-icon"
+                                            data-feather="trash-2"></i></a>
+>>>>>>> origin/auth
 
                                 </td>
                                 {{-- <td>
@@ -78,7 +93,10 @@
                         </tbody>
                     </table>
                 </div>
+<<<<<<< HEAD
                 {{ $user->links() }}
+=======
+>>>>>>> origin/auth
             </div>
         </div>
     </div>

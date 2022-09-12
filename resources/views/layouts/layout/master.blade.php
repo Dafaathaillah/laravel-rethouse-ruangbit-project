@@ -24,7 +24,11 @@
 
     <link rel="manifest" href="site.webmanifest">
     <!-- favicon.ico in the root directory -->
+<<<<<<< HEAD
     <link rel="shortcut icon" href="{{ asset('assets/images/icon.png') }}">
+=======
+    <link rel="apple-touch-icon" href="{{ asset('icon.png') }}">
+>>>>>>> origin/auth
     <meta name="theme-color" content="#3454d1">
     <link href="{{ asset('./css/styles.css?fd365619e86ad9137a29') }}" rel="stylesheet">
 </head>
@@ -44,4 +48,8 @@
     <script src="{{ asset('./js/index.bundle.js?fd365619e86ad9137a29') }}"></script>
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> origin/auth

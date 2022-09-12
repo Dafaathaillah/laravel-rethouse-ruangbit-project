@@ -25,6 +25,7 @@ class Kernel extends ConsoleKernel
 
         // $schedule->command('log:cron')->daily();
 
+
         $schedule->command('update:end_ads')->everyMinute();
     }
 

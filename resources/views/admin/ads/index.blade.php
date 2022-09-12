@@ -47,7 +47,11 @@
                                         @foreach ($ads as $adv )
                                         <tr>
                                             <td>{{ $no++ +1 }}</td>
+<<<<<<< HEAD
                                             <td><img src="{{asset('storage/property-images/' .$adv->image)}}"
+=======
+                                            <td><img src="{{asset('storage/images/logo/20220831023629.jpg')}}"
+>>>>>>> origin/auth
                                                     class="rounded float-left" style="width: 100px"></td>
                                             <td>
                                                 <?php
@@ -66,9 +70,15 @@
                                             <td>{{($adv->start_ads)}}</td>
                                             <td>{{($adv->end_ads)}}</td>
                                             <td>
+<<<<<<< HEAD
                                                 @if ($adv->end_ads == null)
                                                 <span class="badge badge-danger text-dark">Free</span>
                                                 @elseif ($adv->end_ads != null)
+=======
+                                                @if ($adv->start_ads == null)
+                                                <span class="badge badge-danger text-dark">Free</span>
+                                                @elseif ($adv->start_ads != null)
+>>>>>>> origin/auth
                                                 <span class="badge badge-primary text-dark">Advertise</span>
                                                 @endif
                                             </td>
@@ -85,6 +95,10 @@
                                     </tbody>
                                 </table>
                             </div>
+<<<<<<< HEAD
+=======
+                        </div>
+>>>>>>> origin/auth
                     </div>
                     {{ $ads->links() }}
                 </div>

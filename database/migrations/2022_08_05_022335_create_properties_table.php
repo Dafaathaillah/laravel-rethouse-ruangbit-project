@@ -19,7 +19,11 @@ class CreatePropertiesTable extends Migration
             $table->integer('price')->nullable();
             $table->enum('status', ['sold','sell','rent']);
             $table->string('street', 255);
+<<<<<<< HEAD
             $table->string('image')->nullable();
+=======
+            $table->string('picture')->nullable();
+>>>>>>> origin/auth
             $table->string('city', 100);
             $table->string('province', 100);
             $table->timestamps();

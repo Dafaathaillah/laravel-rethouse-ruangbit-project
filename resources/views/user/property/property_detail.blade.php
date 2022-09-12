@@ -58,7 +58,11 @@
    <div class="slider__property-carousel-opacity owl-carousel owl-theme">
       <div class="item">
          <a href="#">
+<<<<<<< HEAD
             <img src="{{asset('storage/property-images/' .$property->image)}}" alt="" class="img-fluid">
+=======
+            <img src="images/property.jpg" alt="" class="img-fluid">
+>>>>>>> origin/auth
          </a>
       </div>
       <div class="item">

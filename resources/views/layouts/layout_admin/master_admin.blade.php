@@ -57,10 +57,25 @@ License: You must have a valid license purchased only from above link or https:/
                                     class=" text-primary"></i></span>
                             <input type="text" class="form-control">
                         </div>
+<<<<<<< HEAD
                     </div>
                 </div>
                 <div class="container">
                             @yield('content')
+=======
+                        <button type="button" class="btn btn-primary btn-icon-text mb-2 mb-md-0">
+                            <i class="btn-icon-prepend" data-feather="download-cloud"></i>
+                            Download Report
+                        </button>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            @yield('content')
+                        </div>
+                    </div>
+>>>>>>> origin/auth
                 </div>
             </div>
 

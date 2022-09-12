@@ -39,6 +39,7 @@
                                 <td>{{ ++$no }}</td>
                                 <td>{{ $rl->name }}</td>
                                 <td>
+<<<<<<< HEAD
                                     <a class="btn btn-primary px-1 py-1"
                                     href="{{ route('admin.role.show', $rl->id) }}}"><i
                                     class="link-icon p-1" data-feather="eye"></i></a>
@@ -49,6 +50,14 @@
                                         href="#" id="trash" data-id="{{ $rl->id }}"
                                         data-name="{{ $rl->name }}" ><i
                                         class="link-icon p-1" data-feather="trash"></i></a>
+=======
+                                    <a class="nav-link" href="{{ route('admin.role.show', $rl->id) }}"><i
+                                            class="link-icon" data-feather="eye"></i></a>
+                                    <a class="nav-link" href="{{ route('admin.role.edit', $rl->id) }}"><i
+                                            class="link-icon" data-feather="edit"></i></a>
+                                    <a class="nav-link" href="#" id="trash" data-id="{{ $rl->id }}"
+                                        data-name="{{ $rl->name }}"><i class="link-icon" data-feather="trash-2"></i></a>
+>>>>>>> origin/auth
                                 </td>
                                 {{-- <td>
                                     <a href="#" class="nav-link">

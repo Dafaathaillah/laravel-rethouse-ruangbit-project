@@ -61,17 +61,24 @@ License: You must have a valid license purchased only from above link or https:/
 					</a>
 				</li>
 				<li class="nav-item">
+<<<<<<< HEAD
 					<a href=" {{ route('logo.index')}} " class="nav-link">
+=======
+					<a href=" {{ route('admin.logo.index')}} " class="nav-link">
+>>>>>>> origin/auth
 						<i class="link-icon" data-feather="image"></i>
 						<span class="link-title">Manage Logo</span>
 					</a>
 				</li>
+<<<<<<< HEAD
                 <li class="nav-item">
 					<a href=" {{ route('kpr-admin.index')}} " class="nav-link">
 						<i class="link-icon" data-feather="tag"></i>
 						<span class="link-title">KPR</span>
 					</a>
 				</li>
+=======
+>>>>>>> origin/auth
 			</ul>
 		</div>
 	</nav>

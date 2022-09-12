@@ -28,24 +28,39 @@ class ManageUserController extends Controller
     public function index()
     {
     //fungsi eloquent menampilkan data menggunakan pagination
+<<<<<<< HEAD
     $user = $user = DB::table('users')->simplePaginate(5); // Mengambil semua isi tabel
     return view('admin.users.index', compact('user'));
     }
 
+=======
+    $user = $user = DB::table('users')->get(); // Mengambil semua isi tabel    
+    return view('admin.users.index', compact('user'));    
+    }        
+    
+>>>>>>> origin/auth
     public function show($id)
     {
     //menampilkan detail data dengan menemukan/berdasarkan id user
     $user = User::find($id);
     return view('admin.users.detail', compact('user'));
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/auth
     public function store(Request $request)
     {
     //melakukan validasi data
     $request->validate([
         'name' => 'required',
         'email' => 'required',
+<<<<<<< HEAD
         'contact' => 'required',
+=======
+        'contact' => 'required', 
+>>>>>>> origin/auth
         'gender' => 'required',
         'agent_status' => 'required',
     ]);
@@ -62,14 +77,22 @@ class ManageUserController extends Controller
     $user = DB::table('users')->where('id', $id)->first();;
     return view('admin.users.edit', compact('user'));
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/auth
     public function update(Request $request, $id)
     {
     //melakukan validasi data
     $request->validate([
         'name' => 'required',
         'email' => 'required',
+<<<<<<< HEAD
         'contact' => 'required',
+=======
+        'contact' => 'required', 
+>>>>>>> origin/auth
         'gender' => 'required',
         // 'agent_status' => 'required',
     ]);
@@ -78,7 +101,11 @@ class ManageUserController extends Controller
     //jika data berhasil diupdate, akan kembali ke halaman utama
     return redirect()->route('admin.user.index')->with('success', 'User Update Successfully!');;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/auth
     public function destroy( $id)
     {
     //fungsi eloquent untuk menghapus data

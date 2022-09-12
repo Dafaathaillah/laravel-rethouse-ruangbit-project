@@ -35,7 +35,11 @@
                     <!-- Search bar.// -->
                     <ul class="navbar-nav ">
                         <li>
+<<<<<<< HEAD
                             <a href="{{ route('property.index') }}" class="btn btn-primary text-capitalize">
+=======
+                            <a href="{{route('property.index')}}" class="btn btn-primary text-capitalize">
+>>>>>>> origin/auth
                                 <i class="fa fa-plus-circle mr-1"></i> add listing</a>
                         </li>
                     </ul>
@@ -100,6 +104,7 @@
                                                 aria-labelledby="buy-tab">
                                                 <div class=" search__container">
                                                     <div class="row input-group no-gutters">
+<<<<<<< HEAD
                                                         <input type="text" name="search" class="form-control"
                                                             id="search"
                                                             placeholder="cari lokasi, area, nama property, nama agent"
@@ -107,6 +112,11 @@
                                                         <div class="col-lg-2">
                                                             <button class="btn btn-primary btn-block" type="submit"
                                                                 style="line-height: 2.2rem">
+=======
+                                                            <input type="text" name="search" class="form-control" id="search" placeholder="cari lokasi, area, nama property, nama agent" style="font-size: 1.3em">
+                                                        <div class="col-lg-2">
+                                                            <button class="btn btn-primary btn-block" type="submit" style="line-height: 2.2rem">
+>>>>>>> origin/auth
                                                                 <i class="fa fa-search"></i> <span
                                                                     class="ml-1 text-uppercase">search</span>
                                                             </button>
@@ -118,6 +128,7 @@
                                                 aria-labelledby="rent-tab">
                                                 <div class=" search__container">
                                                     <div class="row input-group no-gutters">
+<<<<<<< HEAD
                                                         <input type="text" name="search" class="form-control"
                                                             id="search"
                                                             placeholder="cari lokasi, area, nama property, nama agent"
@@ -125,6 +136,11 @@
                                                         <div class="col-lg-2">
                                                             <button class="btn btn-primary btn-block" type="submit"
                                                                 style="line-height: 2.2rem">
+=======
+                                                            <input type="text" name="search" class="form-control" id="search" placeholder="cari lokasi, area, nama property, nama agent" style="font-size: 1.3em">
+                                                        <div class="col-lg-2">
+                                                            <button class="btn btn-primary btn-block" type="submit" style="line-height: 2.2rem">
+>>>>>>> origin/auth
                                                                 <i class="fa fa-search"></i> <span
                                                                     class="ml-1 text-uppercase">search</span>
                                                             </button>

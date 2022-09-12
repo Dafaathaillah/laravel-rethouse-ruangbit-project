@@ -24,6 +24,7 @@
 
     <link rel="manifest" href="{{ asset('site.webmanifest') }}">
     <!-- favicon.ico in the root directory -->
+<<<<<<< HEAD
     <link rel="shortcut icon" href="{{ asset('assets/images/icon.png') }}">
     <meta name="theme-color" content="#3454d1">
     <link href="{{ asset('./css/styles.css?fd365619e86ad9137a29') }}" rel="stylesheet">
@@ -35,6 +36,11 @@
             height: 120px;
         }
     </style>
+=======
+    <link rel="apple-touch-icon" href="{{ asset('icon.png') }}">
+    <meta name="theme-color" content="#3454d1">
+    <link href="{{ asset('./css/styles.css?fd365619e86ad9137a29') }}" rel="stylesheet">
+>>>>>>> origin/auth
 </head>
 
 <body>
@@ -52,10 +58,13 @@
     <a href="{{ asset('javascript:') }}" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
     <!-- END SCROLL TO TOP -->
     <script src="{{ asset('./js/index.bundle.js?fd365619e86ad9137a29') }}"></script>
+<<<<<<< HEAD
     <script src="{{ asset('assets/assets/dropzone/dropzone.min.js')}}"></script>
     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 
     @yield('script')
+=======
+>>>>>>> origin/auth
 </body>
 
 </html>

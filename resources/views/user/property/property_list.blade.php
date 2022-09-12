@@ -44,7 +44,11 @@
                         <ol class="breadcrumb mb-0 bg-light">
                             <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> </a></li>
                             <li class="breadcrumb-item"> <a href="#">Property</a></li>
+<<<<<<< HEAD
                             <li class="breadcrumb-item active"> <span class="text-capitalize"> List Property</span>
+=======
+                            <li class="breadcrumb-item active"> <span class="text-capitalize"> Luxury family home</span>
+>>>>>>> origin/auth
                             </li>
 
                         </ol>
@@ -56,7 +60,11 @@
     <!-- END BREADCRUMB -->
     <div class="search__area bg__shadow">
         <div class="container">
+<<<<<<< HEAD
             <div class="bg__overlay-black p-4 shadow mb-3">
+=======
+            <div class="bg__overlay-black p-4">
+>>>>>>> origin/auth
                 <div class="search__property">
                     <div class="position-relative">
                         <ul class="nav nav-tabs nav-tabs-02 mb-3 justify-content-start" id="pills-tab" role="tablist">
@@ -123,7 +131,11 @@
                         <div class="col-lg-12">
                             <div class="tabs__custom-v2 ">
                                 <!-- FILTER VERTICAL -->
+<<<<<<< HEAD
                                 <ul class="nav nav-pills myTab shadow-sm" role="tablist">
+=======
+                                <ul class="nav nav-pills myTab" role="tablist">
+>>>>>>> origin/auth
                                     <li class="list-inline-item mr-auto">
                                         <span class="title-text">Sort by</span>
                                         <div class="btn-group">
@@ -132,9 +144,18 @@
                                                 Based Properties
                                             </a>
                                             <div class="dropdown-menu">
+<<<<<<< HEAD
                                                 <a class="dropdown-item" href="#">Low to High Price</a>
                                                 <a class="dropdown-item" href="javascript:void(0)">High to Low Price
                                                 </a>
+=======
+                                                <a class="dropdown-item" href="javascript:void(0)">Low to High Price</a>
+                                                <a class="dropdown-item" href="javascript:void(0)">High to Low Price
+                                                </a>
+                                                <a class="dropdown-item" href="javascript:void(0)">Sell Properties</a>
+
+                                                <a class="dropdown-item" href="javascript:void(0)">Rent Properties</a>
+>>>>>>> origin/auth
                                             </div>
                                         </div>
                                     </li>
@@ -150,11 +171,17 @@
                                     <div class="row">
                                         @foreach ($property as $prt)
                                             <div class="col-md-4 col-lg-4">
+<<<<<<< HEAD
                                                 <div class="card__image card__box-v1 rounded">
                                                     <div class="card__image-header h-250 rounded shadow-sm">
                                                         @if ($prt->end_ads != null)
                                                             <div class="ribbon text-capitalize">Advertise</div>
                                                         @endif
+=======
+                                                <div class="card__image card__box-v1">
+                                                    <div class="card__image-header h-250">
+                                                        <div class="ribbon text-capitalize">featured</div>
+>>>>>>> origin/auth
                                                         @if ($prt->image)
                                                             <img src="{{ asset('storage/property-images/' . $prt->image) }}"
                                                                 alt="" class="img-fluid w100 img-transition">
@@ -220,7 +247,11 @@
                                                         <ul class="list-inline my-auto ml-auto">
                                                             <li class="list-inline-item">
 
+<<<<<<< HEAD
                                                                 <h6>Rp {{ number_format($prt->price) }}</h6>
+=======
+                                                                <h6>Rp {{ $prt->price }}</h6>
+>>>>>>> origin/auth
                                                             </li>
 
                                                         </ul>
@@ -228,15 +259,31 @@
                                                 </div>
                                             </div>
                                         @endforeach
+<<<<<<< HEAD
                                         <div class="cleafix"></div>
                                     </div>
                                     <div class="mt-3 d-flex justify-content-center">
                                         {{ $property->links() }}
                                     </div>
+=======
+
+
+
+
+                                        <div class="cleafix"></div>
+                                    </div>
+
+
+
+>>>>>>> origin/auth
                                 </div> <!-- END FILTER VERTICAL -->
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/auth
                 </div>
             </div>
         </div>
