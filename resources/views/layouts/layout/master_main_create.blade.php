@@ -27,9 +27,8 @@
     <link rel="shortcut icon" href="{{ asset('assets/images/icon.png') }}">
     <meta name="theme-color" content="#3454d1">
     <link href="{{ asset('./css/styles.css?fd365619e86ad9137a29') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css"
-        integrity="sha512-zoIoZAaHj0iHEOwZZeQnGqpU8Ph4ki9ptyHZFPe+BmILwqAksvwm27hR9dYH4WXjYY/4/mz8YDBCgVqzc2+BJA=="
-        crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{{ asset('assets/assets/dropzone/dropzone.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css">
     <style>
         .dz-image img {
             width: 120px;
@@ -53,9 +52,10 @@
     <a href="{{ asset('javascript:') }}" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
     <!-- END SCROLL TO TOP -->
     <script src="{{ asset('./js/index.bundle.js?fd365619e86ad9137a29') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"
-        integrity="sha512-jytq61HY3/eCNwWirBhRofDxujTCMFEiQeTe+kHR4eYLNTXrUq7kY2qQDKOUnsVAKN5XGBJjQ3TvNkIkW/itGw=="
-        crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/assets/dropzone/dropzone.min.js')}}"></script>
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+
+    @yield('script')
 </body>
 
 </html>

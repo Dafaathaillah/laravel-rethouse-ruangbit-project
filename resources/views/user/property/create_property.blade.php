@@ -18,34 +18,10 @@
                             @csrf
                             <div style="mt-3 mb-3" class="form-group col-12">
                                 <label for="picture">Picture</label>
-                                <div class="shadow dropzone dz-clickable @error('image') is-invalid @enderror" name="image[]"
-                                    id="image">
-                                    <div class="dz-default dz-message"><span>Drop images here</span></div>
-                                    @error('image')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                                <script type="text/javascript">
-                                    Dropzone.options.dropzone = {
-                                        maxFilesize: 12,
-                                        renameFile: function(file) {
-                                            var dt = new Date();
-                                            var time = dt.getTime();
-                                            return time + file.name;
-                                        },
-                                        acceptedFiles: ".jpeg,.jpg,.png,.gif",
-                                        addRemoveLinks: true,
-                                        timeout: 5000,
-                                        success: function(file, response) {
-                                            console.log(response);
-                                        },
-                                        error: function(file, response) {
-                                            return false;
-                                        }
-                                    };
-                                </script>
+                                <input type="hidden" name="image[]" id="image" multiple>
+                                  <div  class="dropzone" id="dpz-multiple-files">
+                                      <div class="dz-message">Drop Image Here To Upload</div>
+                                  </div>
                             </div>
                             <div class="container">
                                 <div class="row">
@@ -116,8 +92,8 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-6 ">
-                                        <label for="type_property_id">Advertise</label>
-                                        <select class="form-control shadow-sm" id="type_property_id" name="type_property_id">
+                                        <label for="ads_id">Advertise</label>
+                                        <select class="form-control shadow-sm" id="ads_id" name="ads_id">
                                             <option value="#" disabled selected>Choose Advertise</option>
                                             @foreach ($ad_lists as $ads)
                                                 {
@@ -169,4 +145,59 @@
             </div>
         </div>
     </div>
+    @stop
+
+
+    @section('script')
+    <script>
+        var uploadedDocumentMap = {}
+        Dropzone.options.dpzMultipleFiles = {
+          paramName:"dzfile",//the name that will be used to transfer  the file
+          maxFilesize: 5, // MB
+          maxFiles: 3,
+          clickable:true,
+          addRemoveLinks: true,
+          acceptedFiles:'image/*',
+          dictFallbackMessage:"Your browser does not supported",
+          dictInvalidFileType:"This type of file cannot be uploaded",
+          dictCancelUpload:"Cancel",
+          dictCancelUploadConfirmation:"Are you sure to cancel?",
+          dictRemoveFile:"Remove File",
+          dictMaxFileExceeded:"You exceeded the maximum number of files",
+          headers: {
+            'X-CSRF-TOKEN': "{{ csrf_token() }}"
+          },
+          url:"{{route('property.store')}}",
+
+          success: function (file, response) {
+            $('form').append('<input type="hidden" name="image[]" value="' + response.name + '">')
+            uploadedDocumentMap[file.name] = response.name
+          },
+
+          removedfile: function (file) {
+            file.previewElement.remove()
+            var name = ''
+            if (typeof file.file_name !== 'undefined') {
+              name = file.file_name
+            } else {
+              name = uploadedDocumentMap[file.name]
+            }
+            $('form').find('input[name="image[]"][value="' + name + '"]').remove()
+          },
+          init: function () {
+            @if(isset($event) && $event->document)
+              var files =
+                {!! json_encode($event->document) !!}
+              for (var i in files) {
+                var file = files[i]
+                this.options.addedfile.call(this, file)
+                file.previewElement.classList.add('dz-complete')
+                $('form').append('<input type="hidden" name="image[]" value="' + file.file_name + '">')
+              }
+            @endif
+          }
+        }
+      </script>
+
+
 @endsection
