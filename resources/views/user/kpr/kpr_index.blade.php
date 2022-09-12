@@ -301,22 +301,24 @@
                             <div class="row my-3">                                
                                 <div class="card__image mt-3 ml-4 col-md-4 col-lg-4 rounded">
                                     <div class="card-body">
-                                        <form action="/" method="post">
+                                        <form method="post" onsubmit="return process()">
+                                            @csrf
                                             <div class="form-group">                                                
                                                 <h5>Profil Financial</h5>
+                                                <h5 id="demo"></h5>
                                                 <hr />
                                             </div>                                            
                                             <div class="form-group">                                                
-                                                <label for="text">Harga Rumah</label>                                                                                               
-                                                <input type="text" class="form-control shadow-sm" id="tanpa-rupiah" name="price" placeholder="Harga property yang ingin dibeli" >
+                                                <label for="text">Harga Property</label>                                                                                               
+                                                <input type="text" class="form-control shadow-sm" id="property" name="price" placeholder="Harga property yang ingin dibeli">
                                             </div>
                                             <div class="form-group">                                                
                                                 <label for="text">Penghasilan</label>
-                                                <input type="text" class="form-control shadow-sm" id="tanpa-rupiah" name="income" placeholder="Penghasilan gabungan suami & istri" value="Rp. ">
+                                                <input type="text" class="form-control shadow-sm" id="penghasilan" name="income" placeholder="Penghasilan gabungan suami & istri">
                                             </div>     
                                             <div class="form-group">                                                
                                                 <label for="text">Uang Muka</label>
-                                                <input type="text" class="form-control shadow-sm" id="tanpa-rupiah" name="downPayment" placeholder="Minimal 20% dari harga property"value="Rp. ">
+                                                <input type="text" class="form-control shadow-sm" id="uang_muka" name="downPayment" placeholder="Minimal 20% dari harga propert">
                                             </div>     
                                             <div class="form-group">                                                
                                                 <label for="text">Margin (7.00% - 9.50%)</label>
@@ -324,11 +326,11 @@
                                             </div>
                                             <div class="form-group">                                                
                                                 <label for="text">Lama masa KPR (tahun)</label>
-                                                <input type="text" class="form-control shadow-sm" id="instalment" name="instalment" placeholder="Lama waktu angsuran">
+                                                <input type="text" class="form-control shadow-sm" id="tenor" name="instalment" placeholder="Lama waktu angsuran">
                                             </div>
                                             <div class="form-group">                                                
                                                 <label for="text">Cicilan lainnya</label>
-                                                <input type="text" class="form-control shadow-sm" id="tanpa-rupiah" name="instalment2" placeholder="Cicilan dalam bulan" value="Rp. ">
+                                                <input type="text" class="form-control shadow-sm" id="cicilan_lain" name="instalment2" placeholder="Cicilan dalam bulan">
                                             </div>  
                                             <div class="form-group">                                                
                                                 <button type="submit" class="btn btn-primary rounded col-12">Hitung</button>                                                                                  
@@ -344,59 +346,60 @@
                                             <div class="col-4">
                                                 <div class="btn btn-primary rounded col-12 text-center">
                                                     <label for="price">Pinjaman</label>
-                                                    <div for="price">Rp.0</div>
+                                                    <div id="pinjaman">Rp.0</div>
                                                 </div>                                            
                                             </div>
                                             <div class="col-4">
                                                 <div class="btn btn-primary rounded col-12 text-center">
                                                     <label for="price">Total Pinjaman</label>
-                                                    <div for="price">Rp.0</div>
+                                                    <div id="total_pinjaman">Rp.0</div>
                                                 </div>                                            
                                             </div>
                                             <div class="col-4">
                                                 <div class="btn btn-primary rounded col-12 text-center">
                                                     <label for="price">Cicilan/bulan</label>
-                                                    <div for="price">Rp.0</div>
+                                                    <div id="cicilan_bulanan">Rp.0</div>
                                                 </div>                                            
                                             </div>
                                             <div class="col-12 mt-3">
                                                 <div class="btn btn-primary rounded col-12 text-center">
                                                     <label for="price" class="h5">Persentase Cicilan</label>
-                                                    <div for="price">0%</div>
+                                                    <div id="persentase_cicilan">Rp.0</div>
                                                 </div>                                            
                                             </div>
-                                        </div>                                        
+                                        </div>       
+                                        <p class="font-weight-light">* Pengajuan KPR kemungkinan besar diterima bila persentase cicilan &#8804; 40%</p>                                 
                                         <hr />                                                 
                                         <div class="row my-3 mx-2">
                                             <div class="col-4">
                                                 <p class="font-weight-light"> Penghasilan Bulanan</p>
                                             </div>
                                             <div class="col-8">
-                                                <p class="text-right"> Rp.0</p>
+                                                <p class="text-right" id="penghasilan_bulanan"> Rp.0</p>
                                             </div>
                                             <div class="col-4">
                                                 <p class="font-weight-light"> Cicilan Lainnya</p>
                                             </div>
                                             <div class="col-8">
-                                                <p class="text-right"> Rp.0</p>
+                                                <p class="text-right" id="cicilan_cicilan"> Rp.0</p>
                                             </div>     
                                             <div class="col-4">
                                                 <p class="font-weight-light">Kesiapan Uang Muka</p>
                                             </div>
                                             <div class="col-8">
-                                                <p class="text-right"> Rp.0</p>
+                                                <p class="text-right" id="uang_dp"> Rp.0</p>
                                             </div>                                    
                                             <div class="col-4">
                                                 <p class="font-weight-light"> Masa Kredit KPR</p>
                                             </div>
                                             <div class="col-8">
-                                                <p class="text-right"> Rp.0</p>
+                                                <p class="text-right" id="kredit"> 0 Tahun</p>
                                             </div>
                                             <div class="col-4">
                                                 <p class="font-weight-light">Suku Bunga Fix</p>
                                             </div>
                                             <div class="col-8">
-                                                <p class="text-right"> 0%</p>
+                                                <p class="text-right" id="bunga"> 7.5%</p>
                                             </div>          
                                             <div class="col-4">
                                                 <p class="font-weight-light"> Jenis KPR</p>
@@ -442,36 +445,86 @@
     </div>
 </section>
 <!-- END CALL TO ACTION -->
-@endsection
 <script>
-    var tanpa_rupiah = document.getElementById('tanpa-rupiah');
-    tanpa_rupiah.addEventListener('keyup', function(e)
+    function process(e)
     {
-        tanpa_rupiah.value = formatRupiah(this.value);
-    });
+        if (!e) e = window.event;
+        e.preventDefault();
     
-    /* Dengan Rupiah */
-    var dengan_rupiah = document.getElementById('price');
-    dengan_rupiah.addEventListener('keyup', function(e)
-    {
-        dengan_rupiah.value = formatRupiah(this.value, 'Rp. ');
-    });
+        var harga_rumah  = parseInt(document.getElementById('property').value);
+        var uang_muka    = parseInt(document.getElementById('uang_muka').value);
+        var margin       = parseFloat(document.getElementById('margin').value).toFixed(2);
+        var tenor        = parseInt(document.getElementById('tenor').value);
+        var penghasilan  = parseInt(document.getElementById('penghasilan').value);
+        var cicilan_lain = parseInt(document.getElementById('cicilan_lain').value);
+    //     var harga_rumah  = parseInt(document.getElementById('harga_rumah').value);
+    // var uang_muka    = parseInt(document.getElementById('uang_muka').value);
+    // var margin       = parseFloat(document.getElementById('margin').value).toFixed(2);
+    // var tenor        = parseInt(document.getElementById('tenor').value);
+    // var penghasilan  = parseInt(document.getElementById('penghasilan').value);
+    // var cicilan_lain = parseInt(document.getElementById('cicilan_lain').value);
+        const LIMIT = 40;
     
-    /* Fungsi */
-    function formatRupiah(angka, prefix)
-    {
-        var number_string = angka.replace(/[^,\d]/g, '').toString(),
-            split    = number_string.split(','),
-            sisa     = split[0].length % 3,
-            rupiah     = split[0].substr(0, sisa),
-            ribuan     = split[0].substr(sisa).match(/\d{3}/gi);
-            
-        if (ribuan) {
-            separator = sisa ? '.' : '';
-            rupiah += separator + ribuan.join('.');
+        // error if...
+        // uang_muka >= harga_rumah
+        if (uang_muka >= harga_rumah)
+        {
+            alert('Uang Muka tidak boleh lebih dari Harga Rumah');
+            return ;
         }
-        
-        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+    
+        // uang_muka < 0.2 * harga_rumah
+        if (uang_muka < 0.2 * harga_rumah)
+        {
+            alert('Uang Muka minimal 20 persen dari Harga Rumah');
+            return ;
+        }
+    
+        // penghasilan >= harga rumah - uang_muka
+        if (penghasilan >= harga_rumah)
+        {
+            alert('Penghasilan per bulan lebih dari Harga Rumah');
+            return ;
+        }
+    
+        // cicilan_lain >= penghasilan
+        if (cicilan_lain >= penghasilan)
+        {
+            alert('Cicilan Lain lebih dari Penghasilan per Bulan');
+            return ;
+        }
+    
+        var pinjaman = harga_rumah - uang_muka;
+        var total_pinjaman = pinjaman + (margin / 100 * pinjaman * tenor);
+        var cicilan_bulanan = parseInt(total_pinjaman / tenor / 12);
+        var persentase_cicilan = parseFloat((cicilan_bulanan + cicilan_lain) / penghasilan * 100).toFixed(2);                                                    
+        // document.getElementById('hasil_harga_rumah').innerHTML = addCommas(harga_rumah);
+        // document.getElementById('hasil_uang_muka').innerHTML = addCommas(uang_muka);
+        // document.getElementById('hasil_margin').innerHTML = margin;
+        // document.querySelectorAll('.hasil_pinjaman')[0].innerHTML = document.querySelectorAll('.hasil_pinjaman')[1].innerHTML = addCommas(pinjaman);
+        // document.querySelectorAll('.hasil_tenor')[0].innerHTML = document.querySelectorAll('.hasil_tenor')[1].innerHTML = tenor;
+        // document.querySelectorAll('.hasil_pinjaman')[0].innerHTML = 
+            // document.querySelectorAll('.hasil_pinjaman')[1].innerHTML = 
+            document.getElementById('pinjaman').innerHTML = "Rp. " + addCommas(pinjaman);
+        // document.getElementById('hasil_total_pinjaman').innerHTML = 
+            document.getElementById('total_pinjaman').innerHTML = "Rp. " + addCommas(total_pinjaman);
+    
+        document.getElementById('cicilan_bulanan').innerHTML = "Rp." + addCommas(cicilan_bulanan);
+        document.getElementById('persentase_cicilan').innerHTML = persentase_cicilan + "%";
+        if (persentase_cicilan > LIMIT)
+            document.getElementById('persentase_cicilan').style.color = 'red'; 
+        else
+        document.getElementById('persentase_cicilan').style.color = 'white';
+
+        document.getElementById('penghasilan_bulanan').innerHTML = "Rp. " +  addCommas(parseInt(document.getElementById('penghasilan').value));
+        document.getElementById('cicilan_cicilan').innerHTML = "Rp. " + addCommas(cicilan_lain);
+        document.getElementById('uang_dp').innerHTML =  "Rp. " + addCommas(uang_muka);        
+        document.getElementById('bunga').innerHTML = margin + "%";        
+        document.getElementById('kredit').innerHTML = tenor + " Tahun";       
+    }
+    
+    function addCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 </script>
+@endsection

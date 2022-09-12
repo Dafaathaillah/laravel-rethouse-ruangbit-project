@@ -44,6 +44,8 @@
     <a href="{{ asset('javascript:') }}" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
     <!-- END SCROLL TO TOP -->
     <script src="{{ asset('./js/index.bundle.js?fd365619e86ad9137a29') }}"></script>
+    {{-- <script src="{{ asset('assets/js/kpr.js')}}"></script>    
+    <script type="text/javascript" src="{{ asset('/js/kpr.js')}}"></script> --}}
 </body>
 
 </html>
