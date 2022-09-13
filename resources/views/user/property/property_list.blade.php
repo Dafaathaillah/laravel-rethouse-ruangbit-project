@@ -127,13 +127,13 @@
                                     <li class="list-inline-item mr-auto">
                                         <span class="title-text">Sort by</span>
                                         <div class="btn-group">
-                                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                                                 aria-haspopup="true" aria-expanded="false">
                                                 Based Properties
                                             </a>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#">Low to High Price</a>
-                                                <a class="dropdown-item" href="javascript:void(0)">High to Low Price
+                                                <a class="dropdown-item" href="#">High to Low Price
                                                 </a>
                                             </div>
                                         </div>

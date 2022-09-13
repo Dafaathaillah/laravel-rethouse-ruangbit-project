@@ -23,7 +23,7 @@
                 @endif
                 <ul class="list-group list-group-flush">
                     <div class="container mb-3">
-                        <img src="{{asset('storage/images/logo/20220831023629.jpg')}}"
+                        <img src="{{asset('storage/property-images/' .$ads->image)}}"
                         class="rounded float-left" style="width: 300px">
                     </div>
                     <div class="row mb-3 mx-1">
