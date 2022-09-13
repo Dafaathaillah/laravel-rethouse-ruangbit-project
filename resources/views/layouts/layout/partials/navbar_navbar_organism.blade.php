@@ -16,8 +16,8 @@
                             <ul class="topbar-link">
                                 <li><a href="#" title="">Career</a></li>
                                 <li><a href="#" title="">Contact Us</a></li>
-                                <li><a href="{{route('auth.register')}}" title="">Login / Register</a></li>
-                            </ul>
+                                {{-- <li><a href="{{route('auth.register')}}" title="">Login / Register</a></li> --}}                                                                
+                            </ul>                            
                             <ul class="topbar-sosmed">
                                 <li>
                                     <a href="http://www.facebook.com"><i class="fa fa-facebook"></i></a>
@@ -28,6 +28,41 @@
                                 <li>
                                     <a href="http://www.instagram.com"><i class="fa fa-instagram"></i></a>
                                 </li>
+                                @auth
+                                <li class="nav-item dropdown nav-profile">
+                                    {{-- <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="{{ asset('images\pic_sample.jpg') }}" alt="profile">
+                                    </a> --}}
+                                    <a class="dropdown-toggle" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome, {{ auth()->user()->name }}</a>
+                                    <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                                        <div class="dropdown-header d-flex flex-column align-items-center">
+                                            {{-- <div class="figure mb-3">
+                                                <img src="{{ asset('images\pic_sample.jpg') }}" alt="">
+                                            </div> --}}
+                                            <div class="info text-center">
+                                                <p class="name font-weight-bold mb-0">Welcome, {{ auth()->user()->name }}</p>
+                                                <p class="email text-muted mb-3">{{ auth()->user()->email }}</p>
+                                            </div>
+                                        </div>                                        
+                                        <div class="dropdown-body">
+                                            <hr />
+                                            <ul class="profile-nav p-0">
+                                                <li class="nav-item">
+                                                    <form action="{{ route('auth.logout') }}" action="post">
+                                                        @csrf
+                                                        <button type="submit" class="dropdown-item">Log Out</button>
+                                                    </form>									
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                @else
+                                <li class="nav-item dropdown nav-profile">
+                                    <a href="{{ route('auth.login')}}" title="">Login</a> / <a href="{{ route('auth.register')}}" title="">Register</a>
+                                </li>				
+                                @endauth
                             </ul>
                         </div>
                     </div>
