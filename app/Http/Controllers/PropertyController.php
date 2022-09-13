@@ -25,7 +25,11 @@ class PropertyController extends Controller
         return view('user.property.property_list', compact('property', 'ldate'));
     }
 
-
+    public function sorthtl()
+    {
+        $sorthtl = Property::orderByDesc('price')->get();
+        return redirect()->route('property.index', compact('sorthtl'));
+    }
     /**
      * Show the form for creating a new resource.
      *
