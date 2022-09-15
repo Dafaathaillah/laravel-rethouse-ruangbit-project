@@ -93,7 +93,7 @@
                                 </li>
                                 <li><a class="dropdown-item icon-arrow" href="{{ route('property.index') }}"> Property </a>
                                 </li>
-                                <li><a class="dropdown-item icon-arrow" href="{{ route('property.index') }}"> File Manager </a>
+                                <li><a class="dropdown-item icon-arrow" href="{{ route('filemanager.index') }}"> File Manager </a>
                                 </li>
                             </ul>
                         </li>

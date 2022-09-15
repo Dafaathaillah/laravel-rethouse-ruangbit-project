@@ -14,6 +14,7 @@ use App\Http\Controllers\ManageLogoController;
 use App\Http\Controllers\ManageTermController;
 use App\Http\Controllers\ManageRoleController;
 use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\FileManagerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,6 +113,8 @@ Route::get('/property/show/{id}', [PropertyController::class,'show'])->name('pro
 Route::get('/property/edit{id}', [PropertyController::class,'edit'])->name('property.edit')->middleware('auth');
 Route::put('/property/update{id}', [PropertyController::class,'update'])->name('property.update')->middleware('auth');
 Route::get('/property/delete/{id}', [PropertyController::class,'destroy'])->name('property.destroy')->middleware('auth');
+
+Route::get('/filemanager', [FileManagerController::class, 'index'])->name('filemanager.index')->middleware('auth');
 
 Route::group(['middleware' => ['auth', 'check.admin:1']], function(){
     Route::get('/admin', [DashboardAdminController::class,'index'])->name('admin.dashboard.index');
