@@ -86,12 +86,14 @@
                                 data-toggle="dropdown"> Home </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Pages </a>
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Menu </a>
                             <ul class="dropdown-menu animate fade-up">
 
                                 <li><a class="dropdown-item icon-arrow" href="{{ route('dashboard') }}"> Dashboard </a>
                                 </li>
                                 <li><a class="dropdown-item icon-arrow" href="{{ route('property.index') }}"> Property </a>
+                                </li>
+                                <li><a class="dropdown-item icon-arrow" href="{{ route('property.index') }}"> File Manager </a>
                                 </li>
                             </ul>
                         </li>
