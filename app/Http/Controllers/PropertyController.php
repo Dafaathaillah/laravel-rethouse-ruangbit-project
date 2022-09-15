@@ -75,18 +75,11 @@ class PropertyController extends Controller
         // Property::create($validateData);
 
         $prt = new Property();
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
+        if ($request->hasFile('dzfile')) {
+            $file = $request->file('dzfile');
             $ext = $file->getClientOriginalName();
             $file->move('storage/property-images', $ext);
-            $prt->image = $ext;
-        }
-
-        if ($request->hasFile('image_transaction')) {
-            $file = $request->file('image_transaction');
-            $ext = $file->getClientOriginalName();
-            $file->move('storage/transaction-images', $ext);
-            $prt->image = $ext;
+            $prt->image = json_encode([$ext]);
         }
 
         $prt->name = $request->input('name');
