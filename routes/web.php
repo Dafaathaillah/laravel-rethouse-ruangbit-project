@@ -6,6 +6,7 @@ use App\Http\Controllers\ManageUserController;
 use App\Http\Controllers\ManageAdsController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\KprAdminController;
 use App\Http\Controllers\KprController;
 use App\Http\Controllers\ManageAgencyController;
@@ -113,7 +114,7 @@ Route::put('/property/update{id}', [PropertyController::class,'update'])->name('
 Route::get('/property/delete/{id}', [PropertyController::class,'destroy'])->name('property.destroy')->middleware('auth');
 
 Route::group(['middleware' => ['auth', 'check.admin:1']], function(){
-    Route::get('/admin', [DashboardAdminController::class,'index'])->name('admin.dashboard.index');    
+    Route::get('/admin', [DashboardAdminController::class,'index'])->name('admin.dashboard.index');
     Route::get('/admin/users', [ManageUserController::class,'index'])->name('admin.user.index');
     Route::get('/admin/users/show/{id}', [ManageUserController::class,'show'])->name('admin.user.show');
     Route::get('/admin/users/edit{id}', [ManageUserController::class,'edit'])->name('admin.user.edit');
@@ -140,7 +141,7 @@ Route::group(['middleware' => ['auth', 'check.admin:1']], function(){
     Route::get('/admin/advertisements/create', [ManageAdsController::class,'create'])->name('admin.ads.create');
     Route::get('/admin/advertisements/show/{id}', [ManageAdsController::class,'show'])->name('admin.ads.show');
     Route::get('/admin/edit/advertisements/{id}', [ManageAdsController::class,'edit'])->name('admin.ads.edit');
-    Route::put('/admin/update/advertisements/{id}', [ManageAdsController::class,'update'])->name('admin.ads.update');    
+    Route::put('/admin/update/advertisements/{id}', [ManageAdsController::class,'update'])->name('admin.ads.update');
 
     Route::resource('logo', ManageLogoController::class);
 

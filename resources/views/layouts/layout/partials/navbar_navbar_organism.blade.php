@@ -16,8 +16,8 @@
                             <ul class="topbar-link">
                                 <li><a href="#" title="">Career</a></li>
                                 <li><a href="#" title="">Contact Us</a></li>
-                                {{-- <li><a href="{{route('auth.register')}}" title="">Login / Register</a></li> --}}                                                                
-                            </ul>                            
+                                {{-- <li><a href="{{route('auth.register')}}" title="">Login / Register</a></li> --}}
+                            </ul>
                             <ul class="topbar-sosmed">
                                 <li>
                                     <a href="http://www.facebook.com"><i class="fa fa-facebook"></i></a>
@@ -44,7 +44,7 @@
                                                 <p class="name font-weight-bold mb-0">Welcome, {{ auth()->user()->name }}</p>
                                                 <p class="email text-muted mb-3">{{ auth()->user()->email }}</p>
                                             </div>
-                                        </div>                                        
+                                        </div>
                                         <div class="dropdown-body">
                                             <hr />
                                             <ul class="profile-nav p-0">
@@ -52,7 +52,7 @@
                                                     <form action="{{ route('auth.logout') }}" action="post">
                                                         @csrf
                                                         <button type="submit" class="dropdown-item">Log Out</button>
-                                                    </form>									
+                                                    </form>
                                                 </li>
                                             </ul>
                                         </div>
@@ -61,7 +61,7 @@
                                 @else
                                 <li class="nav-item dropdown nav-profile">
                                     <a href="{{ route('auth.login')}}" title="">Login</a> / <a href="{{ route('auth.register')}}" title="">Register</a>
-                                </li>				
+                                </li>
                                 @endauth
                             </ul>
                         </div>
@@ -89,12 +89,9 @@
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Pages </a>
                             <ul class="dropdown-menu animate fade-up">
 
-                                <li><a class="dropdown-item icon-arrow" href="#"> Property Listing </a>
-                                    <ul class="submenu dropdown-menu  animate fade-up">
-                                        <li><a class="dropdown-item" href="{{ route('dashboard') }}"> Dashboard </a></li>
-                                        <li><a class="dropdown-item" href="{{ route('property.index') }}"> Property </a>
-                                        </li>
-                                    </ul>
+                                <li><a class="dropdown-item icon-arrow" href="{{ route('dashboard') }}"> Dashboard </a>
+                                </li>
+                                <li><a class="dropdown-item icon-arrow" href="{{ route('property.index') }}"> Property </a>
                                 </li>
                             </ul>
                         </li>

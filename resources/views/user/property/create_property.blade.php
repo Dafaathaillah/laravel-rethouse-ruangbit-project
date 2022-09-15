@@ -18,16 +18,16 @@
                             @csrf
                             <div style="mt-3 mb-3" class="form-group col-12">
                                 <label for="picture">Picture</label>
-                                <input type="hidden" name="image[]" id="image" multiple>
-                                  <div  class="dropzone" id="dpz-multiple-files">
-                                      <div class="dz-message">Drop Image Here To Upload</div>
-                                  </div>
+                                <div class="dropzone" id="dpz-multiple-files">
+                                    <div class="dz-message">Drop Image Here To Upload</div>
+                                </div>
                             </div>
                             <div class="container">
                                 <div class="row">
                                     <div class="form-group col-4 ">
                                         <label for="name">Name</label>
-                                        <input type="text" class="form-control shadow-sm" id="name" name="name" placeholder="Name">
+                                        <input type="text" class="form-control shadow-sm" id="name" name="name"
+                                            placeholder="Name">
                                     </div>
                                     <div class="form-group col-4 ">
                                         <label for="price">Price</label>
@@ -40,7 +40,7 @@
                                             <option value="#" disabled selected>Choose Status</option>
                                             <option value="For Sell">For Sell</option>
                                             <option value="For Rent">For Rent</option>
-                                            <option value="Sold OUt">Sold out</option>
+                                            <option value="Sold Out">Sold out</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-4 ">
@@ -80,7 +80,8 @@
                                     </div>
                                     <div class="form-group col-6 ">
                                         <label for="type_property_id">Type Property</label>
-                                        <select class="form-control shadow-sm" id="type_property_id" name="type_property_id">
+                                        <select class="form-control shadow-sm" id="type_property_id"
+                                            name="type_property_id">
                                             <option value="#" disabled selected>Choose Type Property</option>
                                             @foreach ($type_property as $type)
                                                 {
@@ -114,7 +115,8 @@
                                     </div>
                                     <div class="form-group col-6">
                                         <label for="garage">Garage</label>
-                                        <input type="number" class="form-control shadow-sm" id="garage" name="garage">
+                                        <input type="number" class="form-control shadow-sm" id="garage"
+                                            name="garage">
                                     </div>
                                     <div class="form-group col-6">
                                         <label for="property_size">Property Size</label>
@@ -123,7 +125,8 @@
                                     </div>
                                     <div class="form-group col-12">
                                         <label for="area">Area</label>
-                                        <input type="text" class="form-control shadow-sm" id="area" name="area">
+                                        <input type="text" class="form-control shadow-sm" id="area"
+                                            name="area">
                                     </div>
                                     <div style="margin-top: 20px" class="form-group col-12 ">
                                         <label for="features">Features</label>
@@ -132,7 +135,8 @@
                                 </div>
                             </div>
                             <div class="row justify-content-end">
-                                <button type="submit" style="margin-top: 20px" class="btn btn-primary shadow rounded">Simpan</button>
+                                <button type="submit" style="margin-top: 20px"
+                                    class="btn btn-primary shadow rounded">Simpan</button>
                                 &nbsp;
                                 <a href="{{ route('property.index') }}" style="margin-top: 20px" type="button"
                                     class="btn btn-warning shadow rounded">
@@ -145,59 +149,58 @@
             </div>
         </div>
     </div>
-    @stop
+@stop
 
 
-    @section('script')
+@section('script')
     <script>
         var uploadedDocumentMap = {}
         Dropzone.options.dpzMultipleFiles = {
-          paramName:"dzfile",//the name that will be used to transfer  the file
-          maxFilesize: 5, // MB
-          maxFiles: 3,
-          clickable:true,
-          addRemoveLinks: true,
-          acceptedFiles:'image/*',
-          dictFallbackMessage:"Your browser does not supported",
-          dictInvalidFileType:"This type of file cannot be uploaded",
-          dictCancelUpload:"Cancel",
-          dictCancelUploadConfirmation:"Are you sure to cancel?",
-          dictRemoveFile:"Remove File",
-          dictMaxFileExceeded:"You exceeded the maximum number of files",
-          headers: {
-            'X-CSRF-TOKEN': "{{ csrf_token() }}"
-          },
-          url:"{{route('property.store')}}",
+            url: '{{ route('property.store') }}',
+            maxFilesize: 5, // MB
+            maxFiles: 3,
+            clickable: true,
+            addRemoveLinks: true,
+            acceptedFiles: '.jpeg,.jpg,.png,.gif',
+            dictFallbackMessage: "Your browser does not supported",
+            dictInvalidFileType: "This type of file cannot be uploaded",
+            dictCancelUpload: "Cancel",
+            dictCancelUploadConfirmation: "Are you sure to cancel?",
+            dictRemoveFile: "Remove File",
+            dictMaxFileExceeded: "You exceeded the maximum number of files",
+            headers: {
+                'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            },
 
-          success: function (file, response) {
-            $('form').append('<input type="hidden" name="image[]" value="' + response.name + '">')
-            uploadedDocumentMap[file.name] = response.name
-          },
+            success: function(file, response) {
+                $('form').append('<input type="hidden" name="image[]" value="' + response.name + '">')
+                uploadedDocumentMap[file.name] = response.name
+            },
 
-          removedfile: function (file) {
-            file.previewElement.remove()
-            var name = ''
-            if (typeof file.file_name !== 'undefined') {
-              name = file.file_name
-            } else {
-              name = uploadedDocumentMap[file.name]
+            removedfile: function(file) {
+                file.previewElement.remove()
+                var name = ''
+                if (typeof file.file_name !== 'undefined') {
+                    name = file.file_name
+                } else {
+                    name = uploadedDocumentMap[file.name]
+                }
+                $('form').find('input[name="image[]"][value="' + name + '"]').remove()
+            },
+            init: function() {
+                @if (isset($event) && $event->document)
+                    var files =
+                        {!! json_encode($event->document) !!}
+                    for (var i in files) {
+                        var file = files[i]
+                        this.options.addedfile.call(this, file)
+                        file.previewElement.classList.add('dz-complete')
+                        $('form').append('<input type="hidden" name="image[]" value="' + file.file_name + '">')
+                    }
+                @endif
             }
-            $('form').find('input[name="image[]"][value="' + name + '"]').remove()
-          },
-          init: function () {
-            @if(isset($event) && $event->document)
-              var files =
-                {!! json_encode($event->document) !!}
-              for (var i in files) {
-                var file = files[i]
-                this.options.addedfile.call(this, file)
-                file.previewElement.classList.add('dz-complete')
-                $('form').append('<input type="hidden" name="image[]" value="' + file.file_name + '">')
-              }
-            @endif
-          }
         }
-      </script>
+    </script>
 
 
 @endsection

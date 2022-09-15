@@ -85,7 +85,7 @@ class PropertyController extends Controller
 
         // Property::create($validateData);
         // // return view('user.property.property_list');
-        // return redirect()->route('property.index');
+        
         $prt = new Property();
         if ($request->hasFile('dzfile')) {
             $file = $request->file('dzfile');
