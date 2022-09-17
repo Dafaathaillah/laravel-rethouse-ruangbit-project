@@ -1,4 +1,5 @@
 @extends('layouts.layout.master_main_create')
+@include('sweetalert::alert')
 
 @section('title')
     | Create Property
@@ -13,6 +14,16 @@
                         Add Property
                     </div>
                     <div class="card-body">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <form method="post" action="{{ route('property.store') }}" id="myForm"
                             enctype="multipart/form-data">
                             @csrf

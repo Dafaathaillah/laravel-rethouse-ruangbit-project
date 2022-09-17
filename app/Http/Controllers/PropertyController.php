@@ -67,7 +67,7 @@ class PropertyController extends Controller
 
     public function store(Request $request)
     {
-        // $validateData = $request->validate([
+        //  $request->validate([
         //     'image' => 'image|file',
         //     'type_property_id' => 'required',
         //     'name' => 'required',
@@ -97,6 +97,26 @@ class PropertyController extends Controller
 
         // Property::create($validateData);
         // // return view('user.property.property_list');
+
+         $request->validate([
+            'image' => 'image|file',
+            'type_property_id' => 'required',
+            'name' => 'required',
+            'price' => 'required',
+            'status_property' => 'required',
+            'street' => 'required',
+            'city_id' => 'required',
+            'provience_id' => 'required',
+            'description' => 'required',
+            'ads_id'=>'required',
+            'bedroom' => 'required',
+            'bathroom' => 'required',
+            'garage' => 'required',
+            'property_size' => 'required',
+            'area' => 'required',
+            'features' => 'required',
+            'image_transaction' => 'image|file'
+        ]);
 
         $prt = new Property();
         if ($request->hasFile('file')) {
