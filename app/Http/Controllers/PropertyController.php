@@ -28,6 +28,7 @@ class PropertyController extends Controller
     public function lowPrice()
     {
         $property = $property = DB::table('property')
+        ->orderByDesc('start_ads')
         ->orderBy('price', 'ASC')
         ->simplePaginate(6);
         $ldate = Carbon::today();
@@ -37,6 +38,7 @@ class PropertyController extends Controller
     public function highPrice()
     {
         $property = $property = DB::table('property')
+        ->orderByDesc('start_ads')
         ->orderBy('price', 'DESC')
         ->simplePaginate(6);
         $ldate = Carbon::today();
