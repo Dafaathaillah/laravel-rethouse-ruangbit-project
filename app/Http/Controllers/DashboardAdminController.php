@@ -30,6 +30,11 @@ class DashboardAdminController extends Controller
         $users = User::count();
         $property = Property::count();
         $ads = Property::where('start_ads', '!=' , Null)->count();
-        return view('admin/dashboard/index', compact('users', 'property', 'ads'));
+        $advertise = Property::select(DB::raw("COUNT(*) as count"))
+        ->whereYear("created_at",date('Y'))
+        ->groupBy(DB::raw("Month(created_at)"))
+        ->pluck('count');
+        // dd($advertise);
+        return view('admin/dashboard/index', compact('users', 'property', 'ads', 'advertise'));
     }
 }

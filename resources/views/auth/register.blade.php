@@ -9,7 +9,7 @@
 <meta name="description" content="Rethouse - Real Estate HTML Template">
 <meta name="keywords" content="Real Estate, Property, Directory Listing, Marketing, Agency" />
 <meta name="author" content="mardianto - retenvi.com">
-<title>Rethouse - Real Estate HTML Template</title>
+<title>Rethouse - Real Estate | Register</title>
 
 <!-- Facebook and Twitter integration -->
 <meta property="og:title" content="" />
@@ -24,7 +24,7 @@
 
 <link rel="manifest" href="site.webmanifest">
 <!-- favicon.ico in the root directory -->
-<link rel="apple-touch-icon" href="icon.png">
+<link rel="shorcut icon" href="{{ asset('assets/images/icon.png') }}">
 <meta name="theme-color" content="#3454d1">
 <link href="{{ asset('./css/styles.css?fd365619e86ad9137a29')}}" rel="stylesheet"></head>
 
@@ -60,7 +60,7 @@
                     <label>Contact</label>
                     <input type="text" class="form-control" placeholder="Enter your phone number" name="contact">
                     <span class="text-danger">@error('contact'){{ $message }} @enderror</span>
-                </div> 
+                </div>
                  <!-- form-group end.// -->
             </div> <!-- form-row end.// -->
             <div class="form-group">
@@ -81,10 +81,10 @@
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" class="form-control" placeholder="Enter your password" name="password">                
+                <input type="password" class="form-control" placeholder="Enter your password" name="password">
                 <span class="text-danger">@error('password'){{ $message }} @enderror</span>
             </div>
-             <!-- form-group end.// -->            
+             <!-- form-group end.// -->
             <!--<div class="form-row">
                 <div class="form-group col-lg-6">
                     <label>City</label>
@@ -103,7 +103,7 @@
                 </div>  -->
                 <!-- form-group end.// -->
             <!-- </div>  -->
-            <!-- form-row.// -->           
+            <!-- form-row.// -->
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block"> Register </button>
             </div> <!-- form-group// -->
@@ -113,8 +113,8 @@
                     <span class="custom-control-label"> I am agree with <a href="#">terms and contitions</a> </span>
                 </label>
             </div> <!-- form-group end.// -->
-        </form>        
-    </div><!-- card-body.// -->    
+        </form>
+    </div><!-- card-body.// -->
 </div>
 <p class="text-center mt-4">Have account? <a href="{{ route('auth.login')}}">&#8592 Back to Login</a></p>
                 </div>

@@ -90,7 +90,7 @@
                                                     role="tab" aria-controls="buy" aria-selected="true">Buy </a>
                                             </li>
                                             <li class="nav-item mr-1">
-                                                <a class="nav-link" id="rent-tab" data-toggle="pill" href="#rent"
+                                                <a class="nav-link" id="rent-tab" data-toggle="pill" href="#"
                                                     role="tab" aria-controls="rent" aria-selected="false">Rent</a>
                                             </li>
 
