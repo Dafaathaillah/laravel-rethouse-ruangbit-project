@@ -22,25 +22,26 @@ class PropertyController extends Controller
         ->orderByDesc('start_ads')
         ->simplePaginate(6);
         $ldate = Carbon::today();
-
-        if (request('sorting') == 1) {
-            $property = $property = DB::table('property')
-            ->orderBy('start_ads', 'DESC')
-            ->orderBy('price', 'ASC')
-            ->simplePaginate(6);
-            return view('user.property.property_list', compact('property', 'ldate'));
-        } elseif (request('sorting') == 2) {
-            $property = $property = DB::table('property')
-            ->orderBy('start_ads', 'DESC')
-            ->orderBy('price', 'DESC')
-            ->simplePaginate(6);
-            return view('user.property.property_list', compact('property', 'ldate'));
-        } else {
-            return view('user.property.property_list', compact('property', 'ldate'));
-        }
         return view('user.property.property_list', compact('property', 'ldate'));
     }
 
+    public function lowPrice()
+    {
+        $property = $property = DB::table('property')    
+        ->orderBy('price', 'ASC')
+        ->simplePaginate(6);
+        $ldate = Carbon::today();
+        return view('user.property.property_list', compact('property', 'ldate'));
+    }
+
+    public function highPrice()
+    {
+        $property = $property = DB::table('property')    
+        ->orderBy('price', 'DESC')
+        ->simplePaginate(6);
+        $ldate = Carbon::today();
+        return view('user.property.property_list', compact('property', 'ldate'));
+    }
 
     /**
      * Show the form for creating a new resource.

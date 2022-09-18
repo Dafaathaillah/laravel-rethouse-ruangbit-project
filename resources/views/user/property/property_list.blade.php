@@ -127,33 +127,24 @@
                                     <li class="list-inline-item mr-auto">                                        
                                             <span class="title-text">Sort by</span>                                            
                                            
-                                        {{-- <div class="btn-group">
+                                        <div class="btn-group">
                                             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"
                                                 aria-haspopup="true" aria-expanded="false">
-                                                Based Properties
+                                                Price
                                             </a>                                            
                                             <div class="dropdown-menu">
-                                                <button type="submit" class="btn btn-block"><a class="dropdown-item" id="low" name="low" href="#">Low to High Price</a></button>                                                
-                                                <button type="submit" class="btn btn-block"><a class="dropdown-item" id="high" name="high" href="#">High to Low Price</a></button>                                                
+                                                <a class="dropdown-item" id="low" name="low" href="{{ route('property.low')}}">Low to High Price</a>
+                                                <a class="dropdown-item" id="high" name="high" href="{{ route('property.high')}}">High to Low Price</a> 
                                             </div>
-                                        </div> --}}
+                                        </div>
                                     </li>
-                                    <li class="nav-item">
-                                        <form action="/property">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <select class="custom-select" id="sorting" name="sorting" value="{{ request('sorting') }}">
-                                                        <option selected disabled class="title-text">Choose...</option>
-                                                        <option value="1" class="title-text">Low to High Price</option>
-                                                        <option value="2" class="title-text">High to Low Price</option>
-                                                    </select>
-                                                </div>           
-                                                <div class="col-4">
-                                                    <button type="submit" class="btn btn-primary btn-block title-text">Sort</button>
-                                                </div>                                                                                                                                             
-                                            </div>                                                
-                                        </form>
-                                    </li>
+                                    {{-- <li class="nav-item">
+                                        <select id="sorting" name="sorting" value="{{ request('sorting') }}">
+                                            <option selected disabled class="title-text">Choose...</option>
+                                            <option value="1" class="title-text">Low to High Price</option>
+                                            <option value="2" class="title-text">High to Low Price</option>
+                                        </select>
+                                    </li> --}}
                                     <li class="nav-item">
                                         <a class="nav-link active" data-toggle="pill" href="#pills-tab-two"
                                             role="tab" aria-controls="pills-tab-two" aria-selected="false">

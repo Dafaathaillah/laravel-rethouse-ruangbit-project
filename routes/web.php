@@ -113,6 +113,8 @@ Route::get('/property/show/{id}', [PropertyController::class,'show'])->name('pro
 Route::get('/property/edit{id}', [PropertyController::class,'edit'])->name('property.edit')->middleware('auth');
 Route::put('/property/update{id}', [PropertyController::class,'update'])->name('property.update')->middleware('auth');
 Route::get('/property/delete/{id}', [PropertyController::class,'destroy'])->name('property.destroy')->middleware('auth');
+Route::get('/property/low', [PropertyController::class,'lowPrice'])->name('property.low')->middleware('auth');
+Route::get('/property/high', [PropertyController::class,'highPrice'])->name('property.high')->middleware('auth');
 
 Route::get('/filemanager', [FileManagerController::class, 'index'])->name('filemanager.index')->middleware('auth');
 
