@@ -17,10 +17,10 @@ class PropertyController extends Controller
     public function index()
     {
         $property = $property = DB::table('property')
-        ->where('name', 'like', '%' . request('search') . '%')
-        ->orWhere('street', 'like', '%' . request('search') . '%')
-        ->orderByDesc('start_ads')
-        ->simplePaginate(6);
+            ->where('name', 'like', '%' . request('search') . '%')
+            ->orWhere('street', 'like', '%' . request('search') . '%')
+            ->orderByDesc('start_ads')
+            ->simplePaginate(6);
         $ldate = Carbon::today();
         return view('user.property.property_list', compact('property', 'ldate'));
     }
@@ -28,8 +28,8 @@ class PropertyController extends Controller
     public function lowPrice()
     {
         $property = $property = DB::table('property')
-        ->orderBy('price', 'ASC')
-        ->simplePaginate(6);
+            ->orderBy('price', 'ASC')
+            ->simplePaginate(6);
         $ldate = Carbon::today();
         return view('user.property.property_list', compact('property', 'ldate'));
     }
@@ -37,8 +37,8 @@ class PropertyController extends Controller
     public function highPrice()
     {
         $property = $property = DB::table('property')
-        ->orderBy('price', 'DESC')
-        ->simplePaginate(6);
+            ->orderBy('price', 'DESC')
+            ->simplePaginate(6);
         $ldate = Carbon::today();
         return view('user.property.property_list', compact('property', 'ldate'));
     }
@@ -56,7 +56,7 @@ class PropertyController extends Controller
         $province = $province = DB::table('province')->get();
         $type_property = $type_property = DB::table('type_property')->get();
         $ldate = Carbon::today();
-        return view('user.property.create_property', compact('city','type_property', 'province','ad_lists','users', 'ldate'));
+        return view('user.property.create_property', compact('city', 'type_property', 'province', 'ad_lists', 'users', 'ldate'));
     }
 
     /**
@@ -99,7 +99,7 @@ class PropertyController extends Controller
         // Property::create($validateData);
         // // return view('user.property.property_list');
 
-         $request->validate([
+        $request->validate([
             'image' => 'image|file',
             'type_property_id' => 'required',
             'name' => 'required',
@@ -109,7 +109,7 @@ class PropertyController extends Controller
             'city_id' => 'required',
             'provience_id' => 'required',
             'description' => 'required',
-            'ads_id'=>'required',
+            'ads_id' => 'required',
             'bedroom' => 'required',
             'bathroom' => 'required',
             'garage' => 'required',
@@ -121,14 +121,24 @@ class PropertyController extends Controller
 
         $prt = new Property();
         if ($request->hasFile('file')) {
-            $file = $request->file('file');
-            $ext = $file->getClientOriginalName();
-            $file->move('storage/property-images', $ext);
-            $prt->image = json_encode([$ext]);
+            $image = $request->file('file');
+            $imageName = time() . $image->getClientOriginalName();
+            $upload_success = $image->move(public_path('storage/property-images'), $imageName);
+
+            if ($upload_success) {
+                return response()->json($upload_success, 200);
+            }
+            // Else, return error 400
+            else {
+                return response()->json('error', 400);
+            }
         }
 
-        if ($request->file('image_transaction')) {
-            $validateData['image_transaction'] = $request->file('image_transaction')->store('transaction-images');
+        if ($request->hasFile('image-transaction')) {
+            $file = $request->file('image-transaction');
+            $ext = $file->getClientOriginalName();
+            $file->move('storage/transaction-images', $ext);
+            $prt->image = $ext;
         }
 
         $prt->name = $request->input('name');
@@ -148,9 +158,7 @@ class PropertyController extends Controller
         $prt->features = $request->input('features');
         $prt->image_transaction = $request->input('image_transaction');
         $prt->save();
-        return redirect()->route('property.index')-> with('success', 'Data Berhasil Ditambah');
-
-
+        return redirect()->route('property.index')->with('success', 'Data Berhasil Ditambah');
     }
 
     /**
@@ -163,7 +171,7 @@ class PropertyController extends Controller
     {
         $property = Property::find($id);
         $ldate = Carbon::today();
-        return view('user.property.property_detail', compact('property','ldate'));
+        return view('user.property.property_detail', compact('property', 'ldate'));
     }
 
     /**

@@ -116,7 +116,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="form-group col-md-6 col-lg-6">
+                                    <div class="form-group col-md-12 col-lg-12">
                                         <label for="image_transaction">Receipt of Payment</label>
                                         <div class="input-group">
                                             <input type="file" name="image_transaction"
@@ -130,6 +130,7 @@
                                                 </div>
                                             @enderror
                                         </div>
+                                    </div>
                                         <div class="form-group col-6">
                                             <label for="bedroom">Bedroom</label>
                                             <input type="number" class="form-control shadow-sm" id="bedroom"
@@ -199,9 +200,8 @@
                 'X-CSRF-TOKEN': "{{ csrf_token() }}"
             },
 
-            success: function(file, response) {
-                $('form').append('<input type="hidden" name="image[]" value="' + response.name + '">')
-                uploadedDocumentMap[file.name] = response.name
+            success: function (file, response) {
+                console.log(file);
             },
 
             removedfile: function(file) {
