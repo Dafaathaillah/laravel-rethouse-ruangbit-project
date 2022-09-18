@@ -27,7 +27,7 @@ class PropertyController extends Controller
 
     public function lowPrice()
     {
-        $property = $property = DB::table('property')    
+        $property = $property = DB::table('property')
         ->orderBy('price', 'ASC')
         ->simplePaginate(6);
         $ldate = Carbon::today();
@@ -36,7 +36,7 @@ class PropertyController extends Controller
 
     public function highPrice()
     {
-        $property = $property = DB::table('property')    
+        $property = $property = DB::table('property')
         ->orderBy('price', 'DESC')
         ->simplePaginate(6);
         $ldate = Carbon::today();
@@ -125,6 +125,10 @@ class PropertyController extends Controller
             $ext = $file->getClientOriginalName();
             $file->move('storage/property-images', $ext);
             $prt->image = json_encode([$ext]);
+        }
+
+        if ($request->file('image_transaction')) {
+            $validateData['image_transaction'] = $request->file('image_transaction')->store('transaction-images');
         }
 
         $prt->name = $request->input('name');

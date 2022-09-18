@@ -116,44 +116,60 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="form-group col-6">
-                                        <label for="bedroom">Bedroom</label>
-                                        <input type="number" class="form-control shadow-sm" id="bedroom" name="bedroom">
-                                    </div>
-                                    <div class="form-group col-6">
-                                        <label for="bathroom">Bathroom</label>
-                                        <input type="number" class="form-control shadow-sm" id="bathroom" name="bathroom">
-                                    </div>
-                                    <div class="form-group col-6">
-                                        <label for="garage">Garage</label>
-                                        <input type="number" class="form-control shadow-sm" id="garage"
-                                            name="garage">
-                                    </div>
-                                    <div class="form-group col-6">
-                                        <label for="property_size">Property Size</label>
-                                        <input type="text" class="form-control shadow-sm" id="property_size"
-                                            name="property_size">
-                                    </div>
-                                    <div class="form-group col-12">
-                                        <label for="area">Area</label>
-                                        <input type="text" class="form-control shadow-sm" id="area"
-                                            name="area">
-                                    </div>
-                                    <div style="margin-top: 20px" class="form-group col-12 ">
-                                        <label for="features">Features</label>
-                                        <textarea class="form-control shadow-sm" id="features" name="features" placeholder="Features of Property"></textarea>
+                                    <div class="form-group col-md-6 col-lg-6">
+                                        <label for="image_transaction">Receipt of Payment</label>
+                                        <div class="input-group">
+                                            <input type="file" name="image_transaction"
+                                                class="form-control @error('image_transaction') is-invalid @enderror"
+                                                id="image_transaction" aria-describedby="image_transaction">
+                                            <label for="image_transaction" class="input-group-text"
+                                                style="line-height: 1.1rem">Upload</label>
+                                            @error('image_transaction')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group col-6">
+                                            <label for="bedroom">Bedroom</label>
+                                            <input type="number" class="form-control shadow-sm" id="bedroom"
+                                                name="bedroom">
+                                        </div>
+                                        <div class="form-group col-6">
+                                            <label for="bathroom">Bathroom</label>
+                                            <input type="number" class="form-control shadow-sm" id="bathroom"
+                                                name="bathroom">
+                                        </div>
+                                        <div class="form-group col-6">
+                                            <label for="garage">Garage</label>
+                                            <input type="number" class="form-control shadow-sm" id="garage"
+                                                name="garage">
+                                        </div>
+                                        <div class="form-group col-6">
+                                            <label for="property_size">Property Size</label>
+                                            <input type="text" class="form-control shadow-sm" id="property_size"
+                                                name="property_size">
+                                        </div>
+                                        <div class="form-group col-12">
+                                            <label for="area">Area</label>
+                                            <input type="text" class="form-control shadow-sm" id="area"
+                                                name="area">
+                                        </div>
+                                        <div style="margin-top: 20px" class="form-group col-12 ">
+                                            <label for="features">Features</label>
+                                            <textarea class="form-control shadow-sm" id="features" name="features" placeholder="Features of Property"></textarea>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row justify-content-end">
-                                <button type="submit" style="margin-top: 20px"
-                                    class="btn btn-primary shadow rounded">Simpan</button>
-                                &nbsp;
-                                <a href="{{ route('property.index') }}" style="margin-top: 20px" type="button"
-                                    class="btn btn-warning shadow rounded">
-                                    Cancel
-                                </a>
-                            </div>
+                                <div class="row justify-content-end">
+                                    <button type="submit" style="margin-top: 20px"
+                                        class="btn btn-primary shadow rounded">Simpan</button>
+                                    &nbsp;
+                                    <a href="{{ route('property.index') }}" style="margin-top: 20px" type="button"
+                                        class="btn btn-warning shadow rounded">
+                                        Cancel
+                                    </a>
+                                </div>
                         </form>
                     </div>
                 </div>
