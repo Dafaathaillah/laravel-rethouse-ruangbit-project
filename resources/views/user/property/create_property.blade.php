@@ -27,7 +27,7 @@
                         <form method="post" action="{{ route('property.store') }}" id="myForm"
                             enctype="multipart/form-data">
                             @csrf
-                            <div style="mt-3 mb-3" class="form-group col-12">
+                            <div style="mt-3 mb-3" class="form-group col-md-12 col-lg-12">
                                 <label for="picture">Picture</label>
                                 <div class="dropzone" id="dpz-multiple-files">
                                     <div class="dz-message">Drop Image Here To Upload</div>
@@ -35,17 +35,17 @@
                             </div>
                             <div class="container">
                                 <div class="row">
-                                    <div class="form-group col-4 ">
+                                    <div class="form-group col-md-4 col-lg-4 ">
                                         <label for="name">Name</label>
                                         <input type="text" class="form-control shadow-sm" id="name" name="name"
                                             placeholder="Name">
                                     </div>
-                                    <div class="form-group col-4 ">
+                                    <div class="form-group col-md-4 col-lg-4 ">
                                         <label for="price">Price</label>
                                         <input type="price" class="form-control shadow-sm" id="price" name="price"
                                             placeholder="Price">
                                     </div>
-                                    <div class="form-group col-4 ">
+                                    <div class="form-group col-md-4 col-lg-4 ">
                                         <label for="status_property" class="form-label">Status</label>
                                         <select class="form-control shadow-sm" id="status_property" name="status_property">
                                             <option value="#" disabled selected>Choose Status</option>
@@ -54,12 +54,12 @@
                                             <option value="Sold Out">Sold out</option>
                                         </select>
                                     </div>
-                                    <div class="form-group col-md-4 ">
+                                    <div class="form-group col-md-4 col-lg-4 ">
                                         <label for="street">Address</label>
                                         <input type="text" class="form-control shadow-sm" id="street" name="street"
                                             placeholder="Address">
                                     </div>
-                                    <div class="form-group col-4 ">
+                                    <div class="form-group col-md-4 col-lg-4 ">
                                         <label for="city_id">City</label>
                                         <select class="form-control shadow-sm" id="city_id" name="city_id">
                                             <option value="#" disabled selected>Choose City</option>
@@ -72,7 +72,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="form-group col-4 ">
+                                    <div class="form-group col-md-4 col-lg-4 ">
                                         <label for="provinsi">Province</label>
                                         <select class="form-control shadow-sm" id="provience_id" name="provience_id">
                                             <option value="#" disabled selected>Choose Provience</option>
@@ -85,11 +85,11 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="form-group col-12 ">
+                                    <div class="form-group col-md-12 col-lg-12 ">
                                         <label for="deskripsi">Description Property</label>
                                         <textarea class="form-control shadow-sm" id="description" name="description" placeholder="Description Your Property"></textarea>
                                     </div>
-                                    <div class="form-group col-6 ">
+                                    <div class="form-group col-md-6 col-lg-6 ">
                                         <label for="type_property_id">Type Property</label>
                                         <select class="form-control shadow-sm" id="type_property_id"
                                             name="type_property_id">
@@ -103,7 +103,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="form-group col-6 ">
+                                    <div class="form-group col-md-6 col-lg-6 ">
                                         <label for="ads_id">Advertise</label>
                                         <select class="form-control shadow-sm" id="ads_id" name="ads_id">
                                             <option value="#" disabled selected>Choose Advertise</option>
@@ -131,32 +131,32 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="form-group col-6">
+                                    <div class="form-group col-md-6 col-lg-6">
                                         <label for="bedroom">Bedroom</label>
                                         <input type="number" class="form-control shadow-sm" id="bedroom"
                                             name="bedroom">
                                     </div>
-                                    <div class="form-group col-6">
+                                    <div class="form-group col-md-6 col-lg-6">
                                         <label for="bathroom">Bathroom</label>
                                         <input type="number" class="form-control shadow-sm" id="bathroom"
                                             name="bathroom">
                                     </div>
-                                    <div class="form-group col-6">
+                                    <div class="form-group col-md-6 col-lg-6">
                                         <label for="garage">Garage</label>
                                         <input type="number" class="form-control shadow-sm" id="garage"
                                             name="garage">
                                     </div>
-                                    <div class="form-group col-6">
+                                    <div class="form-group col-md-6 col-lg-6">
                                         <label for="property_size">Property Size</label>
                                         <input type="text" class="form-control shadow-sm" id="property_size"
                                             name="property_size">
                                     </div>
-                                    <div class="form-group col-12">
+                                    <div class="form-group col-md-12 col-lg-12">
                                         <label for="area">Area</label>
                                         <input type="text" class="form-control shadow-sm" id="area"
                                             name="area">
                                     </div>
-                                    <div style="margin-top: 20px" class="form-group col-12 ">
+                                    <div style="margin-top: 20px" class="form-group col-md-12 col-lg-12">
                                         <label for="features">Features</label>
                                         <textarea class="form-control shadow-sm" id="features" name="features" placeholder="Features of Property"></textarea>
                                     </div>
