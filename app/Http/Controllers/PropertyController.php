@@ -25,7 +25,7 @@ class PropertyController extends Controller
             ->orderByDesc('start_ads')
             ->simplePaginate(6);
         $ldate = Carbon::today();
-        return view('user.property.property_list', compact('property', 'ldate'));
+        return view('user.property.property_list', ['property'=>$property, 'ldate'=>$ldate, 'mediaCollection' => $this->mediaCollection]);
     }
 
     public function lowPrice()
@@ -120,7 +120,8 @@ class PropertyController extends Controller
             'property_size' => 'required',
             'area' => 'required',
             'features' => 'required',
-            'image_transaction' => 'image|file'
+            'image_transaction' => 'image|file',
+            'image_thumb' => 'image|file'
         ]);
 
         $prt = new Property();
@@ -145,6 +146,13 @@ class PropertyController extends Controller
             $ext = $file->getClientOriginalName();
             $file->move('storage/transaction-images', $ext);
             $prt->image_transaction = $ext;
+        }
+
+        if ($request->hasFile('image_thumb')) {
+            $file = $request->file('image_thumb');
+            $ext = $file->getClientOriginalName();
+            $file->move('storage/property-images', $ext);
+            $prt->image_thumb = $ext;
         }
 
         foreach($request->input('image', []) as $file){
@@ -182,7 +190,7 @@ class PropertyController extends Controller
     {
         $property = Property::find($id);
         $ldate = Carbon::today();
-        return view('user.property.property_detail', compact('property', 'ldate'));
+        return view('user.property.property_detail', ['property'=>$property, 'ldate'=>$ldate, 'mediaCollection' => $this->mediaCollection]);
     }
 
     /**

@@ -35,6 +35,7 @@
             height: 120px;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" />
 </head>
 
 <body>
@@ -54,6 +55,7 @@
     <script src="{{ asset('./js/index.bundle.js?fd365619e86ad9137a29') }}"></script>
     <script src="{{ asset('assets/assets/dropzone/dropzone.min.js')}}"></script>
     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <script src="https://jeremyfagis.github.io/dropify/dist/js/dropify.min.js"></script>
 
     @stack('script-internal')
 </body>

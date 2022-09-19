@@ -27,6 +27,19 @@
                         <form method="post" action="{{ route('property.store') }}" id="myForm"
                             enctype="multipart/form-data">
                             @csrf
+                            <div class="form-group col-md-12 col-lg-12">
+                                <label for="image_thumb">Thumbnail Property</label>
+                                <div class="input-group">
+                                    <input type="file" name="image_thumb"
+                                        class="dropify @error('image_thumb') is-invalid @enderror" id="image_thumb"
+                                        aria-describedby="image_thumb">
+                                    @error('image_thumb')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
                             <div style="mt-3 mb-3" class="form-group col-md-12 col-lg-12">
                                 <label for="picture">Picture</label>
                                 <div class="dropzone" id="dpz-multiple-files">
@@ -216,5 +229,14 @@
                 $('form').find('input[name="image[]"][value="' + name + '"]').remove()
             },
         }
+
+        $('.dropify').dropify({
+            messages: {
+                'default': 'Drag and drop a file here or click',
+                'replace': 'Drag and drop or click to replace',
+                'remove': 'Remove',
+                'error': 'Ooops, something wrong happended.'
+            }
+        });
     </script>
 @endpush

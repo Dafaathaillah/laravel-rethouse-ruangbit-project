@@ -162,11 +162,10 @@
                                                         @if ($prt->end_ads != null)
                                                             <div class="ribbon text-capitalize">Advertise</div>
                                                         @endif
-                                                        @if ($prt->image)
-                                                        @foreach ($product->getMedia($mediaCollection) as $media)
-                                                        <img src="{{ $media->getUrl() }}" style="height: 200px; width: 200px" class="img-fluid w100 img-transition"
-                                                           alt="{{ $media->getUrl() }}">
-                                                     @endforeach
+                                                        @if ($prt->image_thumb)
+                                                            <img src="{{ asset('storage/property-images/' . $prt->image_thumb) }}"
+                                                                alt="" class="img-fluid w100 img-transition">
+                                                            <div class="info"> {{ $prt->status_property }}</div>
                                                         @else
                                                             <img src="images/property4.jpg" alt=""
                                                                 class="img-fluid w100 img-transition">

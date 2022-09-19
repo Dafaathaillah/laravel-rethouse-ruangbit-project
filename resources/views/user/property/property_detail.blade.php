@@ -45,19 +45,14 @@
     <div class="slider__property bg-light">
 
         <div class="slider__property-carousel-opacity owl-carousel owl-theme">
+            @foreach ($property->getMedia($mediaCollection) as $media)
             <div class="item">
-                @if ($property->image)
                 <a href="#">
-                    @foreach ($product->getMedia($mediaCollection) as $media)
-                     <img src="{{ $media->getUrl() }}" style="height: 200px; width: 200px" class="img-thumbnail"
+                     <img src="{{ $media->getUrl() }}"  class="img-fluid"
                         alt="{{ $media->getUrl() }}">
-                  @endforeach
                 </a>
-                @else
-                    <img src="images/property4.jpg" alt="" class="img-fluid">
-                @endif
             </div>
-
+            @endforeach
 
         </div>
 
