@@ -124,17 +124,17 @@
                             <div class="tabs__custom-v2 ">
                                 <!-- FILTER VERTICAL -->
                                 <ul class="nav nav-pills myTab shadow-sm" role="tablist">
-                                    <li class="list-inline-item mr-auto">                                        
-                                            <span class="title-text">Sort by</span>                                            
-                                           
+                                    <li class="list-inline-item mr-auto">
+                                            <span class="title-text">Sort by</span>
+
                                         <div class="btn-group">
                                             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"
                                                 aria-haspopup="true" aria-expanded="false">
                                                 Price
-                                            </a>                                            
+                                            </a>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" id="low" name="low" href="{{ route('property.low')}}">Low to High Price</a>
-                                                <a class="dropdown-item" id="high" name="high" href="{{ route('property.high')}}">High to Low Price</a> 
+                                                <a class="dropdown-item" id="high" name="high" href="{{ route('property.high')}}">High to Low Price</a>
                                             </div>
                                         </div>
                                     </li>
@@ -163,9 +163,10 @@
                                                             <div class="ribbon text-capitalize">Advertise</div>
                                                         @endif
                                                         @if ($prt->image)
-                                                            <img src="{{ asset('storage/property-images/' . $prt->image) }}"
-                                                                alt="" class="img-fluid w100 img-transition">
-                                                            <div class="info"> {{ $prt->status_property }}</div>
+                                                        @foreach ($product->getMedia($mediaCollection) as $media)
+                                                        <img src="{{ $media->getUrl() }}" style="height: 200px; width: 200px" class="img-fluid w100 img-transition"
+                                                           alt="{{ $media->getUrl() }}">
+                                                     @endforeach
                                                         @else
                                                             <img src="images/property4.jpg" alt=""
                                                                 class="img-fluid w100 img-transition">

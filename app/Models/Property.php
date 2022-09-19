@@ -5,9 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Property extends Model
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+
+class Property extends Model implements HasMedia
 {
     use HasFactory;
+    use InteractsWithMedia;
 
     protected $table = "property";
     protected $primaryKey = 'id';
@@ -17,7 +22,6 @@ class Property extends Model
         'name',
         'id_user',
         'price',
-        'image',
         'status_property',
         'street',
         'picture',
@@ -42,6 +46,10 @@ class Property extends Model
 
     public function user(){
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function images(){
+        return $this->morphMany(Media::class, 'model');
     }
 
 

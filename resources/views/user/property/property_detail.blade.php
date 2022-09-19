@@ -48,7 +48,10 @@
             <div class="item">
                 @if ($property->image)
                 <a href="#">
-                    <img src="{{ asset('storage/property-images/' . $property->image) }}" alt="" class="img-fluid">
+                    @foreach ($product->getMedia($mediaCollection) as $media)
+                     <img src="{{ $media->getUrl() }}" style="height: 200px; width: 200px" class="img-thumbnail"
+                        alt="{{ $media->getUrl() }}">
+                  @endforeach
                 </a>
                 @else
                     <img src="images/property4.jpg" alt="" class="img-fluid">

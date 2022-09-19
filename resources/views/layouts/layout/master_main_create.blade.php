@@ -55,7 +55,7 @@
     <script src="{{ asset('assets/assets/dropzone/dropzone.min.js')}}"></script>
     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 
-    @yield('script')
+    @stack('script-internal')
 </body>
 
 </html>

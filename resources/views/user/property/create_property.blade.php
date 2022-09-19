@@ -177,14 +177,14 @@
             </div>
         </div>
     </div>
-@stop
+@endsection
 
 
-@section('script')
+@push('script-internal')
     <script>
         var uploadedDocumentMap = {}
         Dropzone.options.dpzMultipleFiles = {
-            url: '{{ route('property.store') }}',
+            url: '{{ route('property.storeMedia') }}',
             maxFilesize: 5, // MB
             maxFiles: 3,
             clickable: true,
@@ -215,28 +215,6 @@
                 }
                 $('form').find('input[name="image[]"][value="' + name + '"]').remove()
             },
-            init: function() {
-                @if (isset($photos))
-                    var files =
-                        {!! json_encode($photos) !!}
-                    for (var i in files) {
-                        var file = files[i]
-                        console.log(file);
-                        file = {
-                            ...file,
-                            width: 226,
-                            height: 324
-                        }
-                        this.options.addedfile.call(this, file)
-                        this.options.thumbnail.call(this, file, file.original_url)
-                        file.previewElement.classList.add('dz-complete')
-
-                        $('form').append('<input type="hidden" name="image[]" value="' + file.file_name + '">')
-                    }
-                @endif
-            }
         }
     </script>
-
-
-@endsection
+@endpush

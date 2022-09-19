@@ -102,6 +102,7 @@ Route::post('/auth/check', [HomeController::class, 'check'])->name('auth.check')
 Route::get('/property', [PropertyController::class, 'index'])->name('property.index')->middleware('auth');
 Route::get('/property/create', [PropertyController::class, 'create'])->name('property.create')->middleware('auth');
 Route::post('/property/store', [PropertyController::class, 'store'])->name('property.store')->middleware('auth');
+Route::post('/property/media', [PropertyController::class, 'storeMedia'])->name('property.storeMedia')->middleware('auth');
 Route::get('/property/show/{id}', [PropertyController::class, 'show'])->name('property.show')->middleware('auth');
 Route::get('/property/edit{id}', [PropertyController::class, 'edit'])->name('property.edit')->middleware('auth');
 Route::put('/property/update{id}', [PropertyController::class, 'update'])->name('property.update')->middleware('auth');
