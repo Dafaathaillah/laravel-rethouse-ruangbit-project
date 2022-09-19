@@ -131,46 +131,46 @@
                                             @enderror
                                         </div>
                                     </div>
-                                        <div class="form-group col-6">
-                                            <label for="bedroom">Bedroom</label>
-                                            <input type="number" class="form-control shadow-sm" id="bedroom"
-                                                name="bedroom">
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <label for="bathroom">Bathroom</label>
-                                            <input type="number" class="form-control shadow-sm" id="bathroom"
-                                                name="bathroom">
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <label for="garage">Garage</label>
-                                            <input type="number" class="form-control shadow-sm" id="garage"
-                                                name="garage">
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <label for="property_size">Property Size</label>
-                                            <input type="text" class="form-control shadow-sm" id="property_size"
-                                                name="property_size">
-                                        </div>
-                                        <div class="form-group col-12">
-                                            <label for="area">Area</label>
-                                            <input type="text" class="form-control shadow-sm" id="area"
-                                                name="area">
-                                        </div>
-                                        <div style="margin-top: 20px" class="form-group col-12 ">
-                                            <label for="features">Features</label>
-                                            <textarea class="form-control shadow-sm" id="features" name="features" placeholder="Features of Property"></textarea>
-                                        </div>
+                                    <div class="form-group col-6">
+                                        <label for="bedroom">Bedroom</label>
+                                        <input type="number" class="form-control shadow-sm" id="bedroom"
+                                            name="bedroom">
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label for="bathroom">Bathroom</label>
+                                        <input type="number" class="form-control shadow-sm" id="bathroom"
+                                            name="bathroom">
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label for="garage">Garage</label>
+                                        <input type="number" class="form-control shadow-sm" id="garage"
+                                            name="garage">
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label for="property_size">Property Size</label>
+                                        <input type="text" class="form-control shadow-sm" id="property_size"
+                                            name="property_size">
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label for="area">Area</label>
+                                        <input type="text" class="form-control shadow-sm" id="area"
+                                            name="area">
+                                    </div>
+                                    <div style="margin-top: 20px" class="form-group col-12 ">
+                                        <label for="features">Features</label>
+                                        <textarea class="form-control shadow-sm" id="features" name="features" placeholder="Features of Property"></textarea>
                                     </div>
                                 </div>
-                                <div class="row justify-content-end">
-                                    <button type="submit" style="margin-top: 20px"
-                                        class="btn btn-primary shadow rounded">Simpan</button>
-                                    &nbsp;
-                                    <a href="{{ route('property.index') }}" style="margin-top: 20px" type="button"
-                                        class="btn btn-warning shadow rounded">
-                                        Cancel
-                                    </a>
-                                </div>
+                            </div>
+                            <div class="row justify-content-end">
+                                <button type="submit" style="margin-top: 20px"
+                                    class="btn btn-primary shadow rounded">Simpan</button>
+                                &nbsp;
+                                <a href="{{ route('property.index') }}" style="margin-top: 20px" type="button"
+                                    class="btn btn-warning shadow rounded">
+                                    Cancel
+                                </a>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -200,8 +200,9 @@
                 'X-CSRF-TOKEN': "{{ csrf_token() }}"
             },
 
-            success: function (file, response) {
-                console.log(file);
+            success: function(file, response) {
+                $('form').append('<input type="hidden" name="image[]" value="' + response.name + '">')
+                uploadedDocumentMap[file.name] = response.name
             },
 
             removedfile: function(file) {
@@ -215,13 +216,21 @@
                 $('form').find('input[name="image[]"][value="' + name + '"]').remove()
             },
             init: function() {
-                @if (isset($event) && $event->document)
+                @if (isset($photos))
                     var files =
-                        {!! json_encode($event->document) !!}
+                        {!! json_encode($photos) !!}
                     for (var i in files) {
                         var file = files[i]
+                        console.log(file);
+                        file = {
+                            ...file,
+                            width: 226,
+                            height: 324
+                        }
                         this.options.addedfile.call(this, file)
+                        this.options.thumbnail.call(this, file, file.original_url)
                         file.previewElement.classList.add('dz-complete')
+
                         $('form').append('<input type="hidden" name="image[]" value="' + file.file_name + '">')
                     }
                 @endif
