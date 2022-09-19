@@ -82,7 +82,7 @@
                 <div class="collapse navbar-collapse" id="main_nav99">
                     <ul class="navbar-nav  mx-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle" href="{{ route('dashboard') }}"
+                            <a class="nav-link active dropdown-toggle" href="{{ route('property.index') }}"
                                 data-toggle="dropdown"> Home </a>
                         </li>
                         <li class="nav-item dropdown">
@@ -94,6 +94,8 @@
                                 <li><a class="dropdown-item icon-arrow" href="{{ route('property.index') }}"> Property </a>
                                 </li>
                                 <li><a class="dropdown-item icon-arrow" href="{{ route('filemanager.index') }}"> File Manager </a>
+                                </li>
+                                <li><a class="dropdown-item icon-arrow" href="{{ route('kpr.index') }}"> KPR </a>
                                 </li>
                             </ul>
                         </li>
