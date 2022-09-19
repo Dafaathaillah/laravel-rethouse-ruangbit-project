@@ -47,7 +47,7 @@
                                         @foreach ($ads as $adv )
                                         <tr>
                                             <td>{{ $no++ +1 }}</td>
-                                            <td><img src="{{asset('storage/property-images/' .$adv->image)}}"
+                                            <td><img src="{{ asset('storage/property-images/' . $adv->image_thumb) }}"
                                                     class="rounded float-left" style="width: 100px"></td>
                                             <td>
                                                 <?php
@@ -62,7 +62,8 @@
                                                 }
                                             ?>
                                             </td>
-                                            <td>{{($adv->image_transaction)}}</td>
+                                            <td><img src="{{ asset('storage/transaction-images/' . $adv->image_transaction) }}"
+                                                class="rounded float-left" style="width: 100px"></td>
                                             <td>{{($adv->start_ads)}}</td>
                                             <td>{{($adv->end_ads)}}</td>
                                             <td>

@@ -23,8 +23,8 @@
                 @endif
                 <ul class="list-group list-group-flush">
                     <div class="container mb-3">
-                        <img src="{{asset('storage/property-images/' .$ads->image)}}"
-                        class="rounded float-left" style="width: 300px">
+                        <img src="{{asset('storage/transaction-images/' .$ads->image_transaction)}}"
+                        class="rounded float-left" style="width: 500px">
                     </div>
                     <div class="row mb-3 mx-1">
                         <li class="list-group-item col-6"><b>Type Property : </b>
