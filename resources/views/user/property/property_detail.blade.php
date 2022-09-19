@@ -462,13 +462,13 @@
 
                                         <ul class="list-unstyled mb-0">
                                             <li>
-                                                <h5 class="text-capitalize">{{ $property->user->name }}</h5>
+                                                <h5 class="text-capitalize">{{ auth()->user()->name }}</h5>
                                             </li>
                                             <li><a href="tel:123456"><i
-                                                        class="fa fa-phone-square mr-1"></i>{{ $property->user->contact }}</a>
+                                                        class="fa fa-email mr-1"></i>{{ auth()->user()->email }}</a>
                                             </li>
                                             <li><a href="javascript:void(0)"><i class=" fa fa-building mr-1"></i>
-                                                    {{ $property->user->company }}</a>
+                                                    {{ auth()->user()->company }}</a>
                                             </li>
                                             </li>
                                         </ul>
@@ -483,7 +483,7 @@
                                 <div class="profile__agent__footer">
                                     <div class="form-group mb-0">
                                         <a class="btn btn-primary text-capitalize btn-block"
-                                            href="https://wa.me/{{ $property->user->contact }}"> Contact Agent <i
+                                            href="https://wa.me/{{ auth()->user()->contact }}"> Contact Agent <i
                                                 class="fa fa-whatsapp ml-1"></i></a>
 
                                     </div>
