@@ -32,7 +32,7 @@
                                 <div class="input-group">
                                     <input type="file" name="image_thumb"
                                         class="dropify @error('image_thumb') is-invalid @enderror" id="image_thumb"
-                                        aria-describedby="image_thumb">
+                                        aria-describedby="image_thumb" data-allowed-file-extensions="jpg png gif">
                                     @error('image_thumb')
                                         <div class="invalid-feedback">
                                             {{ $message }}
