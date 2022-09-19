@@ -14,6 +14,9 @@ class PropertyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     private $mediaCollection = 'image';
+
     public function index()
     {
         $property = $property = DB::table('property')
@@ -102,7 +105,6 @@ class PropertyController extends Controller
         // // return view('user.property.property_list');
 
         $request->validate([
-            'image' => 'image|file',
             'type_property_id' => 'required',
             'name' => 'required',
             'price' => 'required',
@@ -122,27 +124,6 @@ class PropertyController extends Controller
         ]);
 
         $prt = new Property();
-        if ($request->hasFile('file')) {
-            $image = $request->file('file');
-            $imageName = time() . $image->getClientOriginalName();
-            $upload_success = $image->move(public_path('storage/property-images'), $imageName);
-
-            if ($upload_success) {
-                return response()->json($upload_success, 200);
-            }
-            // Else, return error 400
-            else {
-                return response()->json('error', 400);
-            }
-        }
-
-        if ($request->hasFile('image-transaction')) {
-            $file = $request->file('image-transaction');
-            $ext = $file->getClientOriginalName();
-            $file->move('storage/transaction-images', $ext);
-            $prt->image = $ext;
-        }
-
         $prt->name = $request->input('name');
         $prt->type_property_id = $request->input('type_property_id');
         $prt->price = $request->input('price');
@@ -158,9 +139,37 @@ class PropertyController extends Controller
         $prt->property_size = $request->input('property_size');
         $prt->area = $request->input('area');
         $prt->features = $request->input('features');
-        $prt->image_transaction = $request->input('image_transaction');
+
+        if ($request->hasFile('image_transaction')) {
+            $file = $request->file('image_transaction');
+            $ext = $file->getClientOriginalName();
+            $file->move('storage/transaction-images', $ext);
+            $prt->image_transaction = $ext;
+        }
+
+        foreach($request->input('image', []) as $file){
+            $prt->addMedia(storage_path('tmp/uploads/'. $file))->toMediaCollection($this->mediaCollection);
+        }
+
         $prt->save();
         return redirect()->route('property.index')->with('success', 'Data Berhasil Ditambah');
+    }
+
+    public function storeMedia(Request $request){
+        $path = storage_path('tmp/uploads');
+
+        if(!file_exists($path)){
+            mkdir($path, 0777, true);
+        }
+
+        $file = $request->file('file');
+        $name = uniqid() . '_' . trim($file->getClientOriginalName());
+        $file->move($path,$name);
+
+        return response()->json([
+            'name' => $name,
+            'original_name' => $file->getClientOriginalName(),
+        ]);
     }
 
     /**
