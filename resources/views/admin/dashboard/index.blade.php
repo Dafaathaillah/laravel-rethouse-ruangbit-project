@@ -151,7 +151,7 @@
     </div> <!-- row -->
     <div class="card shadow">
         <div class="card-body">
-            <div class="d-flex justify-content-between align-items-baseline mb-2">
+            {{-- <div class="d-flex justify-content-between align-items-baseline mb-2">
                 <h6 class="card-title mb-0">Monthly Register Property</h6>
                 <div class="dropdown mb-2">
                     <button class="btn p-0" type="button" id="dropdownMenuButton4" data-toggle="dropdown"
@@ -171,7 +171,7 @@
                                 class="icon-sm mr-2"></i> <span class="">Download</span></a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="monthly-sales-chart-wrapper" id="grafik">
             </div>
         </div>
